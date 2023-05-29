@@ -1,0 +1,422 @@
+.iconSearch {
+  display: inline-block;
+  position: relative;
+  bottom: 0.2rem;
+  background: url(../img/icons/search.svg) no-repeat;
+  background-size: 100%;
+  width: 1.9rem;
+  height: 1.9rem;
+}
+
+.iconProfile {
+  display: inline-block;
+  position: relative;
+  width: 2.1rem;
+  height: 2.3rem;
+}
+
+.iconStats {
+  display: inline-block;
+  position: relative;
+  width: 2.4rem;
+  height: 2.4rem;
+}
+
+.iconFavorite {
+  display: inline-block;
+  position: relative;
+  width: 2.4rem;
+  height: 2.3rem;
+  margin-top: 0.2rem;
+}
+
+.iconBag {
+  display: inline-block;
+  position: relative;
+  width: 2.2rem;
+  height: 2.4rem;
+}
+
+.iconLongArrow {
+  display: inline-block;
+  position: relative;
+  width: 10.4rem;
+  height: 2.1rem;
+  path {
+    stroke: #292D32;
+    transition: 0.3s;
+  }
+}
+
+.iconLongArrow:hover {
+  path {
+    stroke: #48A4EB;
+  transition: 0.3s;
+  }
+}
+
+a:hover .iconLongArrow {
+  path {
+    stroke: #48A4EB;
+    transition: 0.3s;
+  }
+}
+
+.iconMessage {
+  width: 2.3rem;
+  height: 1.9rem;
+  margin-top: 1.8rem;
+}
+
+.iconFb {
+  width: 1rem;
+  height: 2rem;
+}
+
+.iconWs {
+  width: 3.8rem;
+  height: 3.8rem;
+}
+
+.iconWeChat {
+  width: 1.7rem;
+  height: 1.6rem;
+}
+
+.iconPhone {
+  width: 1.7rem;
+  height: 1.8rem;
+}
+
+.iconCross {
+  width: 1.8rem;
+  height: 1.8rem;
+  margin-top: 1.8rem;
+}
+
+.iconBlueButton {
+  display: inline-block;
+  position: relative;
+  background-color: #33A9FF;
+  width: 5.5rem;
+  height: 5.5rem;
+  line-height: 5.8rem !important;
+  border-radius: 3rem;
+  text-align: center;
+  margin-right: 1.2rem;
+  font-family: "Circe Bold";
+  color: white;
+  font-size: 1.9rem !important;
+  transition: 0.2s;
+}
+
+a:hover .iconBlueButton {
+  color: #48A4EB;
+  background-color: white;
+  box-shadow: 0px 4px 25px rgba(0, 0, 0, 0.14);
+  transition: 0.2s;
+}
+
+.iconStock {
+  background-color: #33A9FF;
+  width: 4.4rem;
+  height: 4.4rem;
+  text-align: center;
+  padding-top: 0.9rem;
+  border-radius: 100%;
+  img {
+    width: 2.5rem;
+    height: 2.4rem;
+  }
+}
+
+.iconCart {
+  display: inline-block;
+  background-color: #33A9FF;
+  width: 4rem;
+  height: 4rem;
+  text-align: center;
+  border-radius: 100%;
+  svg {
+    width: 1.4rem;
+    height: 1.4rem;
+    margin-top: 1.3rem;
+  }
+}
+
+.like {
+  cursor: pointer;
+  width: 2rem;
+  height: 1.9rem;
+  path {
+    fill: #C0C0C0;
+  }
+  &:hover path {
+    fill: #33A9FF;
+  }
+}
+
+.compare {
+  width: 2.1rem;
+  height: 2rem;
+  cursor: pointer;
+  path {
+    fill: #C0C0C0;
+  }
+  &:hover path {
+    fill: #33A9FF;
+  }
+}
+
+.iconHome {
+  width: 1.4rem;
+  height: 1.5rem;
+  path {
+    fill: #838383;
+  }
+}
+
+a:hover .iconHome {
+  path {
+    fill: #33A9FF;
+  }
+}
+
+.likeHand, .dislikeHand {
+  width: 2rem;
+  height: 2rem;
+  path {
+    fill: #C0C0C0;
+    transition: 0.3s;
+  }
+}
+
+a:hover .likeHand path, a:hover .dislikeHand path {
+  fill: #33A9FF;
+  transition: 0.3s;
+}
+
+.iconAddPhoto {
+  width: 5.3rem;
+  height: 4.5rem;
+}
+
+.iconCompare {
+  width: 2.4rem;
+  height: 2.4rem;
+  path {
+    fill: #292D32;
+    transition: 0.3s;
+  }
+  rect {
+    stroke: #292D32;
+    transition: 0.3s;
+  }
+}
+
+.iconCompare:hover, a:hover .iconCompare {
+  path {
+    fill: #33A9FF;
+    transition: 0.3s;
+  }
+  rect {
+    stroke: #33A9FF;
+    transition: 0.3s;
+  }
+}
+
+.iconTrash {
+  width: 1.9rem;
+  height: 2.4rem;
+  path {
+    stroke: #292D32;
+    transition: 0.3s;
+  }
+}
+
+.iconTrash:hover, a:hover .iconTrash {
+  path {
+    stroke: #33A9FF;
+    transition: 0.3s;
+  }
+}
+
+.iconFav {
+  width: 2.4rem;
+  height: 2.4rem;
+  path {
+    fill: #292D32;
+    transition: 0.3s;
+  }
+}
+
+.iconFav:hover, a:hover .iconFav {
+  path {
+    fill: #33A9FF;
+    transition: 0.3s;
+  }
+}
+
+.iconPCart {
+  width: 1.2rem;
+  height: 1.2rem;
+}
+
+.iconAccept {
+  width: 2.4rem;
+  height: 1.5rem;
+  object-fit: contain; 
+}
+
+.iconPrint {
+  width: 2rem;
+  height: 2rem;
+  object-fit: contain;
+}
+
+@media (max-width: 48em) {
+
+  .iconAccept {
+    width: 3.4rem;
+    height: 2rem;
+  }
+
+  .iconPCart {
+    width: 2.8rem;
+    height: 2.8rem;
+  }
+
+  .iconFav {
+    width: 4.3rem;
+    height: 4.3rem;
+  }
+
+  .iconAddPhoto {
+    width: 6.4rem;
+    height: 5.4rem;
+  }
+
+  .iconCompare {
+    width: 4.3rem;
+    height: 4.3rem;
+  }
+
+  .iconTrash {
+    width: 3.4rem;
+    height: 4rem;
+  }
+
+  .likeHand, .dislikeHand {
+    width: 4rem;
+    height: 4rem;
+    position: relative;
+    top: 0.7rem;
+  }
+
+  .iconHome {
+    width: 2.8rem;
+    height: 3rem;
+    position: relative;
+    top: 0.3rem
+  }
+
+  .iconProfile {
+    width: 3.5rem;
+    height: 4rem;
+  }
+
+  .like {
+    width: 4rem;
+    height: 3.7rem;
+  }
+
+  .compare {
+    width: 4.2rem;
+    height: 4.2rem;
+  }
+
+  .iconLongArrow:hover {
+    path {
+      stroke: #292D32;
+      transition: 0.3s;
+    }
+  }
+
+  .iconBag {
+    width: 3.8rem;
+    height: 4.2rem;
+  }
+
+  .iconBlueButton {
+    width: 9rem;
+    height: 9rem;
+    border-radius: 5rem;
+    line-height: 9.4rem !important;
+    font-size: 3.8rem !important;
+  }
+
+  .iconLongArrow {
+    width: 12.8rem;
+    height: 2.8rem;
+  }
+
+  .iconMessage {
+    width: 4.2rem;
+    height: 3.6rem;
+    margin-top: 3.5rem;
+  }
+
+  .iconFb {
+    width: 1.4rem;
+    height: 2.6rem;
+  }
+
+  .iconCross {
+    width: 2.8rem;
+    height: 2.8rem;
+    margin-top: 4.2rem;
+  }
+
+  .iconWeChat {
+    width: 3.4rem;
+    height: 3.4rem;
+  }
+
+  .iconPhone {
+    width: 3rem;
+    height: 3rem;
+  }
+
+  .iconMenu {
+    margin-top: 0 !important;
+    width: 9.2rem !important;
+    height: 9.2rem !important;
+  }
+
+  .iconSearch {
+    width: 3.6rem;
+    height: 3.6rem;
+    margin-top: 3rem;
+    margin-right: 4rem;
+  }
+
+  .iconStock {
+    width: 8rem;
+    height: 8rem;
+    padding-top: 1.7rem;
+    img {
+      width: 4.4rem !important;
+      height: 4.4rem !important;
+    }
+  }
+
+  .iconCart {
+    width: 8rem;
+    height: 8rem;
+    svg {
+      width: 2.8rem;
+      height: 2.4rem;
+      margin-top: 2.8rem;
+    }
+  }
+}

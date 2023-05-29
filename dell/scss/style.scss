@@ -1,0 +1,8942 @@
+@import "reset.scss";
+@import "fonts.scss";
+@import "icons.scss";
+@import "slider.scss";
+
+$defaultTextColor: #292D32;
+$buttonsColor: #33A9FF;
+$sectionBackground: #F2F2F2;
+
+section {
+  font-size: 1.6rem;
+}
+
+.clearFix {
+  clear: both;
+}
+
+.container {
+  width: 100%;
+  margin: 0 auto;
+  font-family: Roboto;
+  min-height: 100vh;
+  padding-bottom: 45rem;
+  position: relative;
+}
+
+.content2col {
+  width: 92rem;
+  padding-top: 16.4rem;
+}
+
+h2, .contentTitle2 {
+  font-size: 5rem;
+  line-height: 5rem;
+  margin-bottom: 2.5rem;
+}
+
+.contentTitle2.less {
+  font-size: 4.5rem;
+}
+
+h3 {
+  font-size: 2.2rem;
+  line-height: 2.8rem;
+}
+
+.contentTitle3 {
+  font-size: 4.5rem;
+  line-height: 5.3rem;
+  margin-bottom: 4rem;
+}
+
+a {
+  transition: 0.3s;
+}
+
+a:hover {
+  transition: 0.3s;
+  color: #48A4EB;
+}
+
+header {
+  font-size: 1.5rem;
+  background-color: white;
+  .contentWrapper {
+    display: flex;
+    align-items: center;
+    height: 12.3rem;
+    justify-content: space-between;
+  }
+  .left {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+  }
+  .right {
+    display: flex;
+    justify-content: end;
+  }
+}
+
+.logoMain {
+  width: 13rem;
+  img {
+    width: 7rem;
+    height: 7rem;
+  }
+}
+
+.headerMenu {
+  ul {
+    display: flex;
+    justify-content: start;
+  }
+  li {
+    margin-right: 4.5rem;
+  }
+  .iconSearch {
+    margin-left: 0.5rem;
+    top: 0.2rem;
+    cursor: pointer;
+    position: relative;
+    z-index: 3;
+  }
+  a {
+    transition: 0.3s;
+    font-size: 1.5rem;
+  }
+  a:hover {
+    color: #48A4EB;
+    transition: 0.3s;
+  }
+  .active {
+    color: #48A4EB;
+    cursor: default;
+  }
+}
+
+.activeNotification {
+  position: absolute;
+  top: -0.1rem;
+  right: 0;
+  background-color: #48A4EB;
+  width: 1.6rem;
+  height: 1.6rem;
+  color: white;
+  font-size: 1.2rem;
+  line-height: 1.8rem;
+  border-radius: 1rem;
+}
+
+.contentWrapper {
+  margin: 0 auto;
+  width: 140rem;
+  font-size: 1.8rem;
+}
+
+.headerMenu {
+  text-transform: uppercase;
+}
+
+.userActions {
+  ul {
+    display: flex;
+    justify-content: start;
+  }
+  li > a {
+    width: 4.9rem;
+    height: 4.9rem;
+    background-color: #F9F9F9;
+    border-radius: 2.5rem;
+    text-align: center;
+    display: inline-block;
+    padding-top: 1.2rem;
+    position: relative;
+    transition: 0.3s;
+  }
+  a .pathStroke path {
+    stroke: #292D32;
+    transition: 0.3s;
+  }
+  a .pathFill path {
+    fill: #292D32;
+    transition: 0.3s;
+  }
+  a .rectStroke rect {
+    stroke: #292D32;
+    transition: 0.3s;
+  }
+  a .pathFill path {
+    fill: #292D32;
+    transition: 0.3s;
+  }
+  a .svgFill {
+    fill: #292D32;
+    transition: 0.3s;
+  }
+  li > a:hover {
+    background-color: #B7B7B7;
+    transition: 0.3s;
+  }
+  a:hover .pathFill path {
+    fill: white;
+    transition: 0.3s;
+  }
+  a:hover .pathStroke path {
+    stroke: white;
+    transition: 0.3s;
+  }
+  a:hover .rectStroke rect {
+    stroke: white;
+    transition: 0.3s;
+  }
+  a:hover .pathFill path {
+    fill: white;
+    transition: 0.3s;
+  }
+  a:hover .svgFill {
+    fill: white;
+    transition: 0.3s;
+  }
+  a img {
+    margin-top: 1.3rem;
+  }
+  li {
+    margin-left: 3rem;
+  }
+}
+
+.bgGray {
+  background-color: #F2F2F2;
+}
+
+.bgText {
+  position: absolute;
+  font-family: "Rubik One";
+  text-transform: uppercase;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.685417) 5.87%, rgba(242, 242, 242, 0.7) 100%);;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: #0B2349;
+  margin-top: 8rem;
+  margin-left: -2rem;
+  font-size: 29rem;
+  line-height: 20rem;
+  user-select: none;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  &.smallText {
+    font-size: 18.7rem;
+    line-height: 17.3rem;
+    margin-left: 0;
+    margin-top: 12.5rem;
+  }
+}
+
+.bpContentWrapper {
+  margin-left: 26rem;
+  position: relative;
+  display: flex;
+  justify-content: normal;
+  .owl-carousel {
+    width: 114rem;
+  }
+  .item {
+    width: 114rem;
+    display: flex;
+    justify-content: space-between;
+    height: 68.3rem;
+    align-items: center;
+  }
+  .imgWrapper {
+    width: 60rem;
+    text-align: center;
+  }
+  .imgWrapper img {
+    max-height: 55.5rem;
+    max-width: 55.5rem;
+  }
+  .owl-dots {
+    position: absolute;
+    right: 4.1rem;
+    top: 50rem;
+  }
+  .info {
+    margin-left: 13rem;
+    width: 42rem;
+  }
+  a {
+    font-size: 1.6rem;
+  }
+  .info .title {
+    font-size: 5rem;
+    line-height: 5.9rem;
+    margin-top: 1.5rem;
+    margin-bottom: 6rem;
+  }
+  .right {
+    width: 50.9rem;
+    background: #F9F9F9 url(../img/bg_tranparent_1.png) no-repeat left top;
+    background-size: contain;
+    height: 68.3rem;
+    font-size: 2.5rem;
+    position: relative;
+  }
+  .right .title {
+    margin-top: 31.9rem;
+    margin-left: 4rem;
+    width: 20rem;
+  }
+  .right .more {
+    left: 4rem;
+    top: 49.7rem;
+    position: absolute;
+  }
+}
+
+.verticalButton {
+  position: absolute;
+  left: 0;
+  top: 41rem;
+  color: #838383;
+  font-size: 1.6rem;
+  font-family: "Roboto Light";
+  span {
+    position: relative;
+    top: 1rem;
+    line-height: 2.5rem;
+    display: inline-block;
+    transform-origin: left top;
+    transform: rotate(-90deg);
+    -moz-transform: rotate(-90deg);
+    -ms-transform: rotate(-90deg);
+    -webkit-transform: rotate(-90deg);
+    -o-transform: rotate(-90deg);
+  }
+  img {
+    width: 2.5rem !important;
+  }
+}
+
+.stockCol .custom-owl-next svg, .stockCol .custom-owl-prev svg {
+  width: 5.5rem;
+  height: 1.2rem;
+}
+
+.stockCol .owl-nav {
+  margin-top: 0.6rem;
+  text-align: center;
+  .custom-owl-prev {
+    margin-right: 9rem;
+  }
+}
+
+.stockCol .owl-dots {
+  position: absolute;
+  bottom: 0.6rem;
+  left: 12.6rem;
+}
+
+.custom-owl-prev svg {
+  transform: rotate(180deg);
+}
+
+.stockBox {
+  .imgWrap {
+    position: relative;
+    text-align: center;
+    img {
+      max-width: 20rem;
+      max-height: 19rem;
+      display: inline-block !important;
+      width: auto !important;
+    }
+  }
+  .links {
+    font-size: 1.8rem;
+    line-height: 2.4rem;
+    color: #838383;
+    position: absolute;
+    .category {
+      font-family: "Roboto Light";
+      color: #838383;
+    }
+    .product {
+      font-size: 2rem;
+      line-height: 3rem;
+      color: #292D32;
+    }
+  }
+  .iconStock {
+    position: absolute;
+    top: 13rem;
+    right: 0;
+  }
+}
+
+.ratingWrap {
+  color: #33A9FF;
+  .count {
+    vertical-align: top;
+  }
+}
+
+.ratingAndReviews {
+  margin-top: 8rem;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  line-height: 2.7rem;
+  .rating {
+    img {
+      display: inline-block !important;
+      width: auto !important;
+    }
+  }
+  .reviews {
+    padding-left: 4rem;
+    color: #838383;
+    font-family: "Roboto Light";
+    svg {
+      width: 1.9rem;
+      height: 1.9rem;
+      position: relative;
+      top: 0.4rem;
+      margin-right: 0.4rem;
+    }
+  }
+}
+
+.textGray {
+  color: #838383;
+  font-size: 1.8rem;
+  font-family: "Roboto Light";
+}
+
+.iFlex {
+  display: flex;
+  justify-content: space-between;
+}
+
+.catalogShortSection {
+  background-color: white;
+}
+
+.catalogShort {
+  padding: 16.4rem 0 18rem;
+  width: 144.01rem;
+  margin-left: -4rem;
+  font-size: 0;
+  &.col2 {
+    width: 96.1rem;
+    padding-top: 8.1rem;
+  }
+  h2 {
+    margin-bottom: 2.9rem;
+  }
+  .iconBlueButton {
+    line-height: 5.5rem;
+  }
+  .item {
+    background-color: #F2F2F2;
+    width: 44rem;
+    height: 37.1rem;
+    display: inline-block;
+    margin-left: 4rem;
+    vertical-align: top;
+    margin-bottom: 4rem;
+    border-radius: 2rem;
+    font-size: 1.8rem;
+  }
+  .item .imgWrapper {
+    height: 26.4rem;
+    text-align: center;
+    display: table-cell;
+    vertical-align: middle;
+    width: 43rem;
+    margin-left: -0.5rem;
+  }
+  .item .imgWrapper img {
+    max-height: 23rem;
+    max-width: 36rem;
+  }
+  .textItem .textGray {
+    font-size: 1.8rem;
+    line-height: 2.7rem;
+    margin-bottom: 4.6rem;
+  }
+  .item.textItem {
+    background: transparent;
+  }
+  .item.textItem .textGray {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  span {
+    font-size: 1.6rem;
+    line-height: 1.6rem;
+  }
+  .itemNum {
+    position: absolute;
+    margin-top: 4rem;
+    margin-left: 4rem;
+    font-family: "Roboto Thin";
+    font-size: 2.5rem;
+    line-height: 3.75rem;
+    color: #292D32;
+    font-weight: 200;
+  }
+  .textGray {
+    margin: 0 4rem 0.5rem;
+    font-size: 1.8rem;
+    line-height: 2.4rem;
+  }
+  .category {
+    margin: 0 4rem;
+    font-size: 2.5rem;
+    line-height: 3.75rem;
+  }
+}
+
+.item.imgTopOverflow  .imgWrapper {
+  vertical-align: top;
+  img {
+    margin-top: -2rem;
+  }
+}
+
+.ourAdvantagesIntro {
+  display: flex;
+  justify-content: normal;
+  align-items: center;
+  height: 55rem;
+  margin-bottom: 5rem;
+  .left {
+    position: relative;
+    .imgWrapper {
+      width: 78rem;
+      vertical-align: top;
+      margin-left: -8rem;
+    }
+    .imgWrapper img {
+      max-width: 73.3rem;
+      vertical-align: top;
+      margin-top: 4rem;
+    }
+  }
+  .right {
+    font-size: 1.6rem;
+    h2 {
+      margin-bottom: 3.7rem;
+    }
+    .textGray {
+      font-size: 1.8rem;
+      line-height: 2.7rem;
+      margin-bottom: 4.1rem;
+    }
+  }
+}
+
+.ourAdvantagesList {
+  width: 140rem;
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 7.3rem;
+  .item {
+    width: 33rem;
+    height: 28.9rem;
+    background-color: #292D32;
+    color: white;
+    position: relative;
+    border-radius: 2rem;
+    overflow: hidden;
+    font-family: "EuclidCircularA-Bold";
+    .bgLine {
+      top: 0;
+      right: 0;
+      left: initial;
+      position: absolute;
+      img {
+        height: 9rem;
+      }
+    }
+    h3 {
+      margin: 12.5rem 2rem 1.3rem 3rem;
+    }
+    .icon {
+      background-color: #343A41;
+      color: white;
+      position: absolute;
+      top: 3rem;
+      left: 3rem;
+      width: 7rem;
+      height: 7rem;
+      border-radius: 1rem;
+      text-align: center;
+    }
+    .icon img {
+      margin-top: 2rem;
+      width: 3.6rem;
+    }
+    .textGray {
+      font-size: 1.6rem;
+      line-height: 2rem;
+      color: #B7B7B7;
+      margin: 0 3rem;
+      font-family: "EuclidCircularA-Light";
+    }
+  }
+}
+
+.lastNewsWrapper {
+  padding: 17.2rem 0 18rem;
+}
+
+.lastNewsHeader {
+  .right {
+    float: right;
+    margin-top: -0.25rem;
+    .iconBlueButton {
+      margin-left: 1.5rem;
+    }
+  }
+  h2 {
+    margin-right: 20rem;
+  }
+  .textGray {
+    line-height: 2.7rem;
+  }
+}
+
+.newsList {
+  font-size: 0;
+  vertical-align: top;
+  margin-left: -6.51rem;
+  margin-top: 6.9rem;
+  .item {
+    background-color: white;
+    display: inline-block;
+    width: 41.5rem;
+    height: 36.4rem;
+    font-size: 1.4rem;
+    line-height: 2.1rem;
+    border-radius: 4.5rem;
+    border-top-right-radius: 0;
+    border-bottom-left-radius: 0;
+    margin-bottom: 4rem;
+    box-shadow: 0px 40px 80px rgba(0, 0, 0, 0.05);
+    margin-left: 6.5rem;
+    position: relative;
+    .imgWrap {
+      overflow: hidden;
+      height: 25.9rem;
+      border-top-left-radius: 4.5rem;
+      img {
+        max-width: 41.5rem;
+        max-height: 25.9rem;
+      }
+    }
+    .newsDate {
+      position: absolute;
+      background: #FFFFFF;
+      box-shadow: 6px 6px 30px rgba(0, 0, 0, 0.06);
+      border-radius: 15px;
+      width: 5rem;
+      height: 9.7rem;
+      top: 6.5rem;
+      right: -2.5rem;
+      font-size: 1rem;
+      text-align: center;
+      .big {
+        font-size: 2rem;
+        font-family: "Roboto Bold";
+        margin: 2.4rem 0 1.4rem;
+      }
+    }
+    .bgLayout {
+      position: relative;
+      margin-top: -4rem;
+      background: url(../img/newsLayout.png) no-repeat top left;
+      background-size: contain;
+      padding: 2.4rem 3rem 0;
+      .linkWrap {
+        padding-right: 10rem;
+        margin-bottom: 1.1rem;
+        a {
+          font-family: "Roboto Bold";
+          font-size: 2.5rem;
+          line-height: 3.25rem;
+          color: #292D32;
+        }
+      }
+      .iconBlueButton {
+        position: absolute;
+        right: 2.5rem;
+        top: 2.6rem;
+        width: 4.3rem;
+        height: 4.3rem;
+        line-height: 4.4rem !important;
+        background-color: #292D32;
+      }
+      a:hover.iconBlueButton {
+        background-color: white;
+        box-shadow: 0px 4px 25px rgba(0, 0, 0, 0.14)
+      }
+    }
+  }
+}
+
+.requestFormWitchContacts {
+  display: flex;
+  justify-content: stretch;
+  overflow: hidden;
+  border-radius: 2rem;
+  position: relative;
+}
+
+.ourContacts {
+  background-color: #F9F9F9;
+  height: 84.2rem;
+  width: 70rem;
+  padding: 10rem 18rem 10rem 10rem;
+  position: relative;
+  .bgLayout {
+    position: absolute;
+    top: 14.5rem;
+    right: -8.8rem;
+    img {
+      width: 29.5rem;
+    }
+  }
+  .textGray {
+    font-size: 1.6rem;
+    line-height: 2.4rem;
+  }
+  .contactsList {
+    margin-top: 5.3rem;
+    padding-bottom: 1rem;
+  }
+}
+
+.contactsList {
+  font-size: 2.2rem;
+  line-height: 3.3rem;
+  .title {
+    color: #838383;
+    font-size: 1.8rem;
+    line-height: 2.4rem;
+    margin-bottom: 0.8rem;
+  }
+  li {
+    margin-bottom: 6.5rem;
+    margin-left: 5.6rem;
+    position: relative;
+  }
+  .icon {
+    position: absolute;
+    top: -0.5rem;
+    left: -5.6rem;
+    img {
+      width: 3.6rem;
+    }
+  }
+}
+
+.iHide {
+  display: none !important;
+}
+
+.requestForm {
+  background-color: #292D32;
+  color: white;
+  height: 84.2rem;
+  width: 70rem;
+  padding: 10rem 12.9rem 10rem;
+  p {
+    font-size: 1.6rem;
+    line-height: 2.4rem;
+    margin-bottom: 5rem;
+  }
+  label {
+    display: block;
+    background-color: #292D32;
+    padding: 0 0.8rem;
+    position: absolute;
+    font-size: 1.8rem;
+    line-height: 2.4rem;
+    margin-left: 2.3rem;
+    font-family: "Roboto Light";
+    color: #F2F2F2;
+  }
+  input[type=text] {
+    height: 5.9rem;
+    line-height: 5.9rem;
+    padding: 0 0.9rem;
+  }
+  input[type=text], textarea {
+    background-color: #292D32;
+    color: white;
+    font-size: 1.8rem;
+    border: 1px solid rgba(242, 242, 242, 0.5);
+    border-radius: 2rem;
+    width: 100%;
+    margin-top: 1rem;
+    margin-bottom: 5rem;
+    padding: 0 2rem;
+    font-family: "Roboto Light";
+  }
+  textarea {
+    height: 14.5rem;
+    padding: 2rem;
+    resize: none;
+  }
+}
+
+.requestFormSection {
+  background-color: #eeeeee;
+  padding-bottom: 18rem;
+  .bgText {
+    margin-top: 53rem;
+    font-size: 25.5rem;
+    line-height: 23.6rem;
+  }
+}
+
+.requestFormSection.contactsPage {
+  background: linear-gradient(to right, #F9F9F9 50%, #292D32 50%);
+  padding-bottom: 0;
+}
+
+.requestFormSectionBgLayout {
+  background-color: white;
+  height: 35.7rem;
+  margin-bottom: -35.7rem;
+}
+
+.js-submitForm {
+  cursor: pointer;
+}
+
+footer {
+  padding-top: 6rem;
+  background-color: white;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  overflow: hidden;
+  .logoMain {
+    float: left;
+  }
+  .contentWrapper {
+    position: relative;
+  }
+  .bgText.smallText {
+    right: -3.6rem;
+    font-size: 18.7rem;
+    line-height: 17.3rem;
+    background: linear-gradient(180deg, rgba(242, 242, 242, 1) 5.87%, rgba(242, 242, 242, 0) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    opacity: 0.7;
+    margin-top: 7.5rem;
+  }
+  .logoMain {
+    margin-top: 2.9rem;
+    img {
+      width: 11.2rem;
+      height: 11.2rem;
+    }
+  }
+}
+
+.footerNav {
+  margin-left: 27rem;
+  display: flex;
+  justify-content: space-around;
+  font-size: 1.6rem;
+  line-height: 1.9rem;
+  font-family: "Roboto Light";
+  margin-bottom: 6rem;
+  ul {
+    width: 29rem;
+    padding-right: 3rem;
+  }
+  .title {
+    font-size: 2.5rem;
+    line-height: 2.9rem;
+    font-family: Roboto;
+    margin-bottom: 1.5rem;
+  }
+  li {
+    margin-bottom: 1rem;
+  }
+}
+
+.contactsRow {
+  padding: 4rem 0;
+  border-top: 1px solid #e5e5e5;
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.8rem;
+  line-height: 2.7rem;
+  .title {
+    color: #838383;
+    font-size: 1.6rem;
+    line-height: 2.1rem;
+    margin-bottom: 1.1rem;
+  }
+}
+
+.socLinks {
+  font-size: 0;
+  li {
+    display: inline-block;
+    margin-left: 1.8rem;
+    vertical-align: top;
+    a {
+      display: inline-block;
+      width: 3.8rem;
+      height: 3.8rem;
+      border-radius: 2rem;
+      border: 3px solid #292D32;
+      text-align: center;
+      transition: 0.3s;
+      .iconFb {
+        margin-top: 0.6rem;
+        path {
+          fill: #292D32;
+          transition: 0.3s;
+        }
+      }
+      .iconWs {
+        path {
+          stroke: #292D32;
+          transition: 0.3s;
+        }
+        path:last-child {
+          fill: #292D32;
+          transition: 0.3s;
+          stroke:none;
+        }
+      }
+    }
+    a:hover {
+      border-color: #48A4EB;
+      transition: 0.3s;
+      .iconFb path {
+        fill: #48A4EB;
+        transition: 0.3s;
+      }
+      .iconWs {
+        path {
+          stroke: #48A4EB;
+          transition: 0.3s;
+        }
+        path:last-child {
+          stroke: none;
+          fill: #48A4EB;
+          transition: 0.3s;
+        }
+      }
+    }
+  }
+  li.noStyle a {
+    border: 0;
+    svg {
+      margin-top: 0;
+    }
+  }
+}
+
+.buttonBlue {
+  background-color: #33A9FF;
+  color: white;
+  cursor: pointer;
+  height: 4.4rem;
+  line-height: 4.4rem;
+  text-align: center;
+  padding: 0 4rem;
+  display: inline-block;
+  border-radius: 1rem;
+}
+
+.buttonBlue:hover {
+  color: white;
+}
+
+.messengerLink {
+  position: absolute;
+  right: 10rem;
+  top: 31.2rem;
+  .icon {
+    width: 5.5rem;
+    height: 5.5rem;
+    border-radius: 3rem;
+    background-color: #33A9FF;
+    text-align: center;
+    cursor: pointer;
+    user-select: none;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    transition: 0.3s;
+    .iconCross {
+      display: none;
+    }
+    .iconMessage path {
+      fill: white;
+      transition: 0.3s;
+    }
+  }
+  .icon:hover {
+    background-color: white;
+    box-shadow: 0px 4px 25px rgba(0, 0, 0, 0.14);
+    transition: 0.3s;
+    .iconMessage path {
+      fill: #48A4EB;
+      transition: 0.3s;
+    }
+  }
+  .messangersCol {
+    display: none;
+  }
+}
+
+.messengerLink.isOpen {
+  .messangersCol {
+    display: block;
+  }
+  .icon {
+    background-color: #DBD8D8;
+    .iconMessage {
+      display: none;
+    }
+    .iconCross {
+      display: inline-block;
+    }
+  }
+}
+
+.messangersCol {
+  position: absolute;
+  margin-left: 0.75rem;
+  margin-top: -21rem;
+  a {
+    display: inline-block;
+    width: 4rem;
+    height: 4rem;
+    background-color: #33A9FF;
+    border-radius: 2rem;
+    text-align: center;
+    padding-top: 1.2rem;
+    margin-bottom: 1.2rem;
+    .iconWs {
+      width: 1.8rem;
+      height: 1.8rem;
+      path {
+        stroke: white;
+        transition: 0.3s;
+      }
+      path:last-child {
+        stroke: none;
+        fill: white;
+        transition: 0.3s;
+      }
+    }
+    .iconWeChat path {
+      fill: white;
+      transition: 0.3s;
+    }
+    .iconPhone path {
+      stroke: white;
+      transition: 0.3s;
+    }
+  }
+  a:hover {
+    background-color: white;
+    box-shadow: 0px 4px 25px rgba(0, 0, 0, 0.14);
+    .iconWs {
+      width: 1.8rem;
+      height: 1.8rem;
+      path {
+        stroke: #33A9FF;
+        transition: 0.3s;
+      }
+      path:last-child {
+        stroke: none;
+        fill: #33A9FF;
+        transition: 0.3s;
+      }
+    }
+    .iconWeChat path {
+      fill: #33A9FF;
+      transition: 0.3s;
+    }
+    .iconPhone path {
+      stroke: #33A9FF;
+      transition: 0.3s;
+    }
+  }
+}
+
+.mobImage {
+  display: none;
+}
+
+.mobShow {
+  display: none !important;
+}
+
+#toggleMenu {
+  display: none;
+  opacity: 0;
+
+}
+
+.bgCategory {
+  background: #F9F9F9 url(../img/bgCategory.png) no-repeat top left;
+  background-size: contain;
+}
+
+header .noAuth {
+  display: none;
+}
+
+.bgCircle {
+  background: #F2F2F2 url('../img/bgCircle.png') no-repeat right center;
+  background-size: contain;
+}
+
+.stockTimer {
+  color: #C0C0C0;
+  font-family: "Roboto Light";
+  display: flex;
+  justify-content: space-between;
+  .counter {
+    font-family: "Roboto Thin";
+  }
+}
+
+.categorySection {
+  background-color: #F2F2F2;
+  padding: 16.4rem 0 18rem;
+}
+
+.categoryBox {
+  display: flex;
+  justify-content: left;
+}
+
+.categoryFilterWrap {
+  width: 32rem;
+}
+
+.categoryFHeader {
+  margin-top: 7rem;
+  line-height: 2.7rem;
+  img {
+    position: absolute;
+    margin-top: 0.6rem;
+    margin-left: 0.2rem;
+    width: 1.5rem;
+  }
+  span {
+    margin-left: 4rem;
+  }
+}
+
+.categoryFilter {
+  margin-top: 7rem;
+  .item {
+    min-height: 11rem;
+    width: 32rem;
+    border: 1px solid #C0C0C0;
+    border-radius: 2rem;
+    margin-bottom: 4rem;
+    &.isOpen .itemList {
+      display: block;
+    }
+    .itemList {
+      margin-top: -1rem;
+      padding: 0 4rem 4rem;
+      display: none;
+      li {
+        margin-bottom: 1rem;
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+      .count {
+        color: #838383;
+      }
+      input[type=checkbox] {
+        margin-right: 0.9rem;
+        border-radius: 4px;
+        border: 1px solid #D0D0D0;
+        background: #f2f2f2;
+      }
+      .inpSliderUI {
+        display: flex;
+        justify-content: space-between;
+        input {
+          width: 11rem;
+          margin-bottom: 3rem;
+          height: 4rem;
+          line-height: 4rem;
+          padding: 0 1.2rem;
+          font-size: 1.6rem;
+          border: 1px solid #e5e5e5;
+          border-radius: 0.6rem;
+          color: #838383;
+        }
+      }
+    }
+    .title {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 11rem;
+      padding-left: 4rem;
+      font-size: 2rem;
+      line-height: 3rem;
+      padding-right: 2.8rem;
+      span {
+        cursor: pointer;
+      }
+      .acArrow {
+        display: inline-block;
+        width: 3rem;
+        text-align: center;
+        font-family: "Circe Bold";
+        font-size: 1.9rem;
+        transform: rotate(90deg);
+        transition: 0.3s;
+      }
+    }
+  }
+}
+
+.acArrow {
+  display: inline-block;
+  width: 3rem;
+  text-align: center;
+  font-family: "Circe Bold";
+  font-size: 1.9rem;
+  transform: rotate(90deg);
+}
+
+.pagination {
+  margin-left: 8rem;
+  display: flex;
+  justify-content: space-between;
+  .dlMore {
+    font-size: 1.6rem;
+    line-height: 3rem;
+  }
+  .acArrow {
+    color: #33A9FF;
+  }
+  .paginationWrap {
+    display: flex;
+    justify-content: right;
+    font-size: 2.5rem;
+    line-height: 3.5rem;
+    a {
+      margin-left: 1.5rem;
+    }
+    span {
+      margin-left: 1.5rem;
+    }
+    a.active {
+      color: #33A9FF;
+      cursor: default;
+    }
+  }
+  .iconLongArrow {
+    width: 5.5rem;
+    height: 1.2rem;
+    vertical-align: top;
+    margin-top: 1.2rem;
+  }
+  .prev {
+    .iconLongArrow {
+      transform: rotate(180deg);
+    }
+  }
+}
+
+.categoryListHeader {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 7rem;
+  margin-left: 8rem;
+  height: 2.7rem;
+  width: 92rem;
+  .acArrow {
+    display: inline-block;
+    width: 3rem;
+    text-align: center;
+    font-family: "Circe Bold";
+    font-size: 1.9rem;
+    transform: rotate(-90deg);
+  }
+}
+
+.categoryListLine {
+  border-left: 1px solid #E5E5E5;
+  margin-top: 7rem;
+  margin-left: -1px;
+}
+
+.categoryListWrap {
+  margin-left: 8rem;
+}
+
+.categoryList {
+  margin-left: 4rem;
+  font-size: 0;
+  width: 96rem;
+  &.recommendet {
+    width: auto;
+    margin-left: -4rem;
+    .item {
+      background-color: #f2f2f2;
+    }
+  }
+  .item {
+    font-size: 2rem;
+    width: 44rem;
+    height: 54.5rem;
+    background-color: white;
+    border-radius: 2rem;
+    padding: 4rem;
+    position: relative;
+    display: inline-block;
+    margin-left: 4rem;
+    margin-bottom: 4rem;
+    .imgWrap {
+      position: relative;
+      height: 26.5rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      img {
+        width: 36rem;
+        height: 26.5rem;
+        object-fit: contain;
+      }
+      .likeBox {
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+      .compareBox {
+        position: absolute;
+        top: 0;
+        right: 0;
+      }
+    }
+    .info {
+      margin-top: 2rem;
+      font-size: 2rem;
+      line-height: 3rem;
+      color: #838383;
+      .cat {
+        font-size: 1.8rem;
+        line-height: 2.4rem;
+        font-family: "Roboto Light";
+      }
+      .itemName {
+        color: #292D32;
+        margin-bottom: 0.4rem;
+      }
+    }
+    .price {
+      font-size: 2.5rem;
+      line-height: 3.75rem;
+      position: absolute;
+      bottom: 3rem;
+      left: 4rem;
+    }
+    .inCart {
+      position: absolute;
+      bottom: 3rem;
+      right: 4rem;
+      .text {
+        font-size: 1.6rem;
+        line-height: 3rem;
+        margin-left: 0.4rem;
+      }
+    }
+  }
+}
+
+.categoryList.viewList {
+  .item {
+    height: auto;
+    display: block;
+    width: auto;
+    .price {
+      bottom: initial;
+      left: initial;
+      top: 4rem;
+      right: 4rem;
+    }
+    .info {
+      margin-right: 15rem;
+      margin-left: 20rem;
+    }
+  }
+  .imgWrap {
+    float: left;
+    height: 15rem;
+    div {
+      display: none;
+    }
+    img {
+      max-height: 12rem;
+    }
+  }
+}
+
+.allFilters {
+  font-size: 1.6rem;
+  line-height: 3rem;
+  span {
+    text-decoration: underline;
+  }
+  .iconLongArrow {
+    width: 5.5rem;
+    height: 1.2rem;
+    margin-left: 0.2rem;
+  }
+}
+
+.viewType {
+  font-size: 0;
+  svg {
+    width: 2.1rem;
+    height: 2.1rem;
+    margin-left: 2rem;
+    cursor: pointer;
+    rect {
+      stroke: #838383;
+    }
+    &:hover rect {
+      stroke: #33A9FF;
+    }
+    &.active rect {
+      stroke: #292D32;
+    }
+    line {
+      stroke: #838383;
+    }
+    &:hover line {
+      stroke: #33A9FF;
+    }
+    &.active line {
+      stroke: #292D32;
+    }
+  }
+}
+
+.viewType svg.active {
+  cursor: default;
+}
+
+.breadScrum {
+  font-size: 1.8rem;
+  line-height: 2.7rem;
+  color: #838383;
+  font-family: "Roboto Light";
+  .iconBCArrow {
+    width: 2.5rem;
+    height: 0.5rem;
+    position: relative;
+    bottom: 0.3rem;
+    margin: 0 1.7rem;
+    path {
+      stroke: #838383;
+    }
+  }
+}
+
+.rowSlider {
+  .item {
+    font-size: 1.8rem;
+    line-height: 2.4rem;
+    .info {
+      margin-bottom: 4rem;
+      div {
+        text-align: center;
+      }
+    }
+    .imgWrapper {
+      margin-bottom: 3.1rem;
+    }
+    .title {
+      font-size: 5rem;
+      line-height: 5.9rem;
+      margin-top: 6.9rem;
+      margin-bottom: 1rem;
+    }
+    .imgWrapper {
+      img {
+        height: 39rem;
+        margin: 0 auto;
+        width: auto;
+      }
+    }
+  }
+  .owl-nav {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    .owl-prev {
+      transform: rotate(180deg);
+      margin-right: 20rem;
+      position: relative;
+      top: -0.7rem;
+    }
+  }
+  .more {
+    height: 6rem;
+    text-align: right;
+    padding-right: 57.3rem;
+  }
+  .owl-dots {
+    position: absolute;
+    bottom: -1.5rem;
+    right: 65.6rem;
+  }
+}
+
+.stockCol {
+  padding-top: 16.4rem;
+  width: 32rem;
+  height: 100rem;
+  float: right;
+}
+
+.gotoLink {
+  font-size: 1.6rem;
+  line-height: 3rem;
+  .iconLongArrow {
+    width: 5.5rem;
+    height: 1.2rem;
+    margin-left: 1rem;
+  }
+}
+
+.mobShowText {
+  display: none;
+}
+
+.stockBox {
+  margin-top: 7.3rem;
+  width: 32rem;
+  .item {
+    width: 32rem;
+    border-radius: 2rem;
+    border: 1px solid #C0C0C0;
+    padding: 4rem;
+    margin-bottom: 4.4rem;
+    height: 48.2rem;
+  }
+  .iconCart {
+    margin-top: 1.2rem;
+  }
+  .priceBox {
+    display: flex;
+    justify-content: left;
+    align-content: center;
+    margin-top: 2.5rem;
+    .left {
+      width: 20rem;
+      font-size: 2.5rem;
+      line-height: 3.75rem;
+      position: relative;
+      .price {
+        font-family: "Roboto Light";
+        font-size: 1.8rem;
+        line-height: 2.7rem;
+        color: #838383;
+        margin-bottom: -0.5rem;
+        position: absolute;
+        top: 0;
+      }
+      .stockPrice {
+        margin-top: 2.5rem;
+      }
+    }
+  }
+}
+
+.deliveryInfo.categoryBG {
+  background: white url(../img/bgDelivery2.png) no-repeat right top;
+  background-size: contain;
+}
+
+.deliveryInfo.terms .bgText {
+  bottom: initial;
+  background: linear-gradient(180deg, rgba(252, 252, 252, 1) 5.87%, rgba(242, 242, 242, 1) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-top: 20rem;
+}
+
+.deliveryInfo.terms .contentWrapper {
+  height: auto;
+}
+
+.deliveryInfo.lnPage.terms {
+  background: url(../img/bgDelivery3mob.png) no-repeat, url(../img/deliveryWhiteSpline.png) no-repeat;
+  background-color: #F2F2F2;
+  background-size: 50rem 100rem, 105rem 21.3rem;
+  background-position: top -15rem right 0, left 3.5rem top 3.6rem;
+  p {
+    width: auto;
+  }
+}
+
+.deliveryInfo.terms .articleWrapper {
+  background-color: transparent;
+  padding-top: 40rem;
+}
+
+.deliveryInfo {
+  background: white url(../img/bgDelivery.png) no-repeat;
+  background-size: contain;
+  position: relative;
+  .contentWrapper {
+    position: relative;
+    padding-top: 4.5rem;
+    height: 63.1rem;
+  }
+  .bgText {
+    bottom: 0;
+    left: 2rem;
+  }
+  .contentTitle2 {
+    margin-top: 11.6rem;
+    margin-bottom: 3.5rem;
+    &.news {
+      font-size: 4.5rem;
+      line-height: 6.75rem;
+    }
+  }
+  .imgWrapper img {
+    max-width: 75rem;
+    max-height: 56.5rem;
+  }
+  p {
+    font-family: "Roboto Light";
+    font-size: 1.8rem;
+    line-height: 2.4rem;
+    color: #838383;
+    width: 55rem;
+    margin-bottom: 4rem;
+  }
+}
+
+.cSelect {
+  background: white;
+  position: relative;
+  overflow: hidden;
+}
+
+.bgNews {
+  background: #F2F2F2;
+}
+
+.newsSlider {
+  .more {
+    height: 13.9rem;
+  }
+  .owl-nav {
+    width: 40rem;
+    right: 16rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: -4rem;
+    .owl-prev {
+      margin-right: 0;
+    }
+  }
+  .owl-dots {
+    bottom: 2.5rem;
+    right: 31.6rem;
+  }
+  .item {
+    .imgWrapper {
+      width: 89rem;
+      height: 39rem;
+      background-color: white;
+      overflow: hidden;
+      border-radius: 2rem;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      margin: 0 auto 4rem;
+      img {
+        max-width: 89rem;
+        max-height: 39rem;
+      }
+    }
+    .textGray {
+      margin: 0 25.5rem;
+      font-size: 1.8rem;
+      line-height: 2.4rem;
+    }
+    .imgPos {
+      position: relative;
+    }
+    .info {
+      margin: 0 25.5rem;
+      .title {
+        text-align: left;
+        font-size: 5rem;
+        line-height: 5.9rem;
+        margin-bottom: 7rem;
+        .ml {
+          margin-left: 6rem;
+          display: block;
+        }
+      }
+    }
+  }
+}
+
+.imgWrapMin1, .imgWrapMin2, .imgWrapMin3, .imgWrapMin4 {
+  position: absolute;
+  background-color: white;
+  overflow: hidden;
+  border-radius: 2rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.imgWrapMin1 {
+  width: 8rem;
+  height: 54rem;
+  top: 0;
+  left: 0;
+}
+
+.imgWrapMin2 {
+  width: 9.5rem;
+  height: 38.7rem;
+  top: 0;
+  left: 12rem;
+}
+
+.imgWrapMin3 {
+  width: 9.5rem;
+  height: 30.8rem;
+  right: 12rem;
+  top: -13.4rem;
+}
+
+.imgWrapMin4 {
+  width: 8rem;
+  height: 41.9rem;
+  right: 0.1rem;
+  top: -22.8rem;
+}
+
+.bgWhite {
+  background: white !important;
+}
+
+.moreNews {
+  text-align: center;
+  color: #33A9FF;
+}
+
+.deliveryInfo.lnPage {
+  background: #F2F2F2 url(../img/bgDelivery3.png) no-repeat top right;
+  background-size: cover;
+}
+
+.h50 {
+  height: 8rem;
+}
+
+.articleWrapper {
+  padding: 16.7rem 0;
+  font-size: 1.8rem;
+  line-height: 2.7rem;
+  background-color: white;
+  .textBlue, .textGray {
+    margin-bottom: 2rem;
+    font-size: 2.4rem;
+    line-height: 1.5;
+  }
+  p {
+    margin-bottom: 2.7rem;
+  }
+  img {
+    max-width: 100%;
+    margin-bottom: 2.7rem;
+  }
+}
+
+.lasteNewSlider {
+  padding-bottom: 8rem;
+}
+
+.newsList.newsListSlider {
+  margin-left: 0;
+  .item {
+    display: block;
+    margin-left: 0;
+    margin-right: 6.5rem;
+    margin-bottom: 10rem;
+  }
+  .owl-nav {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 -10rem;
+    position: relative;
+    svg {
+      width: 4.5rem;
+      height: 1.2rem;
+    }
+    .owl-prev {
+      transform: rotate(180deg);
+      top: -29rem;
+      left: 0;
+      position: absolute;
+    }
+    .owl-next {
+      top: -29rem;
+      right: 0;
+      position: absolute;
+    }
+  }
+}
+
+.stList {
+  padding-bottom: 1.3rem;
+}
+
+.stList li {
+  padding-left: 2.5rem;
+  background: transparent url(../img/icons/dott.svg) no-repeat left center;
+  background-size: 1rem 1rem;
+  margin-bottom: 2.7rem;
+}
+
+.faqBox {
+  font-size: 1.8rem;
+  line-height: 2.7rem;
+  padding: 4rem 0 18rem;
+  .more {
+    color: #33A9FF;
+    margin-top: 4rem;
+  }
+  .contentTitle2 {
+    font-size: 4.5rem;
+    line-height: 5rem;
+    margin-bottom: 2rem;
+  }
+  .textGray {
+    font-size: 1.6rem;
+    line-height: 2.4rem;
+  }
+  .contentTitle3 {
+    margin-top: 6.9rem;
+    font-size: 2.4rem;
+    line-height: 3.6rem;
+    font-family: "Roboto Bold";
+  }
+  .back {
+    color: #838383;
+    margin-bottom: 4rem;
+    .iconLongArrow {
+      width: 2.5rem;
+      height: 0.5rem;
+      transform: rotate(180deg);
+      position: relative;
+      top: -0.4rem;
+      margin-right: 1.5rem;
+    }
+  }
+}
+
+.questionList {
+  margin-top: 4rem;
+  li .quest {
+    background: #F2F2F2 url(../img/icons/longArrow.svg) no-repeat;
+    background-size: 6rem 2.1rem;
+    background-position: right 3rem center;
+    border-radius: 2rem;
+    margin-bottom: 2rem;
+    padding: 2rem 3rem;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    min-height: 6.7rem;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  li.isOpen .quest {
+    background: white url(../img/icons/crossBlack.svg) no-repeat;
+    background-size: 1.5rem 1.5rem;
+    background-position: right 3rem center;
+    box-shadow: 0px 4px 40px rgba(0, 0, 0, 0.14);
+  }
+  li .answers {
+    height: 0;
+    transition: 0.3s linear;
+    overflow: hidden;
+    p {
+      padding: 0 3rem 2rem;
+    }
+  }
+  li.isOpen .answers {
+    height: 4.7rem;
+  }
+}
+
+.yaMapTitle {
+  background-color: #48A4EB;
+  color: white;
+  text-align: center;
+  font-size: 0;
+  padding: 2.4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  span {
+    margin-left: 2.8rem;
+    font-size: 1.8rem;
+    line-height: 2.7rem;
+  }
+  svg {
+    width: 2.7rem;
+    height: 3.2rem;
+  }
+}
+
+#yaMap {
+  width: 100%;
+  height: 80rem;
+}
+
+.services {
+  .bestPrices {
+    background: #F9F9F9 url(../img/bgServices.png) no-repeat top right;
+    background-size: 49rem 98rem;
+    background-position: top -10rem right 0;
+  }
+  .bpContentWrapper {
+    margin: 0 auto;
+    width: 140rem;
+    display: block;
+    .verticalButton {
+      top: 47rem;
+    }
+    .owl-dots {
+      top: initial;
+      bottom: 4.8rem;
+      right: 16rem;
+    }
+    .owl-nav {
+      width: 42rem;
+      position: absolute;
+      right: 0;
+      display: flex;
+      justify-content: space-between;
+      bottom: 3.7rem;
+    }
+    .owl-carousel {
+      width: auto;
+    }
+    .item {
+      width: auto;
+      justify-content: space-between;
+    }
+    .info {
+      width: 65rem;
+      margin-left: 0;
+      padding-left: 13rem;
+      .title {
+        margin-bottom: 3.7rem;
+      }
+      p {
+        width: 48rem;
+        margin-bottom: 2rem;
+        font-size: 1.8rem;
+        line-height: 2.7rem;
+      }
+      .textGray {
+        margin-bottom: 4rem;
+      }
+    }
+    .imgWrapper {
+      width: 75rem;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      img {
+        display: inline-block;
+      }
+    }
+  }
+}
+
+.aboutUs {
+  padding: 15.4rem 0 10rem;
+  .contentWrapper {
+    .imgWrap {
+      width: 83.4rem;
+      height: 38rem;
+      margin-left: -4.5rem;
+      margin-right: 5rem;
+      img {
+        max-width: 83.4rem;
+        max-height: 38rem;
+      }
+    }
+    .info {
+      float: right;
+      font-size: 1.8rem;
+      line-height: 2.7rem;
+      width: 52rem;
+      .title {
+        font-size: 5rem;
+        line-height: 5rem;
+        margin-bottom: 4rem;
+      }
+      p {
+        color: #838383;
+        margin-bottom: 3rem;
+      }
+    }
+  }
+}
+
+.bgLineOc {
+  height: 0.5rem;
+  background: linear-gradient(to bottom, rgba(138, 140, 142, 1) 50%, rgba(36, 39, 44, 1));
+  box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.25);
+  position: absolute;
+  left: 0;
+  width: 90rem;
+  z-index: 1;
+}
+
+.bgC2 {
+  position: relative;
+  height: 1px;
+  z-index: 2;
+  img {
+    position: absolute;
+    bottom: -5.5rem;
+    right: 0;
+    max-width: 92rem;
+    max-height: 55rem;
+  }
+}
+
+.ourContacts2 {
+  padding: 10rem 0 25rem;
+  .contentTitle2 {
+    margin-bottom: 1.8rem;
+  }
+  .textGray {
+    font-size: 1.6rem;
+    line-height: 2.4rem;
+  }
+  .contactsList {
+    width: 100rem;
+    margin-top: 5rem;
+    padding-bottom: 4rem;
+    li {
+      margin-left: 5rem;
+      margin-right: 10rem;
+      display: inline-block;
+      width: 34rem;
+      vertical-align: top;
+    }
+  }
+}
+
+.productCard {
+  background-color: white;
+}
+
+.productCardHeader {
+  background-color: #F9F9F9;
+  display: flex;
+  justify-content: space-between;
+  min-height: 69.2rem;
+  margin-bottom: 7rem;
+  position: relative;
+  .info {
+    padding: 4rem 7rem;
+    background-color: #F2F2F2;
+    width: 50%;
+    p {
+      font-size: 2rem;
+      line-height: 3rem;
+      margin-bottom: 3rem;
+    }
+    .aboutProduct {
+      min-height: 12rem;
+      margin-bottom: 1rem;
+    }
+    .vendorCode {
+      float: right;
+      margin-right: -3rem;
+      font-family: "Roboto Light";
+      font-size: 1.8rem;
+      line-height: 2.4rem;
+      color: #838383;
+    }
+    .ratingAndReviews {
+      margin-top: 3.9rem;
+      margin-bottom: 7rem;
+    }
+    .contentTitle2 {
+      font-family: "Roboto Bold";
+      font-size: 3rem;
+      line-height: 4.5rem;
+      margin-bottom: 3.9rem;
+    }
+  }
+}
+
+.gallery {
+  padding: 8rem 10rem;
+  width: 50%;
+  user-select: none;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  .owl-stage-outer {
+    z-index: 2;
+  }
+  .owl-nav {
+    z-index: 1;
+    display: flex;
+    justify-content: space-between;
+    line-height: 0;
+    width: 54.3rem;
+    position: absolute;
+    margin-left: -7rem;
+    margin-top: -6rem;
+    .disabled {
+      opacity: 0;
+      transition: 0.3s;
+    }
+    button {
+      height: 1rem;
+      transition: 0.3s;
+    }
+    .owl-prev {
+      transform: rotate(180deg);
+    }
+    svg {
+      width: 5.5rem;
+      height: 1rem;
+    }
+  }
+  .imgWrap {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 34rem;
+    position: relative;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      position: absolute;
+      transition: 0.3s;
+    }
+  }
+}
+
+.sliderPrev {
+  transform: rotate(180deg);
+}
+
+.sliderCustomNav {
+  text-align: center;
+  margin-top: 5rem;
+  height: 1.2rem;
+    user-select: none;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  .iconLongArrow {
+    width: 5.5rem;
+    height: 1.2rem;
+    position: relative;
+    top: 0.3rem;
+  }
+  .sliderCustomPagination {
+    display: inline-block;
+    width: 14rem !important;
+    height: 1.2rem;
+  }
+}
+
+.thumbnails {
+  margin-top: 5rem;
+  &.owl-carousel {
+    width: 40.2rem;
+    margin: 4rem auto 0;
+  }
+  .item {
+    padding: 0.2rem 1.1rem;
+    &.swiper-slide-thumb-active {
+      .wrap {
+        outline: 1px solid #33A9FF;
+      }
+    }
+    .wrap {
+      width: 11.2rem;
+      height: 11.2rem;
+      background-color: white;
+      border-radius: 2rem;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      padding: 1rem;
+      cursor: pointer;
+      img {
+        max-width: 9rem;
+        max-height: 9rem;
+        display: inline-block;
+        width: auto;
+      }
+    }
+  }
+}
+
+body .ui-selectmenu-button.ui-button {
+ width: 15em;
+}
+
+body .ui-menu .ui-menu-item-wrapper {
+  padding: 0.8rem 2rem;
+}
+
+body .ui-selectmenu-button,
+body .ui-selectmenu-button:hover,
+body .ui-selectmenu-button:active,
+body .ui-selectmenu-button:focus {
+  background: white;
+  border: 0;
+  font-family: "Roboto Light";
+  font-size: 1.8rem;
+  line-height: 1.5;
+  color: #292D32;
+  width: 15em;
+  padding: 1.1rem 1rem;
+  height: 5rem;
+}
+
+.ui-selectmenu-icon.ui-icon.custom-icon {
+  background: url(../img/icons/select.svg) no-repeat center !important;
+  width: 1.4rem;
+  height: 1.4rem;
+  background-size: contain;
+  margin-top: 0.6rem;
+}
+
+body .ui-menu {
+  font-size: 1.6rem;
+}
+
+body .ui-menu-item-wrapper.ui-state-active {
+  font-weight: normal;
+  background: #33A9FF;
+}
+
+.productOptions {
+  font-size: 0;
+  line-height: 2.4rem;
+  .title {
+    font-size: 1.8rem;
+    color: #838383;
+    font-family: "Roboto Light";
+    margin-bottom: 1.2rem;
+  }
+  .price {
+    margin-left: 4rem;
+    font-family: "Roboto Bold";
+    font-size: 2.5rem;
+    line-height: 3.75rem;
+  }
+  .rowEnd {
+    margin-bottom: 4rem;
+  }
+}
+
+.ui-widget.ui-widget-content.ui-spinner {
+  border: 0;
+  background: white;
+  vertical-align: top;
+}
+
+body .ui-spinner-input {
+  color: #292D32;
+  font-family: Roboto;
+  font-size: 2rem !important;
+  line-height: 3rem;
+  text-align: center;
+  cursor: default;
+  width: 10.4rem;
+  margin: 0;
+  padding: 1rem 0;
+}
+
+body {
+  .ui-spinner-up {
+    top: 1.7rem;
+    left: 1.5rem;
+    background: none !important;
+    border: 0 !important;
+    cursor: pointer;
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+  .ui-icon.custom-up-icon {
+    background: url(../img/icons/inc.svg) no-repeat center !important;
+    background-size: contain;
+  }
+  .ui-spinner-down {
+    top: 1.7rem;
+    right: 1.5rem;
+    background: none !important;
+    border: 0 !important;
+    cursor: pointer;
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+  .ui-icon.custom-down-icon {
+    background: url(../img/icons/dec.svg) no-repeat center !important;
+    background-size: contain;
+  }
+  .ui-widget.ui-widget-content.ui-spinner {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+  .ui-selectmenu-menu .ui-menu {
+    background: transparent url(../img/icons/selectBg.svg) no-repeat;
+    background-position: right 4rem top 1.3rem;
+    border: 0;
+    filter: drop-shadow(0px 14px 75px rgba(0, 0, 0, 0.13)) drop-shadow(0px 1.75302px 9.39116px rgba(0, 0, 0, 0.065));
+  }
+  .ui-menu {
+    padding-top: 2.2rem;
+  }
+  .ui-menu .ui-menu-item {
+    background-color: white;
+    &:first-child {
+      border-top-right-radius: 1.5rem;
+      border-top-left-radius: 1.5rem;
+      position: relative;
+      overflow: hidden;
+    }
+    &:last-child {
+      border-bottom-right-radius: 1.5rem;
+      border-bottom-left-radius: 1.5rem;
+      position: relative;
+      overflow: hidden;
+    }
+  }
+}
+
+.productOptions .toCart {
+  background-color: #33A9FF;
+  border-top-right-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+  height: 5rem;
+  display: inline-block;
+  cursor: pointer;
+  padding: 1rem 2rem;
+  color: white;
+  font-size: 1.6rem;
+  line-height: 3rem;
+}
+
+.compareLink {
+  font-size: 0;
+  margin-left: 2.3rem;
+  svg {
+    width: 2.1rem;
+    height: 2rem;
+    position: relative;
+    top: 0.3rem;
+    path {
+      fill: #33A9FF;
+    }
+  }
+  span {
+    font-size: 1.6rem;
+    line-height: 3rem;
+    margin-left: 1.3rem;
+  }
+}
+
+.mainCharacteristics {
+  display: flex;
+  justify-content: space-between;
+  font-size: 2rem;
+  line-height: 2.6rem;
+  margin-bottom: 15rem;
+  text-align: center;
+  .text {
+    color: #838383;
+    font-size: 1.8rem;
+    margin-top: 2rem;
+  }
+}
+
+.Wrap {
+  display: flex;
+  justify-content: space-between;
+}
+
+.pcFullInfo {
+  margin-top: 4rem;
+  padding: 4rem;
+  background-color: #F9F9F9;
+  width: 104rem;
+  border-radius: 3rem;
+  .productName {
+    font-size: 4.5rem;
+    line-height: 5rem;
+    margin-bottom: 7rem;
+  }
+}
+
+.pcTabs {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 7rem;
+  li {
+    cursor: pointer;
+    width: 22.5rem;
+    border: 1px solid #C0C0C0;
+    border-radius: 1rem;
+    text-align: center;
+    height: 5rem;
+    line-height: 5rem;
+    font-size: 1.8rem;
+    transition: 0.3s;
+    user-select: none;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    &.active {
+      background-color: #33A9FF;
+      color: white;
+      font-family: "Roboto Bold";
+      transition: 0.3s;
+      border-color: #33A9FF;
+    }
+  }
+}
+
+.tabsContent > li {
+  display: none;
+  &.active {
+    display: block;
+  }
+}
+
+.allCharacteristics {
+  .title {
+    font-size: 2.5rem;
+    line-height: 3.7rem;
+    margin-bottom: 5rem;
+  }
+  .acRow {
+    font-size: 1.8rem;
+    line-height: 2.7rem;
+    color: #838383;
+    display: flex;
+    justify-content: left;
+    align-items: flex-end;
+    margin-bottom: 4.5rem;
+  }
+  .rVal {
+    padding-left: 1.2rem;
+    position: relative;
+    top: 0.9rem;
+    width: 41rem;
+  }
+  .text {
+    width: 55rem;
+    border-bottom: 1px dotted #838383;
+    span {
+      background-color: #F9F9F9;
+      position: relative;
+      top: 0.9rem;
+      &::after {
+        background-color: #F9F9F9;
+        content: "";
+        padding-right: 1rem;
+      }
+    }
+  }
+  .showAll {
+    color: #33A9FF;
+    span {
+      cursor: pointer;
+    }
+    .acArrow {
+      margin-left: 1rem;
+    }
+  }
+}
+
+.productFullDescription {
+  font-size: 1.8rem;
+  line-height: 2.7rem;
+  .title {
+    font-size: 2.5rem;
+    line-height: 3.7rem;
+    margin-bottom: 5rem;
+  }
+  .title2 {
+    font-size: 2.5rem;
+    line-height: 3.7rem;
+    margin-bottom: 2.5rem;
+  }
+  p {
+    margin-bottom: 2.7rem;
+    padding-right: 1.3rem;
+  }
+}
+
+.productUsersPhotos {
+  .title {
+    font-size: 2.5rem;
+    line-height: 3.7rem;
+    margin-bottom: 5rem;
+  }
+  .imgWrap {
+    border-radius: 2rem;
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+    font-size: 0;
+    margin-bottom: 2rem;
+    background-color: white;
+    min-height: 40rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 3rem;
+    img {
+      max-width: 96rem;
+      max-height: 96rem;
+    }
+  }
+  .more {
+    margin-top: 5rem;
+    text-align: center;
+  }
+}
+
+.buttonGray {
+  border-radius: 1rem;
+  cursor: pointer;
+  background-color: #e7e7e7;
+  height: 5rem;
+  line-height: 5.1rem;
+  font-size: 1.8rem;
+  padding: 0 9rem;
+  color: #292D32;
+  display: inline-block;
+  user-select: none;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  transition: 0.3s;
+}
+
+.buttonGray:hover {
+  background-color: white !important;
+  transition: 0.3s;
+}
+
+.buttonBlue {
+  transition: 0.3s;
+}
+
+.buttonBlue:hover {
+  background-color: #0097ff !important;
+  transition: 0.3s;
+}
+
+.ratingWrap.bigStars {
+  .rating {
+    font-size: 0;
+    display: inline-block;
+    position: relative;
+    overflow: hidden;
+    height: 3.4rem;
+    z-index: 1;
+    width: 19.4rem;
+    svg {
+      width: 3.4rem;
+      height: 3.4rem;
+      margin-left: 0.6rem;
+      &:first-child {
+        margin-left: 0;
+      }
+      path {
+        fill: #33A9FF;
+      }
+    }
+  }
+}
+
+.floatingRating {
+  position: absolute !important;
+  z-index: 2 !important;
+  overflow: hidden;
+  height: 2.2rem;
+  width: 15rem;
+  .rating {
+    display: block !important;
+    width: 30rem !important;
+  }
+}
+
+.rating.ratingBg {
+  svg path {
+    fill: #9DD6FF !important;
+  }
+}
+
+.reviewsStats {
+  display: flex;
+  justify-content: left;
+  .ratingWrap {
+    margin-bottom: 3.5rem;
+  }
+  .left {
+    width: 30rem;
+    padding-right: 3.5rem;
+  }
+}
+
+.propertiesRating {
+  font-size: 1.6rem;
+  line-height: 2.4rem;
+  color: #A6A6A6;
+}
+
+.ratingBar {
+  height: 5px;
+  border-radius: 2.5px;
+  background-color: #CACACA;
+  width: 20rem;
+  margin-bottom: 1.5rem;
+  div {
+    width: 100%;
+    height: 5px;
+    border-radius: 2.5px;
+    background-color: #33A9FF;
+  }
+}
+
+.reviewsBox {
+  padding-top: 4rem;
+  .more {
+    text-align: center;
+  }
+}
+
+.reviewsTitle {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 4rem;
+  .title {
+    font-size: 3.6rem;
+    line-height: 5rem;
+    .count {
+      color: #A6A6A6;
+      font-size: 2.4rem;
+      margin-left: 1.2rem;
+    }
+  }
+}
+
+.rating {
+  font-size: 0;
+  display: inline-block;
+  width: 12rem;
+  height: 2.2rem;
+  line-height: 0;
+  svg {
+    width: 2.2rem;
+    height: 2.2rem;
+    margin-left: 0.2rem;
+    path {
+      fill: #33A9FF;
+    }
+    &:first-child {
+      margin-left: 0;
+    }
+  }
+}
+
+.js-ratingChoise {
+  div {
+    width: 2.2rem;
+    height: 2.2rem;
+    display: inline-block;
+    position: absolute;
+    background: rgba(255, 255, 255, 0.5);
+    margin-left: 0.2rem;
+    &:first-child {
+      margin-left: 0;
+    }
+    &.active {
+      background: transparent;
+    }
+  }
+}
+
+.reviewItem {
+  margin-bottom: 4rem;
+  .title {
+    font-size: 2.4rem;
+    line-height: 5rem;
+    margin-bottom: 1.8rem;
+    .date {
+      color: #A6A6A6;
+      font-size: 1.8rem;
+      font-family: Roboto;
+    }
+  }
+  .reviewText {
+    font-size: 1.6rem;
+    line-height: 2.4rem;
+    padding-right: 8rem;
+  }
+  .title2 {
+    font-family: "Roboto Bold";
+    margin-top: 2rem;
+  }
+}
+
+.totalRating {
+  display: flex;
+  justify-content: left;
+  margin-bottom: 4rem;
+  .tNum {
+    width: 5rem;
+    height: 5rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    color: white;
+    background-color: #33A9FF;
+    font-size: 2.4rem;
+    border-radius: 100%;
+    line-height: 2.4rem;
+  }
+  .tRatingByProp {
+    display: flex;
+    justify-content: left;
+    .col {
+      margin-left: 3rem;
+      .property {
+        color: #A6A6A6;
+        font-size: 1.6rem;
+        line-height: 2.4rem;
+      }
+    }
+  }
+}
+
+.reviewLikes {
+  margin-top: 2.2rem;
+  .count {
+    color: #C0C0C0;
+    font-size: 1.8rem;
+    margin-left: 0.5rem;
+  }
+  a {
+    margin-right: 2.5rem;
+  }
+  .addComment {
+    color: #33A9FF;
+    font-size: 1.6rem;
+    .formIsVisible {
+      display: none;
+    }
+    &.active {
+      .formIsVisible {
+        display: inline;
+      }
+      .formIsHidden {
+        display: none;
+      }
+    }
+  }
+}
+
+.reviewPhotos {
+  display: flex;
+  justify-content: safe left;
+  margin-left: -1.9rem;
+  flex-wrap: wrap;
+  margin-top: 3.3rem;
+  .imgWrap {
+    margin-left: 1.9rem;
+    margin-bottom: 1.9rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 30rem;
+    height: 22.5rem;
+    position: relative;
+    overflow: hidden;
+    border-radius: 2rem;
+    background-color: white;
+  }
+}
+
+.commentItem {
+  margin-top: 2rem;
+  .commentTitle {
+    font-size: 1.8rem;
+    line-height: 3.2rem;
+    margin-bottom: 0.5rem;
+    .userName {
+      font-family: "Roboto Bold";
+    }
+    .commentDate {
+      color: #838383;
+    }
+  }
+}
+
+.rcCommentsWrap .rcTitle {
+  margin-top: 4rem;
+  color: #33A9FF;
+  font-size: 1.6rem;
+  line-height: 2.4rem;
+}
+
+.cvWrap {
+  margin-top: 2rem;
+}
+
+.commentsVisibility {
+  cursor: pointer;
+  color: #33A9FF;
+  font-size: 1.6rem;
+  line-height: 2.4rem;
+  .showComments {
+    display: none;
+  }
+  &.commentsIsHidden {
+    .showComments {
+      display: inline;
+    }
+    .hideComments {
+      display: none;
+    }
+  }
+}
+
+.pcRight {
+  width: calc(32rem + 2px);
+}
+
+.mySwiper {
+  height: 110rem;
+}
+
+.pcFullInfoWrap {
+  display: flex;
+  justify-content: space-between;
+}
+
+.pcFullInfoWrap .stockBox {
+  margin-top: 4rem;
+  .item {
+    margin: 0 0 4rem;
+  }
+}
+
+.swiper-pagination-bullet {
+  width: 5px !important;
+  height: 5px !important;
+  background: #D0D0D0 !important;
+  opacity: 1 !important;
+  &.swiper-pagination-bullet-active {
+    width: 9px !important;
+    height: 9px !important;
+    background: #292D32 !important;
+    position: relative;
+    top: 2px;
+  }
+}
+
+.swiper-nav {
+  position: relative;
+  bottom: 3rem;
+  width: 20rem;
+  margin: 0 auto;
+  .button-prev {
+    position: absolute;
+    z-index: 2;
+    transform: rotate(180deg);
+    bottom: 1.3rem;
+    left: 0;
+    cursor: pointer;
+    width: 5.5rem;
+    height: 1.2rem;
+  }
+  .swiper-pagination {
+    z-index: 1;
+    bottom: 1rem !important;
+  }
+  .button-next {
+    position: absolute;
+    z-index: 2;
+    bottom: 1.3rem;
+    right: 0;
+    cursor: pointer;
+    width: 5.5rem;
+    height: 1.2rem;
+  }
+}
+
+.ratingWrap.bigStars .floatingRating {
+  height: 3.4rem;
+}
+
+.recommendetProducts {
+  padding: 11rem 0 15rem;
+  .contentTitle2 {
+    margin-bottom: 7rem;
+  }
+}
+
+.tingle-modal.custom {
+  background: rgba(0, 0, 0, 0.4);
+  .tingle-modal-box {
+    width: 85rem;
+    border-radius: 2rem;
+  }
+  .tingle-modal-box__content {
+    padding: 0;
+  }
+}
+
+.tingle-modal.custom1 {
+  background: rgba(0, 0, 0, 0.4);
+  .tingle-modal-box {
+    width: 85rem;
+    border-radius: 2rem;
+  }
+  .tingle-modal-box__content {
+    padding: 0;
+  }
+}
+
+.tingle-modal.custom1.w110 {
+  .tingle-modal-box {
+    width: 116rem;
+  }
+}
+
+.tingle-modal.custom1.w140 {
+  .tingle-modal-box {
+    width: 140rem;
+  }
+}
+
+.balanceModalWrap {
+  padding: 19.5rem 18rem;
+  .title {
+    font-size: 4.5rem;
+    line-height: 5rem;
+    margin-bottom: 5rem;
+  }
+}
+
+.addReviewForm {
+  font-size: 1.8rem;
+  line-height: 2.7rem;
+  padding: 5rem 5.5rem;
+  .title {
+    font-size: 3.6rem;
+    line-height: 5rem;
+    font-family: "Roboto Bold";
+    margin-bottom: 5.5rem;
+  }
+  .title2 {
+    font-size: 2.4rem;
+    line-height: 3.2rem;
+    margin-bottom: 2rem;
+    font-family: "Roboto Bold";
+  }
+  .textGray {
+    font-size: 1.6rem;
+    line-height: 2.2rem;
+    margin-bottom: 2rem;
+  }
+  .item {
+    display: flex;
+    justify-content: left;
+    margin-bottom: 4rem;
+    .imgWrap {
+      img {
+        width: 14.5rem;
+        height: 10rem;
+        object-fit: contain;
+      }
+    }
+    .info {
+      margin-left: 3.5rem;
+      .price {
+        font-size: 2.5rem;
+        line-height: 3.7rem;
+        margin-bottom: 1rem;
+        font-family: "Roboto Bold";
+      }
+    }
+  }
+}
+
+.sendFile {
+  border: 1px dashed #CACACA;
+  padding: 5.5rem 3rem 5rem;
+  text-align: center;
+  font-size: 1.6rem;
+  line-height: 2.1rem;
+  margin-bottom: 4rem;
+  .iconAddPhoto {
+    margin-bottom: 2.5rem;
+  }
+  a {
+    color: #33A9FF;
+  }
+}
+
+#modalContent {
+  display: none;
+}
+
+.blockGray {
+  margin-top: 4rem;
+  background-color: #F9F9F9;
+  border-radius: 2rem;
+  font-size: 1.6rem;
+  line-height: 3rem;
+  padding: 3rem;
+}
+
+.textCenter {
+  text-align: center;
+}
+
+.propertyRatingChoise {
+  display: flex;
+  justify-content: left;
+  margin-bottom: 4rem;
+  li {
+    width: 18rem;
+    padding-right: 1rem;
+  }
+  .prop {
+    font-size: 1.6rem;
+    line-height: 2.4rem;
+    color: #838383;
+  }
+}
+
+textarea {
+  width: 100%;
+  border: 1px solid #C0C0C0;
+  border-radius: 2rem;
+  resize: none;
+  height: 13.5rem;
+  padding: 1rem 2rem;
+  font-size: 1.8rem;
+  line-height: 2.4rem;
+}
+
+.textAreaWrap {
+  label {
+    display: inline-block;
+    font-family: "Roboto Light";
+    color: #838383;
+    font-size: 1.8rem;
+    line-height: 2.4rem;
+    background-color: white;
+    padding: 0 1rem;
+    margin-left: 3.5rem;
+    position: relative;
+    z-index: 1;
+  }
+  textarea {
+    margin-top: -1.2rem;
+    margin-bottom: 2rem;
+  }
+}
+
+.ratingWrap.bigStars .count {
+  font-size: 2.4rem;
+  line-height: 4rem;
+  font-family: "Roboto Bold";
+}
+
+.closeModal {
+  position: absolute;
+  top: 3.9rem;
+  right: 3.9rem;
+  cursor: pointer;
+  z-index: 1001;
+}
+
+
+.fileHidden {
+  display: none;
+}
+
+.textRight {
+  text-align: right;
+}
+
+.addCommentForm {
+  margin-top: 2.5rem;
+  display: none;
+  .row2inputs {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+    div {
+      width: calc(50% - 4rem);
+    }
+  }
+  label {
+    display: inline-block;
+    font-size: 1.8rem;
+    line-height: 2.4rem;
+    position: relative;
+    z-index: 1;
+    font-family: "Roboto Light";
+    margin-left: 2rem;
+    background-color: #F9F9F9;
+    padding: 0 0.7rem;
+  }
+  input {
+    margin-top: -1.2rem;
+    width: 100%;
+    background-color: #F9F9F9;
+  }
+  textarea {
+    margin-top: -1.2rem;
+    background-color: #F9F9F9;
+    margin-bottom: 2rem;
+  }
+}
+
+input[type=text], input[type=password] {
+  border: 1px solid #C0C0C0;
+  border-radius: 2rem;
+  height: 5.8rem;
+  line-height: 6rem;
+  font-size: 2rem;
+  padding: 0 2rem;
+}
+
+.togglePassView {
+  display: inline-block;
+  position: absolute;
+  cursor: pointer;
+  width: 2.4rem;
+  height: 2.4rem;
+  right: 2rem;
+  top: 2.9rem;
+  .passHidden {
+    position: relative;
+    top: 0.5rem;
+  }
+  .passVisible {
+    display: none;
+  }
+  &.active {
+    .passVisible {
+      display: initial;
+    }
+    .passHidden {
+      display: none;
+    }
+  }
+  img {
+    width: 2.4rem;
+    height: 2.4rem;
+    object-fit: contain;
+    background-position: center bottom;
+  }
+}
+
+.prevProductCart, .nextProductCart {
+  position: absolute;
+  top: 26rem;
+  width: 18rem;
+  font-size: 1.6rem;
+  line-height: 1.2rem;
+  font-family: "Roboto Light";
+  .iconLongArrow {
+    width: 5.5rem;
+    height: 1.2rem;
+  }
+  .imgWrap {
+    margin-bottom: 2.5rem;
+    img {
+      width: 18rem;
+      height: 12rem;
+      object-fit: contain;
+    }
+  }
+}
+
+.prevProductCart {
+  left: -22rem;
+  .iconLongArrow {
+    transform: rotate(180deg);
+  }
+}
+
+.nextProductCart {
+  right: -22rem;
+}
+
+.bold {
+  font-family: "Roboto Bold";
+}
+
+.flexRight {
+  display: flex;
+  justify-content: right;
+  align-items: center;
+}
+
+.userHelp {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  color: #838383;
+  font-size: 1.5rem;
+  line-height: 2.7rem;
+  font-family: "Roboto Light";
+  width: 2.5rem;
+  height: 2.5rem;
+  border: 1px solid #838383;
+  border-radius: 100%;
+}
+
+.personalArea {
+  padding: 4rem 0;
+  .contentTitle2 {
+    margin-bottom: 7rem;
+  }
+  .blockGray {
+    margin-top: 0;
+    margin-bottom: 4rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 2rem;
+    line-height: 3rem;
+    .noMyProfile {
+      color: #838383;
+      text-decoration: underline;
+      font-family: "Roboto Light";
+      margin-right: 1rem;
+      font-size: 1.8rem;
+      line-height: 2.7rem;
+    }
+    &.warning {
+      a {
+        color: #33A9FF;
+      }
+      justify-content: left;
+      > div:last-child {
+        margin-left: auto;
+      }
+    }
+    .alert {
+      margin-right: 3.3rem;
+    }
+  }
+}
+
+.alert {
+  background-color: #BB2340;
+  font-size: 2rem;
+  font-family: "Roboto Bold";
+  width: 3.1rem;
+  height: 3.1rem;
+  color: white;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border-radius: 100%;
+  &.yellow {
+    background-color: #FFC107;
+  }
+}
+
+.pa2cols {
+  display: flex;
+  justify-content: space-between;
+  .col {
+    width: calc((100% - 4rem)/2);
+  }
+}
+
+.itemField {
+  padding: 4rem;
+  border-top: 1px solid #D0CFD3;
+}
+
+.orderStatusList {
+  li {
+    display: flex;
+    justify-content: left;
+    margin-bottom: 4rem;
+    font-size: 2rem;
+    line-height: 3rem;
+    &:last-child {
+      margin-bottom: 0;
+    }
+    .orderAbout {
+      a {
+        text-decoration: underline;
+      }
+      .status {
+        margin-top: 0.8rem;
+        font-size: 1.8rem;
+        line-height: 2.7rem;
+        color: #838383;
+        font-family: "Roboto Light";
+      }
+    }
+    .orderIcon {
+      margin-right: 2rem;
+      img {
+        width: 2.4rem;
+        height: 1.5rem;
+        object-fit: contain;
+      }
+    }
+    .right {
+      margin-left: auto;
+    }
+  }
+}
+
+.discountList {
+  li {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    .discountInfo {
+      .date {
+        font-size: 1.8rem;
+        line-height: 2.7rem;
+        font-family: "Roboto Light";
+        color: #838383;
+        margin-bottom: 2rem;
+      }
+      .text {
+        font-size: 1.8rem;
+        line-height: 2.7rem;
+        font-family: "Roboto Light";
+        .bold {
+          font-size: 2rem;
+          line-height: 3rem;
+          font-family: "Roboto Bold";
+        }
+      }
+    }
+    .imgWrap {
+      margin-right: 5.5rem;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      background-color: white;
+      border-radius: 2rem;
+      width: 18.3rem;
+      height: 16rem;
+      text-align: center;
+      &.imgBottom {
+        align-items: end;
+      }
+      img {
+        max-width: 16rem;
+        max-height: 14rem;
+      }
+    }
+  }
+}
+
+.paItem {
+  background-color: #F2F2F2;
+  border-radius: 2rem;
+  margin-bottom: 4rem;
+  &.favorite .title .icon {
+    background-color: #CD294E;
+  }
+  .buttonGray {
+    width: 100%;
+    text-align: center;
+    background-color: #F9F9F9;
+    font-size: 2rem;
+    padding: 0;
+  }
+  .empty {
+    color: #E3E3E3;
+    font-size: 5rem;
+    line-height: 5.8rem;
+    text-align: center;
+    font-family: "Roboto Bold";
+    margin-bottom: 6rem;
+    margin-top: 2rem;
+  }
+  .buttonBlue {
+    padding: 0 1.5rem;
+    font-size: 1.6rem;
+  }
+  .title {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    padding: 4rem;
+    min-height: 12.9rem;
+    .icon {
+      width: 4.9rem;
+      height: 4.9rem;
+      background-color: #F9F9F9;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      border-radius: 100%;
+      img {
+        width: 2.2rem;
+        height: 2.2rem;
+        object-fit: contain;
+      }
+    }
+    .itemName {
+      font-size: 2.5rem;
+      line-height: 3rem;
+      margin-left: 2rem;
+    }
+    .right {
+      margin-left: auto;
+    }
+  }
+}
+
+.personalDataList {
+  font-size: 2rem;
+  line-height: 3rem;
+  li {
+    margin-bottom: 0.7rem;
+    .fieldName {
+      color: #838383;
+      margin-right: 1.4rem;
+      font-family: "Roboto Light";
+    }
+  }
+}
+
+.paSocLinks {
+  .paTitle {
+    margin-bottom: 2rem;
+    font-size: 2rem;
+    line-height: 3rem;
+  }
+  .fb svg {
+    width: 1rem;
+    height: 2rem;
+  }
+  .tw svg {
+    width: 2rem;
+    height: 1.9rem;
+  }
+  .google svg {
+    width: 2rem;
+    height: 2rem;
+  }
+  .tb svg {
+    width: 1.3rem;
+    height: 2.1rem;
+  }
+  .wrap {
+    display: flex;
+    justify-content: left;
+    a {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 3.8rem;
+      height: 3.8rem;
+      border: 0.3rem solid #292D32;
+      border-radius: 100%;
+      margin-right: 2rem;
+      &:last-child {
+        margin-right: 0;
+      };
+    }
+  }
+}
+
+.notificationList {
+  font-size: 2rem;
+  line-height: 3rem;
+}
+
+.userWarning {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  margin-top: 4rem;
+  font-size: 1.8rem;
+  line-height: 2.7rem;
+  .alert {
+    margin-right: 2rem;
+  }
+}
+
+.playmentMethodsList {
+  margin-bottom: 4rem;
+  li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .imgWrap {
+      img {
+        max-width: 11rem;
+        max-height: 11rem;
+      }
+    }
+    .text {
+      margin-right: 3rem;
+      font-size: 2rem;
+      line-height: 3rem;
+    }
+  }
+}
+
+.regFinish {
+  background: #F2F2F2 url(../img/regFinish.png) no-repeat;
+  background-size: 34.4rem 21.9rem;
+  background-position: bottom 0 right 4rem;
+  border-radius: 2rem;
+  padding: 4rem;
+  font-size: 2rem;
+  line-height: 3rem;
+  margin-bottom: 4rem;
+  p {
+    margin-right: 18.7rem;
+    margin-bottom: 3rem;
+  }
+  .buttonBlue {
+    font-size: 1.6rem;
+    padding: 0 1.5rem;
+  }
+}
+
+.itemField {
+  .boxBottomLine:last-child {
+    border-bottom: 0;
+    margin-bottom: -4rem;
+  }
+  .boxBottomLine:first-child {
+    margin-top: -4rem;
+  }
+}
+
+.spaceBettwen .row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 2rem;
+  line-height: 3rem;
+  margin-bottom: 1rem;
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.boxBottomLine {
+  margin: 0 -4rem;
+  padding: 4rem;
+  border-bottom: 1px solid #D0CFD3;
+}
+
+.paOrder {
+  font-size: 2rem;
+  line-height: 3rem;
+  a {
+    color: #33A9FF;
+  }
+  .paLink {
+    margin-bottom: 1rem;
+  }
+  .paOrderVal {
+    font-size: 3rem;
+    line-height: 3.5rem;
+    margin-bottom: 4rem;
+    .price {
+      margin-right: 4rem;
+    }
+  }
+}
+
+.weInStore {
+  font-size: 2rem;
+  line-height: 3rem;
+  p {
+    margin-bottom: 4rem;
+  }
+}
+
+.qrCode {
+  img {
+    width: 28.5rem;
+    height: 28.2rem;
+  }
+}
+
+.appButtons {
+  margin-bottom: 4rem;
+  font-size: 0;
+  .buttonApp {
+    width: calc((100% - 4rem)/2);
+  }
+}
+
+.buttonApp {
+  display: inline-block;
+  font-size: 1.4rem;
+  line-height: 2.5rem;
+  padding: 1rem;
+  background-color: #292D32;
+  border-radius: 2rem;
+  color: white;
+  vertical-align: top;
+  height: 8rem;
+  &:hover {
+    color: white;
+  }
+  .big {
+    font-size: 2.7rem;
+    line-height: 3.2rem;
+  }
+  .baText {
+    margin-left: 8rem;
+  }
+  .icon {
+    float: left;
+    width: 7rem;
+    img {
+      width: 7rem;
+      height: 6rem;
+      object-fit: contain;
+    }
+  }
+  &:first-child {
+    margin-right: 4rem;
+  }
+}
+
+.bnTitle {
+  font-size: 2.5rem;
+  line-height: 3.7rem;
+  margin-bottom: 3rem;
+}
+
+.boxBottomLine.bonuses {
+  background: #F2F2F2 url(../img/regFinish.png) no-repeat;
+  background-size: 34.4rem 21.9rem;
+  background-position: bottom 0 right 4rem;
+  .bnTitle {
+    margin-right: 20rem;
+  }
+}
+
+.favText {
+  font-size: 2rem;
+  line-height: 3rem;
+  margin-top: 4rem;
+}
+
+.iHide {
+  display: nonel;
+}
+
+.csModalWrap {
+  padding: 8rem;
+  font-size: 1.5rem;
+  line-height: 2rem;
+  .contentTitle2 {
+    margin-bottom: 5rem;
+  }
+  .title {
+    font-size: 1.8rem;
+    line-height: 2.4rem;
+    font-family: "Roboto Bold";
+    margin-bottom: 2rem;
+  }
+  .buttonBlue {
+    margin-top: 4rem;
+  }
+  .radioGroup {
+    margin-bottom: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+.cRadio {
+  position: relative;
+  padding-left: 2.6rem;
+  line-height: 1.6rem;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  user-select: none;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  input {
+    display: none;
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+  .checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1.6rem;
+    height: 1.6rem;
+    background: #DFDFDF;
+    border: 0.3rem solid #DFDFDF;
+    border-radius: 100%;
+  }
+}
+
+.cRadio input:checked ~ .checkmark {
+  background: #33A9FF;
+}
+
+.udModalWrap {
+  padding: 8.5rem 7rem;
+  .title {
+    font-size: 4.5rem;
+    line-height: 5rem;
+    margin-bottom: 4rem;
+  }
+  .textCenter {
+    margin-top: 4rem;
+  }
+  .buttonBlue {
+    font-size: 1.6rem;
+  }
+  .row {
+    margin-bottom: 2rem;
+    label {
+      font-size: 1.8rem;
+      line-height: 2.4rem;
+      background: white;
+      color: #838383;
+      position: relative;
+      z-index: 1;
+      font-family: "Roboto Light";
+      margin-left: 2.5rem;
+      display: inline-block;
+      padding: 0 0.5rem;
+    }
+    input {
+      width: 100%;
+      margin-top: -1.2rem;
+    }
+  }
+  .imgWrap {
+    width: 13rem;
+    height: 13rem;
+    position: relative;
+    overflow: hidden;
+    border-radius: 100%;
+    background: #F9F9F9;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    img {
+      width: 13rem;
+      height: 13rem;
+      object-fit: cover;
+    }
+  }
+  .avaWrap {
+    float: left;
+  }
+  .marginLeft {
+    margin-left: 20rem;
+    margin-bottom: 9rem;
+  }
+}
+
+.textCenter {
+  text-align: center;
+}
+
+.js-uploadAvatar {
+  color: #48A4EB;
+  cursor: pointer;
+  font-size: 1.6rem;
+  line-height: 3rem;
+}
+
+.js-uploadAvatarInp {
+  display: none;
+}
+
+.avaIcon {
+  width: 4.9rem;
+  height: 4.9rem;
+  position: relative;
+  overflow: hidden;
+  user-select: none;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  border-radius: 100%;
+  img {
+    width: 4.9rem;
+    height: 4.9rem;
+    object-fit: cover;
+  }
+}
+
+.userLabel .ulUserName {
+  position: absolute;
+  right: 7rem;
+  height: 4.9rem;
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  user-select: none;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
+.js-openUserMenu {
+  cursor: pointer;
+}
+
+.autorizedUser {
+  position: relative;
+  &.userMenuOpen {
+    .userMenu {
+      display: block;
+    }
+  }
+  .userMenu {
+    display: none;
+    right: -18rem;
+    top: 8.6rem;
+    position: absolute;
+    z-index: 7;
+    background: white;
+    min-width: 40.5rem;
+    border-radius: 2rem;
+    filter: drop-shadow(0px 14px 75px rgba(0, 0, 0, 0.13)) drop-shadow(0px 1.75302px 9.39116px rgba(0, 0, 0, 0.065));
+    .menuArrow {
+      position: absolute;
+      top: -1.3rem;
+      left: 18.8rem;
+      img {
+        width: 2.6rem;
+        height: 2.7rem;
+      }
+    }
+    .row {
+      border-top: 1px solid #F2F2F2;
+      padding: 2rem 3rem;
+      a {
+        display: inline;
+        width: auto;
+      }
+    }
+    .umTitle {
+      display: flex;
+      justify-content: left;
+      align-items: center;
+      padding: 3rem;
+      .avaIcon {
+        margin-right: 2rem;
+      }
+    }
+  }
+}
+
+.prevPage {
+  color: #838383;
+  font-stretch: 1.8rem;
+  line-height: 2.8rem;
+  padding: 4rem 0;
+  font-family: "Roboto Light";
+  span {
+    margin-left: 1.8rem;
+  }
+  .iconLongArrow {
+    transform: rotate(180deg);
+    width: 2.5rem;
+    height: 0.5rem;
+    position: relative;
+    bottom: 0.3rem;
+  }
+}
+
+.registrationEntity {
+  background: #F2F2F2;
+  padding-bottom: 12.5rem;
+  .contentTitle2 {
+    margin-bottom: 7rem;
+  }
+  .labelOnTop {
+    background: white;
+    padding: 7rem 30rem;
+  }
+}
+
+.labelOnTop {
+  .title2 {
+    font-size: 1.8rem;
+    line-height: 1.5;
+    margin-bottom: 2rem;
+    font-family: "Roboto Bold";
+  }
+  p {
+    margin-bottom: 4rem;
+  }
+  .row {
+    margin-bottom: 3.5rem;
+    &.radioRow {
+      display: flex;
+      justify-content: left;
+      margin-left: -3rem;
+    }
+    &.lessMB {
+      margin-bottom: 2rem;
+    }
+    &:last-child {
+      margin-bottom: 0;
+    };
+    &.cols2 {
+      display: flex;
+      justify-content: space-between;
+      .col {
+        width: calc((100% - 6.5rem)/2);
+      }
+    }
+    &.phone {
+      display: flex;
+      justify-content: left;
+      width: 100%;
+      .text {
+        font-size: 2.2rem;
+        line-height: 1.5;
+        padding-top: 2rem;
+        margin-right: 2.5rem;
+      }
+      .wa {
+        flex: 1;
+      }
+    }
+  }
+  input[type=text], input[type=password], textarea {
+    width: 100%;
+    margin-top: -1.5rem;
+  }
+  label {
+    color: #838383;
+    font-size: 1.8rem;
+    line-height: 1.5;
+    background: white;
+    display: inline-block;
+    padding: 0 1rem;
+    margin-left: 2.1rem;
+    position: relative;
+    z-index: 1;
+    font-family: "Roboto Light";
+    &.cRadio {
+      margin-top: 0;
+      font-family: "Roboto";
+      position: relative;
+      padding-left: 2.6rem;
+      line-height: 1.6rem;
+      display: flex;
+      color: #292D32;
+    }
+  }
+}
+
+.lightGrayLink {
+  font-size: 1.6rem;
+  line-height: 1.5;
+  font-family: "Roboto Light";
+}
+
+.forgotPassWrap {
+  padding: 10rem 10rem 5rem;
+  font-size: 1.6rem;
+  line-height: 2rem;
+  .title {
+    text-align: center;
+    font-size: 3rem;
+    line-height: 3.5rem;
+  }
+  .js-autorize {
+    margin: 4rem 0 2rem;
+    span {
+      cursor: pointer;
+      color: #838383;
+    }
+  }
+}
+
+.capchaWrap {
+  margin-top: 4rem;
+  img {
+    width: 100%;
+    margin-bottom: 4rem;
+  }
+}
+
+.authTabs {
+  font-size: 1.8rem;
+  line-height: 1.5;
+  color: #A6A6A6;
+  margin-top: 4rem;
+  margin-bottom: 3rem;
+  span {
+    cursor: pointer;
+    user-select: none;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+  }
+  .col {
+    border-bottom: 2px solid #D5D5D5;
+    padding-bottom: 1rem;
+    transition: 0.3s;
+    &:last-child {
+      text-align: right;
+    }
+    &.active {
+      border-color: #33A9FF;
+      color: #292D32;
+      transition: 0.3s;
+    }
+  }      
+}
+
+.authModalWrap {
+  .authFormWrap {
+    padding: 10rem 10rem 6rem;
+    .labelOnTop .row {
+      margin-bottom: 3rem;
+      position: relative;
+    }
+    .sForm {
+      font-size: 1.6rem;
+      line-height: 3rem;
+      margin-bottom: 2.3rem;
+    }
+    .forgotPass {
+      cursor: pointer;
+      color: #838383;
+      font-size: 1.6rem;
+      line-height: 1.9rem;
+      font-family: "Roboto Light";
+    }
+    .textCenter {
+      margin-top: 2rem;
+    }
+    .title {
+      font-size: 3rem;
+      line-height: 3.5rem;
+      margin-bottom: 1.8rem;
+      text-align: center;
+    }
+    .paSocLinks {
+      .paTitle {
+        text-align: center;
+        color: #838383;
+        margin-bottom: 1.5rem;
+        font-family: "Roboto Light";
+      }
+      .wrap {
+        justify-content: center;
+        a {
+          margin-right: 1rem;
+          &:last-child {
+            margin-right: 0;
+          }
+        }
+      } 
+    }
+  }
+  .imgWrap {
+    font-size: 0;
+    img {
+      max-width: 100%;
+      max-height: 100%;
+    }
+  }
+}
+
+.cols2 {
+  display: flex;
+  justify-content: space-between;
+  .col {
+    width: 50%;
+  }
+}
+
+.favoritePage {
+  background-color: white;
+  padding-bottom: 14rem;
+  &.cartPage {
+    padding-bottom: 0;
+  }
+  .contentTitle2 {
+    margin-bottom: 0;
+  }
+}
+
+.fiActions {
+  font-size: 0;
+  display: flex;
+  justify-content: left;
+  li {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    margin-right: 3.2rem;
+  }
+  li a {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+  }
+  .icon {
+    background-color: white;
+    width: 4.9rem;
+    height: 4.9rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 100%;
+    margin-right: 1rem;
+  }
+  span {
+    font-size: 1.6rem;
+    line-height: 1.5;
+  }
+}
+
+.authRequest {
+  margin-top: 2rem;
+  a {
+    color: #33A9FF;
+  }
+}
+
+.deliveryChoise {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  .dcItem {
+    width: calc((100% - 7rem)/2);
+    border-radius: 2rem;
+    border: 2px solid #838383;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 3rem;
+  }
+}
+
+.dcItem {
+  input {
+    display: none;
+  }
+  input:checked ~ .cheskMark {
+    border: 1rem solid #48A4EB;
+  }
+  .cheskMark {
+    border-radius: 100%;
+    width: 3.5rem;
+    height: 3.5rem;
+    border: 2px solid #838383;
+  }
+  .dcTitle {
+    font-family: "Roboto Bold";
+    margin-bottom: 1rem;
+  }
+  .dcText {
+    color: #838383;
+  }
+}
+
+.favoriteList {
+  padding-top: 6rem;
+  .empty {
+    color: #838383;
+    font-size: 3.6rem;
+    line-height: 1.5;
+    display: none;
+    padding-bottom: 7rem;
+    &:first-child {
+      display: block;
+    }
+  }
+  .price {
+    font-family: "Roboto Bold";
+    font-size: 3rem;
+    line-height: 1.5;
+    margin-top: 1rem;
+    margin-bottom: 3.2rem;
+  }   
+  .itemWrap {
+    margin-bottom: 6rem;
+    .title3 {
+      font-size: 2.5rem;
+      line-height: 3rem;
+      margin-bottom: 4rem;
+    }
+    .item {
+      padding-right: 3.5rem;
+      position: relative;
+      .ui-spinner {
+        position: absolute;
+        bottom: 4rem;
+        right: 5.7rem;
+      }
+      .about {
+        padding: 0 3rem;
+        max-width: 42rem;
+        p {
+          font-size: 1.8rem;
+        }
+      }
+    }
+  }     
+  .item {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    background-color: #F2F2F2;
+    border-radius: 2rem;
+    margin-bottom: 4rem;
+    padding: 4rem 8rem 4rem 4rem;
+    .about {
+      padding-left: 5rem;
+      padding-right: 5rem;
+      .itemName {
+        font-size: 2.5rem;
+        line-height: 3rem;
+        margin-bottom: 1rem;
+      }
+      p {
+        font-size: 2rem;
+        line-height: 3rem;
+        margin-bottom: 2rem;
+        color: #838383;
+        &.light {
+          font-size: 1.8rem;
+          line-height: 2.7rem;
+          font-family: "Roboto Light";
+        }
+      }
+    }
+    .right {
+      margin-left: auto;
+      text-align: center;
+      .count {
+        color: #838383;
+      }
+      .buttonBlue {
+        padding: 0 2.5rem;
+      }
+    }
+    .imgWrap {
+      img {
+        height: 20rem;
+        width: 35rem;
+        object-fit: contain;
+      }
+    }
+  }
+}
+
+.cartPage {
+  .infoText {
+    color: #838383;
+    font-size: 1.6rem;
+    line-height: 1.5;
+    padding-top: 2rem;
+  }
+}
+
+.sc2cols {
+  display: flex;
+  justify-content: space-between;
+  .csCol {
+    width: 101rem;
+  }
+  .csColHalf {
+    width: 34.5rem;
+  }
+}
+
+.cartStat {
+  background-color: #F2F2F2;
+  border-radius: 2rem;
+  padding: 3.5rem 2.5rem 2.5rem;
+  margin-top: 6rem;
+  margin-bottom: 2rem;
+  .countMess {
+    color: #838383;
+    margin-bottom: 0.7rem;
+  }
+  .price {
+    font-size: 3rem;
+    line-height: 1.5;
+    margin-bottom: 1rem;
+    font-family: "Roboto Bold"
+  }
+  .row {
+    font-size: 1.6rem;
+    line-height: 1.5;
+    text-align: center;
+    margin-bottom: 2rem;
+    a {
+      color: #33A9FF;
+    }
+  }
+  .buttonBlue {
+    width: 100%;
+    padding: 0 1rem;
+    font-size: 1.6rem;
+  }
+}
+
+.cartStockInfo {
+  background-color: #F2F2F2;
+  border-radius: 2rem;
+  padding: 4rem 1.5rem 4rem 2.3rem;
+  .textCenter {
+    text-align: left;
+    a {
+      color: #3086C8;
+      text-decoration: underline;
+    }
+  }
+  .title {
+    font-weight: "Roboto Bold";
+    margin-bottom: 3rem;
+  }
+  .row {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    margin-bottom: 3rem;
+    .text {
+      span {
+        color: #CC284F;
+        font-family: "Roboto Bold"
+      }
+    }
+    .userHelp {
+      margin-left: 1.8rem;
+    }
+    .icon {
+      width: 2.5rem;
+      height: 2.5rem;
+      border: 1px solid #CC284F;
+      border-radius: 100%;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      margin-right: 1.2rem;
+      img {
+        width: 1.1rem;
+        height: 1.1rem;
+        object-fit: contain;
+      }
+    }
+  }
+}
+
+.contentTitle2.withSelect {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  .right {
+    color: #838383;
+    font-family: "Roboto Light";
+    font-size: 1.5rem;
+    line-height: 1.5;
+  }
+}
+
+body .ui-selectmenu-button.ui-button.blue {
+  width: auto;
+  color: #48A4EB;
+}
+
+.blue .ui-selectmenu-icon.ui-icon.custom-icon {
+  background: url(../img/icons/selectBlue.svg) no-repeat center !important;
+  background-size: contain;
+}
+
+  .yearsList {
+    width: 32rem;
+    margin-right: 4rem;
+    font-size: 2rem;
+    line-height: 1.5;
+    li {
+      padding: 4rem;
+      border-radius: 2rem;
+      background-color: #F2F2F2;
+      margin-bottom: 2rem;
+      cursor: pointer;
+    }
+  } 
+
+  .ordersByYears {
+    flex: 1;
+    .itemsWrap {
+      background-color: #F2F2F2;
+      border-radius: 2rem;
+    }
+    .title {
+      background-color: #F2F2F2;
+      border-radius: 4rem;
+      margin-bottom: 8rem;
+      padding: 4rem;
+    }
+    .item {
+      display: flex;
+      justify-content: left;
+      align-items: center;
+      padding: 4rem;
+      border-bottom: 1px solid #D0CFD3;
+      font-size: 2rem;
+      line-height: 1.5;
+      .right {
+        margin-left: auto;
+        display: flex;
+        justify-content: space-between;
+        width: 27rem;
+      }
+      .orderIcon {
+        align-self: flex-start;
+        margin-right: 2rem;
+        img {
+          width: 2.4rem;
+          height: 1.5rem;
+          object-fit: contain;
+        }
+      }
+      .orderInfo {
+        margin-bottom: 0.8rem;
+        span {
+          text-decoration: underline;
+          cursor: pointer;
+        }
+      }
+      .orderStatus {
+        color: #838383;
+        font-size: 1.8rem;
+        font-family: "Roboto Light";
+      }
+      &:last-child {
+        border: 0;
+      }
+    }
+  }
+
+.ordersList {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10rem;
+}
+
+.textBlue {
+  color: #33A9FF;
+}
+
+.mdWrap {
+  padding: 10rem 13rem 8rem;
+  font-size: 1.8rem;
+  line-height: 1.5;
+  .title {
+    font-size: 3.6rem;
+    line-height: 1;
+    margin-bottom: 2rem; 
+    text-align: center;   
+  }
+  .textGray {
+    text-align: center;
+    margin-bottom: 4rem;
+  }
+  .buttonBlue {
+    font-size: 1.6rem;
+  }
+}
+
+.compare2cols {
+  display: flex;
+  justify-content: space-between;
+  &.showOnlyDiff {
+    .row, .field {
+      display: none !important;
+      &.thereAreDifferences {
+        display: block !important;
+      }
+    }
+  }
+  .colLeft {
+    width: 36.6rem;
+    margin-right: 3rem;
+  }
+  .col {
+    flex: 1;
+    width: 99rem;
+  }
+}
+
+.addToComparison {
+  height: 41.1rem;
+  border: 1px solid #C0C0C0;
+  border-radius: 2rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  color: #33A9FF;
+  cursor: pointer;
+  font-size: 1.6rem;
+  line-height: 1.5;
+  margin-bottom: 4rem;
+  opacity: 0;
+  .icon {
+    width: 6.5rem;
+    height: 6.5rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 3.9rem;
+    line-height: 1;
+    margin: 0 auto 1rem;
+    border:  2px solid #33A9FF;
+    border-radius: 100%;
+  }
+}
+
+.flexBetween {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  .sliderCustomNav {
+    margin-top: 0;
+    height: auto;
+  }
+}
+
+.crOnly {
+  margin-bottom: 6rem;
+}
+
+.ctProductList {
+  .item {
+    width: 36.6rem;
+    border: 1px solid #C0C0C0;
+    border-radius: 2rem;
+    padding: 3.6rem;
+    .category {
+      font-size: 1.5rem;
+      line-height: 1.5;
+    }
+    .ations {
+      display: flex;
+      justify-content: space-between;
+      font-size: 1.6rem;
+      line-height: 1.5;
+      margin-top: 2rem;
+      a {
+        display: flex;
+        justify-content: left;
+        align-items: center;
+      }
+      .icon {
+        width: 3.8rem;
+        height: 3.8rem;
+        margin-right: 1rem;
+        border-radius: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        &.blueBg {
+          background-color: #33A9FF;
+        }
+      }
+    }
+    .info {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      .title {
+        font-size: 1.8rem;
+        line-height: 1.5;
+        max-width: 18rem;
+      }
+      .price {
+        font-size: 2.4rem;
+        line-height: 1.5;
+        max-width: 10rem;
+      }
+    }
+    .imgWrap {
+      margin-bottom: 1rem;
+      img {
+        width: 100%;
+        height: 20.5rem;
+        object-fit: contain;
+      }
+    }
+  }
+}
+
+.compPropList {
+  .field {
+    margin-bottom: 6.5rem;
+  }
+  p {
+    display: none;
+  }
+  .title {
+    font-size: 2.3rem;
+    line-height: 2.5rem;
+    height: 5rem;
+  }
+  .row {
+    font-size: 1.6rem;
+    line-height: 2.5rem;
+    height: 5rem;
+    font-family: "Roboto Light";
+    .red {
+      color: #C43B50;
+      font-family: "Roboto Bold";
+    }
+  }
+}
+
+.ctProductList {
+  .compPropList {
+    width: 36.6rem;
+    margin-right: 0;
+    .title {
+      color: white;
+    }
+  }
+}
+
+.js-comparisonList .compPropList {
+  margin-top: 12rem;
+}
+
+.js-comparisonList .swiper-slide {
+  width: 36.6rem;
+}
+
+.comparison {
+  padding-bottom: 15rem;
+}
+
+.comparison .itemCount {
+  color: #838383;
+  font-size: 3.6rem;
+}
+
+.ct2Date {
+  margin-bottom: 4rem;
+}
+
+.userOrderStatus {
+  padding: 4rem;
+  background-color: #F2F2F2;
+  border-radius: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 15rem;
+  margin-bottom: 4rem;
+  .icon {
+    margin-right: 2rem;
+  }
+  .left {
+    display: flex;
+    justify-content: left;
+  }
+  a {
+    color: #3086C8;
+  }
+}
+
+.uo2cols {
+  display: flex;
+  justify-content: space-between;
+  .col {
+    flex: 1;
+  }
+  .colRight {
+    width: 44rem;
+    margin-left: 4rem;
+  }
+}
+
+.userOrderProduct {
+  background-color: #F2F2F2;
+  border-radius: 2rem;
+  padding: 4rem;
+  margin-bottom: 4rem;
+  display: flex;
+  justify-content: left;
+  .textWrap {
+    flex: 1;
+    .twLinks {
+      font-size: 1.8rem;
+      line-height: 1.5;
+      text-decoration: underline;
+      div {
+        margin-bottom: 1rem;
+      }
+    }
+  }
+  .twTop {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .uoProducAbout {
+      flex: 1;
+      border-right: 1px solid #D0CFD3;
+      margin-right: 4rem;
+      padding-bottom: 3rem;
+      padding-right: 4rem;
+      .title {
+        font-size: 2.5rem;
+        line-height: 1.5;
+        margin-bottom: 1rem;
+      }
+      p {
+        color: #838383;
+        font-size: 1.8rem;
+        line-height: 1.5;
+        font-family: "Roboto Light";
+      }
+    }
+    .uoaRight {
+      text-align: center;
+      .count {
+        color:#838383;
+        font-size: 1.8rem;
+        line-height: 1.5;
+        margin-bottom: 1rem;
+      }
+      .price {
+        font-size: 3rem;
+        line-height: 1.5;
+        font-family: "Roboto Bold";
+      }
+    }
+  }
+  .imgWrap {
+    margin-right: 4rem;
+    img {
+      width: 28rem;
+      height: 19rem;
+      object-fit: contain;
+    }
+  }
+}
+
+.paItem.order {
+  margin-bottom: 18rem;
+  .itemField {
+    border: 0;
+    padding-top: 0;
+  }
+  .title {
+    border-top: 1px solid #D0CFD3;
+    &:first-child {
+      border: 0;
+    }
+  }
+}
+
+.orderTotalPrice {
+  background: #F2F2F2;
+  border-radius: 2rem;
+  margin-bottom: 4rem;
+  .text {
+    padding: 4rem;
+    font-size: 2rem;
+    line-height: 1.5;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #D0CFD3;
+    &:last-child {
+      border-bottom: 0;
+    }
+    .price {
+      font-family: "Roboto Bold";
+      &.total {
+        font-size: 3rem;
+      }
+    }
+  }
+}
+
+.userOrder .contentWrapper {
+  position: relative;
+}
+
+.userOrder .sliderCustomNav {
+  position: absolute;
+  right: 0;
+  z-index: 5;
+}
+
+.sliderCustomNav.clear {
+  .iconLongArrow {
+    top: 0.2rem;
+  }
+}
+
+.print {
+  margin-top: 4rem;
+  a {
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    .icon {
+      margin-right: 2rem;
+      position: relative;
+      top: 0.2rem;
+    }
+  }
+}
+
+.radioBlock {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 4rem;
+  flex-wrap: wrap;
+  .item {
+    padding: 3rem;
+    border: 2px solid #838383;
+    border-radius: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: calc(50% - 2rem);
+    cursor: pointer;
+    color: #838383;
+    font-size: 1.8rem;
+    line-height: 1.5;
+    margin-bottom: 4rem;
+    .big {
+      font-family: "Roboto Bold";
+      color: #292D32;
+      font-size: 2rem;
+      margin-bottom: 0.8rem;
+    }
+    .icon {
+      width: 3.5rem;
+      height: 3.5rem;
+      border: 0.2rem solid #838383;
+      border-radius: 100%;
+      margin-left: 1rem;
+    }
+    .text {
+      width: calc(100% - 5rem);
+    }
+    &.active {
+      border-color: #33A9FF;
+      .icon {
+        border: 1rem solid #48A4EB;;
+      }
+    }
+  }
+  input {
+    display: none;
+  }
+}
+
+.checkout {
+  .colRight {
+    padding-top: 8rem;
+  }
+}
+
+.checkoutWrap {
+  padding-bottom: 16rem;
+  .title {
+    font-size: 2.5rem;
+    line-height: 1.5;
+    margin-bottom: 4rem;
+  }
+}
+
+.cw2cols {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 4rem;
+  .item {
+    width: calc(50% - 2rem);
+  }
+}
+
+#yaMapMini {
+  height: 30rem;
+  margin-bottom: 1.5rem;
+}
+
+.linkBlue {
+  color: #33A9FF;
+}
+
+.listWithIcons {
+  li {
+    display: flex;
+    justify-content: left;
+    font-size: 1.8rem;
+    line-height: 1.5;
+    margin-bottom: 2rem;
+  }
+  .icon {
+    margin-right: 1rem;
+    position: relative;
+    top: 0.4rem;
+    img {
+      width: 2rem;
+      height: 2rem;
+      object-fit: contain;
+    }
+  }
+}
+
+.buttonWhite {
+  font-size: 1.8rem;
+  line-height: 2.7rem;
+  padding: 2.6rem 3rem;
+  cursor: pointer;
+  color: #292D32;
+  border: 2px solid #33A9FF;
+  border-radius: 1rem;
+  display: inline-block;
+  margin-bottom: 6rem;
+}
+
+.lopText {
+  width: 71rem;
+  font-family: "Roboto Light";
+  font-size: 1.6rem;
+  line-height: 1.9rem;
+  margin-bottom: 4rem;
+}
+
+.labelOnTop {
+  .cols2c {
+    display: flex;
+    justify-content: space-between;
+    .colC {
+      width: calc(50% - 2rem);
+    }
+  }
+}
+
+.checkout .labelOnTop {
+  margin-bottom: 6rem;
+}
+
+.paymentChoise {
+  li {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    margin-bottom: 2rem;
+    .userHelp {
+      margin-left: 1.2rem;
+    }
+  }
+}
+
+.pcPromo {
+  vertical-align: top;
+  margin-bottom: 4rem;
+  input {
+    border-radius: 1rem;
+    height: 5.4rem;
+    line-height: 5.5rem;
+    font-size: 1.5rem;
+    width: 29rem;
+    margin-right: 1.8rem;
+  }
+  .buttonBlue {
+    height: 5.4rem;
+    vertical-align: top;
+    line-height: 5.5rem;
+  }
+}
+
+.listDottedBorder {
+  margin-bottom: 4rem;
+  li {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px dotted #838383;
+    margin-bottom: 2.1rem;
+    font-size: 1.8rem;
+    div {
+      background-color: white;
+      position: relative;
+      top: 0.3rem;
+      line-height: 1;
+    }
+  }
+}
+
+.buttonBlue.checkout {
+  width: 30rem;
+}
+
+.empty {
+  .compare2cols .colLeft {
+    width: 100%;
+    .crOnly {
+      display: none;
+    }
+    .compPropList {
+      display: none;
+    }
+  }
+  .compare2cols .col {
+    display: none;
+  }
+} 
+
+.comparisonPopUp {
+  position: absolute;
+  z-index: 11;
+  margin-left: -19rem;
+  margin-top: 3.5rem;
+  .menuArrow {
+    top: -1.6rem;
+    left: 29.8rem;
+    img {
+      width: 3.5rem;
+      height: 3.5rem;
+    }
+  }
+  ul {
+    background-color: white;
+    border-radius: 2rem;
+    font-size: 1.8rem;
+    line-height: 1.5;
+    filter: drop-shadow(0px 14px 75px rgba(0, 0, 0, 0.13)) drop-shadow(0px 1.75302px 9.39116px rgba(0, 0, 0, 0.065));
+    padding: 2.5rem;
+    .buttonBlue {
+      width: 100%;
+      margin-top: 2rem;
+    }
+    li {
+      .cpFlex {
+        display: flex;
+        justify-content: left;
+        align-items: center;
+      }
+      .imgWrap {
+        margin-right: 2rem;
+        img {
+          width: 13rem;
+          height: 9rem;
+          object-fit: contain;
+        }
+      }
+    }
+  }
+}
+
+.bestPrices.main {
+  .bgText {
+    animation: fadeInUp;
+    animation-duration: 4s;
+  }
+  .right {
+    transition: 4s;
+    background-size: contain;
+  }
+}
+
+.storeSelectionWrap {
+  padding: 5.8rem 5.8rem 1.8rem;
+}
+
+.js-callStoreSelectionModal {
+  font-size: 2rem;
+  cursor: pointer;
+  .title2 {
+    font-size: 2.5rem;
+    line-height: 3rem;
+    margin-bottom: 3rem;
+  }
+}
+
+.storeSelection {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  .item {
+    background: #F2F2F2;
+    border-radius: 2rem;
+    font-size: 1.8rem;
+    line-height: 1.5;
+    width: calc(50% - 2rem);
+    margin-bottom: 4rem;
+    border: 0.5rem solid #F2F2F2;
+    padding: 8rem 5rem;
+    &:hover {
+      border-color: #33A9FF;
+    }
+    .title2 {
+      font-size: 2.5rem;
+      line-height: 3rem;
+      margin-bottom: 3rem;
+    }
+    .title {
+      font-size: 2.5rem;
+      line-height: 3rem;
+      margin-bottom: 3rem;
+    }
+  }
+}
+
+.slider-range.ui-slider-horizontal .ui-slider-range {
+  height: 3px;
+  background: #D0D0D0;
+  border: 0;
+}
+
+.ui-widget.slider-range.ui-slider-horizontal {
+  height: 3px;
+  border-radius: 1.5px;
+  background: #33A9FF;
+  border: 0;
+  .ui-slider-handle {
+    outline: none !important;
+    border-radius: 100%;
+    width: 2.1rem;
+    height: 2.1rem;
+    background: #33A9FF;
+    border: 0.5rem solid white;
+    top: -0.9rem;
+  }
+}
+
+  .categoryFilter .item.isOpen .title .acArrow {
+    transform: rotate(-90deg);
+    transition: 0.3s;
+  }
+
+  .showAllFields {
+    .js-showAllFields {
+      margin-top: 2rem;
+      span {
+        cursor: pointer;
+        text-decoration: underline;
+      }
+      .acArrow {
+        color: #33A9FF;
+        margin-left: 1rem;
+        cursor: pointer;
+        text-decoration: none;
+      }
+    }
+    ul {
+      display: none;
+    }
+  }
+
+  .categoryFilterWrap.mobFilter .categoryFilter .item .title {
+    transition: 0.3s;
+  }
+
+  .searchBox.isOpen {
+    transition: 0.3s;
+    width: 36.4rem;
+    opacity: 1;
+  }
+
+  .searchBox {
+    position: absolute;
+    border-radius: 2.5rem;
+    border: 1px solid #ececec;
+    left: -0.5rem;
+    top: -1.7rem;
+    width: 0;
+    z-index: 2;
+    transition: 0.3;
+    opacity: 0;
+    background-color: white;
+    overflow: hidden;
+    .iconBlueButton {
+      margin: -1px;
+      cursor: pointer;
+    }
+    input {
+      width: 20rem;
+      border: 0;
+      height: 2rem;
+      font-family: "Roboto Light";
+      font-size: 1.5rem;
+      padding-left: 0;
+      border-radius: 0;
+      margin-left: 5rem;
+    }
+    .searchActive {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 36.4rem;
+    }
+  }
+
+  .posRelative {
+    position: relative;
+  }
+
+  .autocomplitItems {
+    width: 36.4rem;
+    .item {
+      margin-bottom: 1rem;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      font-size: 1.8rem;
+      font-family: "Roboto Light";
+      padding: 0 5rem 0 0.9rem;
+      display: none;
+    }
+    .itemName {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      height: 2rem;
+      text-transform: none;
+      flex-grow: 1;
+    }
+    .imgWrap {
+      width: 3.5rem;
+      height: 3.5rem;
+      margin-right: 0.6rem;
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
+    }
+  }
+
+  .likeBox .like {
+    path {
+      stroke: #C0C0C0;
+      fill: none;
+    }
+  }
+
+  .likeBox .like:hover {
+    path {
+      stroke: #BB2340;
+    }
+  }
+
+  .likeBox .like.isActive {
+    path {
+      fill: #BB2340;
+      stroke: #BB2340;
+    }
+  }
+
+  #userNotification {
+    position: fixed;
+    width: 52rem;
+    background-color: #F9F9F9;
+    font-size: 2rem;
+    text-align: center;
+    top: 0;
+    left: calc(50% - 26rem);
+    z-index: 20;
+    transition: 0.3s;
+    padding: 0 2.3rem;
+    border-bottom-left-radius: 2rem;
+    border-bottom-right-radius: 2rem;
+    height: 7rem;
+    line-height: 7.2rem;
+    transform-origin: 0 0;
+    transform: translate(0, -7rem);
+    transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
+  }
+
+  #userNotification.isVisible {
+    transform: none;
+  }
+
+  .compare.isActive path {
+    fill: #007aff;
+  }
+
+  .js-addInCart.isActive {
+    color: #838383;
+    .iconCart {
+      background-color: #E5E5E5;
+      path {
+        stroke: #838383;
+      }
+    }
+  }
+
+@media (max-width: 48em) {
+
+  .cw2cols {
+    display: block;
+    .item {
+      width: auto;
+    }
+  }
+
+  #userNotification {
+    font-size: 4rem;
+    width: 66rem;
+    left: calc(50% - 33rem);
+  }
+
+  .searchBox.isOpen {
+    width: 45rem;
+    border-radius: 5rem;
+    top: -0.7rem;
+    left: -2rem;
+  }
+
+  .searchBox input {
+    margin-left: 7rem;
+  }
+
+  .searchBox .searchActive {
+    width: 44rem;
+  }
+
+  .mobShow.posRelative .js-openSearch {
+    position: relative;
+    z-index: 3;
+  }
+
+  .headerMenu a {
+    font-size: initial;
+  }
+
+  .storeSelectionWrap {
+    padding: 3rem;
+  }
+
+  .categoryFilterWrap.mobFilter .categoryFilter .item.isOpen .title {
+    margin-bottom: 2rem;
+    transition: 0.3s;
+  }
+
+  .storeSelection {
+    display: block;
+    margin-top: 6rem;
+    .item {
+      width: 100%;
+      padding: 3rem;
+      .title {
+        font-size: 3.5rem;
+        line-height: 1.2;
+      }
+      .title2 {
+        font-size: 3.5rem;
+        line-height: 1.2;
+      }
+      .linkBlue {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  .tingle-modal.custom1.w140 {
+    .tingle-modal-box {
+      width: 67rem;
+    }
+  }
+
+  .balanceModalWrap {
+    padding: 8rem 4rem;
+    .title {
+      font-size: 4rem;
+      line-height: 5rem;
+      margin-bottom: 8rem;
+    }
+  }
+
+  .balanceModalWrap .ordersByYears li {
+    margin-bottom: 0;
+  }
+
+  div.scNav {
+    position: absolute;
+    width: 32rem;
+    display: flex !important;
+    justify-content: space-between;
+    top: 97rem;
+    z-index: 8;
+    .scNavProgress {
+      text-align: center;
+      color: #8E97AB;
+      font-size: 2.8rem;
+    }
+    .scNavPrev, .scNavNext {
+      width: 5rem;
+      height: 5rem;
+      border-radius: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+
+  .ctProductList .item .category {
+    display: none;
+  }
+
+  .ctProductList .item .info {
+    display: block;
+    .title {
+      font-size: 3rem;
+      max-width: none;
+    }
+    .price {
+      font-size: 3.2rem;
+      max-width: none;
+    }
+  }
+
+  .ctProductList .item .ations a {
+    font-size: 2.6rem;
+    .icon {
+      width: 6rem;
+      height: 6rem;
+    }
+    &:last-child {
+      display: none;
+    }
+  }
+
+  .compare2cols {
+    &.showOnlyDiff {
+      .row, .field {
+        display: block !important;
+        &.thereAreDifferences {
+          display: block !important;
+        }
+      }
+    }
+  }
+
+  .checkout .contentTitle2.withSelect {
+    margin-top: 4rem;
+    margin-bottom: 8rem;
+  }
+
+  .listDottedBorder li {
+    font-size: 3.2rem;
+    line-height: 1.5;
+    margin-bottom: 4rem;
+  }
+
+  .buttonBlue.checkout {
+    width: 100%;
+  }
+
+  .checkoutWrap {
+    padding-bottom: 0;
+  }
+
+  .pcPromo {
+    input {
+      width: 100%;
+      margin-bottom: 4rem;
+    }
+    .buttonBlue {
+      height: 10rem;
+      line-height: 10.2rem;
+      width: 100%
+    }
+  }
+
+  .paymentChoise {
+    font-size: 3.2rem;
+    line-height: 1.5;
+    margin-bottom: 4rem;
+    .cRadio .checkmark {
+      margin-right: 2rem;
+    }
+  }
+
+  .paymentChoise li .userHelp {
+    margin-left: 2rem;
+  }
+
+  .labelOnTop {
+    .cols2c {
+      display: block;
+      .colC {
+        width: auto;
+      }
+    }    
+  } 
+
+  .lopText {
+    font-size: 3rem;
+    line-height: 1.5;
+  }
+
+  .linkBlue {
+    font-size: 3.2rem;
+    margin-bottom: 8rem;
+  }
+
+  .buttonWhite {
+    margin-bottom: 6rem;
+    font-size: 3.2rem;
+    text-align: center;
+    padding: 2rem 15rem;
+    line-height: 1.5;
+    border-radius: 2rem;
+  }
+
+  #yaMapMini {
+    height: 52rem;
+  }
+
+  .listWithIcons {
+    margin-bottom: 4rem;
+    li {
+      font-size: 3.2rem;
+      .icon {
+        margin-right: 2rem;
+        img {
+          width: 4rem;
+          height: 4rem;
+        }
+      }
+    }
+  }
+
+  .checkoutWrap {
+    .title {
+      font-size: 3.6rem;
+      margin-bottom: 4rem;
+    }
+  }
+
+  .radioBlock .item.active .icon {
+    border-width: 1.4rem;
+  }
+
+  .radioBlock {
+    display: block;
+    margin-bottom: 8rem;
+    .item {
+      width: auto;
+      border-width: 1px;
+      font-size: 3rem;
+      border-radius: 4rem;
+      .icon {
+        width: 4.6rem;
+        height: 4.6rem;
+      }
+      .big {
+        font-size: 3.2rem;
+      }
+    }
+  }
+
+  .orderTotalPrice {
+    margin-bottom: 8rem;
+    border-radius: 4rem;
+    .text {
+      padding: 6rem;
+      font-size: 3.2rem;
+      .price {
+        font-size: 4rem;
+      }
+    }
+  }
+
+  .paItem.order {
+    margin-bottom: 8rem;
+  }
+
+  .c2cWrap {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .uo2cols {
+    display: block;
+    .colRight {
+      width: auto;
+      margin: 0 0 24rem;
+    }
+  }
+
+  .userOrderStatus {
+    display: block;
+    margin-bottom: 8rem;
+    border-radius: 4rem;
+  }
+
+  .userOrderProduct {
+    display: block;
+    margin-bottom: 8rem;
+    border-radius: 4rem;
+    .textWrap {
+      .twLinks {
+        font-size: 3rem;
+        div {
+          margin-bottom: 2rem;
+          &:last-child {
+            margin-bottom: 0;
+          }
+        }
+      }
+    }
+    .twTop {
+      display: block;
+      .uoaRight {
+        display: flex;
+        justify-content: left;
+        flex-direction: row-reverse;
+        align-items: center;
+        margin-bottom: 4rem;
+        .count {
+          margin-bottom: 0;
+          font-size: 3.2rem;
+        }
+        .price {
+          font-size: 3.6rem;
+          margin-right: 3rem;
+        }
+      }
+      .uoProducAbout {
+        padding-right: 0;
+        margin-right: 0;
+        border: 0;
+        .title {
+          font-size: 3.6rem;
+          margin-bottom: 2rem;
+        }
+        p {
+          font-size: 3rem;
+          margin-bottom: 2rem;
+        }
+      }
+    }
+    .imgWrap {
+      margin-right: 0;
+      margin-bottom: 2rem;
+      img {
+        width: 100%;
+        height: 32rem;
+      }
+    }
+  }
+
+  .compare2cols.mobShow {
+    .colLeft {
+      display: none;
+    }
+  }
+
+  .compare2cols {
+    display: block;
+    width: calc(50% - 2rem);
+    .colLeft {
+      position: absolute;
+      width: calc(100% - 6rem);
+      .row {
+        opacity: 0;
+      }
+      .title {
+        position: relative;
+        z-index: 3;
+      }
+      .crOnly {
+        opacity: 0;
+      }
+    }
+    .col {
+      width: 100%;
+    }
+  }
+
+  .flexBetween .sliderCustomNav {
+    display: none;
+  }
+
+  .ctProductList .item, .ctProductList .compPropList {
+    width: calc(100% - 1px);
+  }
+
+  .compare2cols .addToComparison {
+    opacity: 0;
+    margin-bottom: 14rem;
+  }
+
+  .ctProductList {
+    position: relative;
+    z-index: 2;
+  }
+
+  .compPropList {
+    .title {
+      font-size: 4rem;
+      line-height: 4rem;
+      height: 10rem;
+      vertical-align: top;
+    }
+    .row {
+      font-size: 3rem;
+      height: 17rem;
+      line-height: 1.2;
+    }
+    .field {
+      margin-bottom: 0;
+    }
+  }
+
+  .mdWrap {
+    padding: 10rem 3rem;
+    .title {
+      font-size: 6rem;
+      margin-bottom: 2rem;
+      text-align: left;
+    }
+    .textGray {
+      font-size: 3rem;
+      text-align: left;
+      margin-bottom: 6rem;
+    }
+    .buttonBlue {
+      width: 100%;
+      font-size: 3.2rem;
+      margin-top: 6rem;
+    }
+  }
+
+  .compPropList {
+    p {
+      display: block;
+      color: #838383;
+      margin-bottom: 2rem;
+    }
+  }
+
+  .contentTitle2.withSelect {
+    display: block;
+    .right {
+      font-size: 3rem;
+      margin-top: 2rem;
+    }
+  }
+
+  .ordersList {
+    display: block;
+    margin-bottom: 8rem;
+    padding-top: 4rem;
+  }
+
+  .yearsList {
+    display: none;
+  }
+
+  .ordersByYears {
+    .iHide {
+      display: block !important;
+    }
+    li {
+      margin-bottom: 10rem;
+    }
+    .item {
+      font-size: 3.2rem;
+      .orderStatus {
+        font-size: 3rem;
+      }
+      .orderIcon img {
+        width: 3.4rem;
+        height: 2rem;
+      }
+    }
+    .item .right {
+      width: auto;
+      display: block;
+      .date {
+        display: none;
+      }
+    }
+  }
+
+  .favoriteList .itemWrap .item .ui-spinner {
+    position: relative;
+    bottom: initial;
+    right: initial;
+  }
+
+  .container {
+    padding-bottom: 0;
+  }
+
+  .sc2cols .csColHalf {
+    width: auto;
+  }
+
+  .cartStockInfo {
+    padding: 4.6rem;
+    font-size: 3.2rem;
+    line-height: 1.5;
+  }
+
+  .cartStockInfo .row .icon {
+    width: 5rem;
+    height: 5rem;
+    img {
+      width: 2.4rem;
+      height: 2.4rem;
+    }
+  }
+
+  .cartStat {
+    background-color: transparent;
+    padding: 0;
+    position: relative;
+    margin-bottom: 8rem;
+    .buttonBlue {
+      font-size: 3.2rem;
+    }
+    .row {
+      font-size: 3.2rem;
+    }
+    .textCenter {
+      padding-top: 4rem;
+      a {
+        color: #33A9FF;      
+      }
+    } 
+    .price {
+      position: absolute;
+      right: 0;
+      top: 2.5rem;
+      background-color: white;
+    }
+    .countMess {
+      border-bottom: 1px dotted #A6A6A6;
+      margin-bottom: 6rem;
+      > span {
+        background-color: white;
+        position: relative;
+        top: 2.1rem;
+      }
+    }
+  }
+
+  .favoritePage {
+    .contentTitle2 {
+      font-size: 6rem;
+      line-height: 9rem;
+      font-family: "Roboto Bold";
+    }
+  }
+
+  .favoriteList {
+    padding-top: 0;
+  }
+
+  .favoriteList .itemWrap .title3 {
+    font-size: 3.2rem;
+    line-height: 1.5;
+  }
+
+  .cartPage .infoText {
+    font-size: 3.2rem;
+  }
+
+  .sc2cols {
+    display: block;
+    .csCol {
+      width: auto;
+    }
+  }
+
+  .deliveryChoise {
+    display: block;
+    .dcItem {
+      width: 100%;
+      margin-bottom: 2rem;
+      border-width: 1px;
+    }
+  }
+
+  .favoriteList .itemWrap .item .about {
+    max-width: none;
+    padding: 14rem 0 0;
+  }
+
+  .favoriteList .item .right {
+    position: absolute;
+    top: 43rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 58rem;
+  }
+
+  .favoriteList .itemWrap .item .about p {
+    font-size: 3rem;
+    margin-bottom: 0;
+  }
+
+  .authRequest {
+    font-size: 3.6rem;
+    line-height: 5.4rem;
+    margin-top: 4rem;
+  }
+
+  .favoriteList {
+    margin-top: 8rem;
+    .item {
+      border-radius: 4rem;
+      display: block;
+      position: relative;
+      padding: 9.2rem 5.4rem 5.2rem;
+      .buttonBlue {
+        width: 100%;
+        font-size: 3.2rem;
+      }
+      .about {
+        .itemName {
+          font-size: 3.6rem;
+          line-height: 5.4rem;
+          margin-bottom: 2.5rem;
+        }
+        p {
+          font-size: 3rem;
+          line-height: 4.5rem;
+          margin-bottom: 5rem;
+        }
+      }
+      .imgWrap img {
+        width: 100%;
+        height: 28rem;
+      }
+      .price {
+        margin-top: 0;
+        margin-bottom: 0;
+        font-size: 4rem;
+        line-height: 1.5;
+        font-family: "Roboto";
+      }
+      .fiActions {
+        position: absolute;
+        width: 100%;
+        top: 0;
+        left: 0;
+        justify-content: space-between;
+        padding: 4.2rem 4.2rem 0;
+        .icon {
+          width: 8.8rem;
+          height: 8.8rem;
+        }
+        li {
+          margin-right: 0;
+        }
+        span:last-child {
+          display: none;
+        }
+      }
+    }
+  }
+
+  .tingle-modal.custom1.w110 {
+    padding: 0;
+    .tingle-modal-box {
+      width: 100%;
+      border-radius: 0;
+    }
+  }
+
+  .authModalWrap .authFormWrap .paSocLinks .paTitle {
+    margin-bottom: 4rem;
+  }
+
+  .forgotPassWrap {
+    padding: 6rem 3rem;
+  }
+
+  .forgotPassWrap .title {
+    font-size: 3.6rem;
+    line-height: 4.2rem;
+    margin-bottom: 5rem;
+  }
+
+  .forgotPassWrap .js-autorize span {
+    font-size: 3rem;
+    line-height: 3.6rem;
+  }
+
+  .authModalWrap .authFormWrap .sForm {
+    font-size: 3rem;
+    line-height: 6rem;
+  }
+
+  .authModalWrap .authFormWrap .textCenter {
+    margin-top: 4rem;
+  }
+
+  .authModalWrap .authFormWrap .forgotPass {
+    font-size: 3rem;
+    line-height: 3.5rem;
+  }
+
+  .lightGrayLink {
+    font-size: 3rem;
+    line-height: 3.5rem;
+  }
+
+  .authTabs {
+    font-size: 3.2rem;
+    line-height: 3.8rem;
+    margin: 5rem 0 6rem;
+  }
+
+  .authModalWrap {
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+    .labelOnTop label {
+      bottom: 1rem;
+    }
+    .authFormWrap {
+      padding: 6rem 3rem 6rem;
+      .title {
+        font-size: 3.6rem;
+        line-height: 4.2rem;
+        margin-bottom: 2rem;
+      }
+    }
+    > .cols2 {
+      display: block;
+      > .col {
+        width: 100%;
+      }
+    }
+  }
+
+  .labelOnTop {
+    input[type=text], input[type=password] {
+      height: 8rem;
+      position: relative;
+      bottom: 2rem;
+    }
+    .title2 {
+      font-size: 3.2rem;
+      margin-bottom: 4rem;
+    }
+    p {
+      line-height: 4rem;
+      margin-bottom: 8rem;
+    }
+    label {
+      font-size: 3.2rem;
+    }
+    .row {
+      margin-bottom: 2.5rem;
+      &.radioRow {
+        margin-bottom: 6rem;
+      }
+      &.cols2 {
+        display: block;
+        .col {
+          width: 100%;
+        }
+      }
+    }
+    label.cRadio {
+      padding-left: 5.2rem;
+      line-height: 3.2rem;
+      margin-right: 4rem;
+      .checkmark {
+        width: 3.2rem;
+        height: 3.2rem;
+        border-width: 0.6rem;
+      }
+    }
+  }
+
+  .labelOnTop .row.phone .text {
+    display: none;
+  }
+
+  .registrationEntity {
+    background: white;
+    .labelOnTop {
+      padding: 0;
+    }
+    .contentTitle2 {
+      font-size: 6rem;
+      line-height: 1.5;
+      font-family: "Roboto Bold";
+      margin-bottom: 7rem;
+    }
+  }
+
+  .prevPage {
+    font-size: 3.6rem;
+    padding: 7rem 0 4rem;
+    .iconLongArrow {
+      width: 5rem;
+      height: 1rem;
+      bottom: 0.8rem;      
+    }
+  }
+
+  .autorizedUser {
+    .userMenu {
+      right: -24rem;
+      top: 13rem;
+      min-width: 60rem;
+      border-radius: 3rem;
+      .menuArrow {
+        top: -1.6rem;
+        left: 29.8rem;
+        img {
+          width: 3.5rem;
+          height: 3.5rem;
+        }
+      }
+      .row {
+        border-top: 1px solid #F2F2F2;
+        padding: 2rem 3rem;
+        a {
+          display: inline;
+          width: auto;
+        }
+      }
+      .umTitle {
+        display: flex;
+        justify-content: left;
+        align-items: center;
+        padding: 3rem;
+        .avaIcon {
+          margin-right: 2rem;
+        }
+      }
+    }
+  }
+
+  .avaIcon {
+    width: 9rem;
+    height: 9rem;
+    img {
+      width: 9rem;
+      height: 9rem;
+    }
+  }
+
+  .cRadio {
+    padding-left: 7.8rem;
+    line-height: 6.8rem;
+    .checkmark {
+      width: 6rem;
+      height: 6rem;
+      border-width: 1.8rem;
+    }
+  }
+
+  .js-uploadAvatar {
+    font-size: 3rem;
+    line-height: 4.5rem;
+  }
+
+  .udModalWrap {
+    padding: 9rem 4.4rem 12rem;
+    font-size: 3rem;
+    line-height: 4.5rem;
+    .title {
+      font-size: 6rem;
+      line-height: 9rem;
+      margin-bottom: 4rem;
+      text-align: center;
+    }
+    .marginLeft {
+      margin-left: 0;
+      margin-bottom: 0;
+    }
+    .buttonBlue {
+      font-size: 3.2rem;
+      margin-top: 6rem;
+    }
+    .row {
+      margin-bottom: 3rem;
+      label {
+        font-size: 3.2rem;
+        line-height: 1.5;
+      }
+      input {
+        margin-top: -2.3rem;
+      }
+    }
+    .avaWrap {
+      float: none;
+      margin: 0 auto 5rem;
+      width: 26rem;
+      .imgWrap {
+        width: 26rem;
+        height: 26rem;
+        margin-bottom: 2rem;
+        img {
+          width: 26rem;
+          height: 26rem;
+          object-fit: cover;
+        }
+      }
+    }
+  }
+
+  .csModalWrap {
+    font-size: 3rem;
+    line-height: 4rem;
+    .buttonBlue {
+      margin-top: 6rem;
+    }
+    .cRadio {
+      margin-bottom: 4rem;
+    }
+    .radioGroup {
+      display: block;
+    }
+    .contentTitle2 {
+      font-size: 6rem;
+      line-height: 9rem;
+      margin-bottom: 3rem;
+    }
+    .title {
+      font-size: 3.2rem;
+      line-height: 4.2rem;
+      margin-bottom: 6rem;
+    }
+  }
+
+  .weInStore {
+    p {
+      font-size: 3.2rem;
+      line-height: 4.8rem;
+    }
+  }
+
+  .qrCode {
+    text-align: center;
+    padding-right: 0.5rem;
+    img {
+      width: 48rem;
+      height: 48rem;
+    }
+  }
+
+  .bnTitle {
+    font-size: 3.2rem;
+    line-height: 4.8rem;
+  }
+
+  .boxBottomLine.bonuses .bnTitle {
+    margin-right: 10rem;
+  }
+
+  .favText {
+    font-size: 3.2rem;
+    line-height: 4.8rem;
+  }
+
+  .appButtons {
+    text-align: center;
+    padding-right: 0.5rem;
+    .buttonApp {
+      width: 48rem;
+      height: 16rem;
+      padding: 2.2rem 0 2.2rem 2rem;
+      margin-bottom: 4rem;
+      text-align: left;
+      font-size: 2.8rem;
+      line-height: 3.2rem;
+      .big {
+        font-size: 5rem;
+        line-height: 6.1rem;
+      }
+      .baText {
+        margin-left: 16rem;
+        margin-top: 2rem;
+      }
+      .icon {
+        width: 14rem;
+        img {
+          width: 14rem;
+          height: 11.6rem;
+        }
+      }
+    }
+  }
+
+  .buttonApp:first-child {
+    margin-right: 0;
+  }
+
+  .regFinish {
+    font-size: 3.2rem;
+    line-height: 4.8rem;
+    border-radius: 4rem;
+    padding: 5.2rem 4.6rem 14rem;
+    p {
+      margin-right: 0;
+    }
+    .buttonBlue {
+      font-size: 3rem;
+      padding: 0 3rem;
+    }
+  }
+
+  .boxBottomLine {
+    margin: 0 -3rem 0 -4.6rem;
+    padding: 8rem 4.1rem 8rem 4.6rem;
+  }
+
+  .paOrder {
+    font-size: 3.2rem;
+    line-height: 4.8rem;
+    .paOrderVal {
+      font-size: 3.2rem;
+      line-height: 3.7rem;
+      .price {
+        margin-right: 10rem;
+      }
+    }
+    .paLink {
+      margin-bottom: 2rem;
+    }
+  }
+
+  .itemField .boxBottomLine:first-child {
+    margin-top: -4rem;
+  }
+
+  .itemField .boxBottomLine:last-child {
+    margin-bottom: -4rem;
+  }
+
+  .spaceBettwen .row {
+    font-size: 3rem;
+    line-height: 4.5rem;
+    margin-bottom: 2rem;
+  }
+
+  .playmentMethodsList {
+    li {
+      display: block;
+      .text {
+        font-size: 3rem;
+        line-height: 4.5rem;
+        margin-bottom: 4rem;
+      }
+      .imgWrap {
+        img {
+          max-width: 21rem;
+          max-height: 21rem;
+        }
+      }
+    }
+  } 
+
+  .mobNextLineLeft {
+    margin-left: 0 !important;
+    margin-top: 2.5rem;
+  }
+
+  .notificationList {
+    font-size: 3rem;
+    line-height: 4.5rem;
+  }
+
+  .paSocLinks {
+    .fb svg {
+      width: 1.5rem;
+      height: 3.1rem;
+    }
+    .tw svg {
+      width: 3.3rem;
+      height: 2.8rem;
+    }
+    .google svg {
+      width: 3.2rem;
+      height: 3.2rem;
+    }
+    .tb svg {
+      width: 1.8rem;
+      height: 3.4rem;
+    }
+    .paTitle {
+      font-size: 3rem;
+      line-height: 4.5rem;
+      margin-bottom: 2rem;
+    }
+    .wrap {
+      a {
+        width: 6.2rem;
+        height: 6.2rem;
+        border-width: 0.5rem;
+      }
+    }
+  }
+
+  .alert {
+    width: 6.2rem;
+    height: 6.2rem;
+    font-size: 4rem;
+    line-height: 6rem
+  }
+
+  .userWarning {
+    font-size: 3rem;
+    line-height: 4.5rem;
+    align-items: flex-start;
+  }
+
+  .personalDataList {
+    font-size: 3rem;
+    line-height: 4.5rem;
+    li {
+      margin-bottom: 2rem;
+      .fieldName {
+        margin-right: 2rem;
+        display: inline-block;
+        min-width: 13rem;
+      }
+    }
+  }
+
+  .discountList {
+    li {
+      .discountInfo {
+        .date {
+          font-size: 3rem;
+          line-height: 3rem;
+          margin-bottom: 2rem;
+        }
+        .text {
+          font-size: 3.2rem;
+          line-height: 4.8rem;
+          .bold {
+            font-size: 3.2rem;
+            line-height: 4.8rem;
+          }
+        }
+      }
+      .imgWrap {
+        margin-right: 6rem;
+        border-radius: 4rem;
+        width: 20rem;
+        height: 18rem;
+        img {
+          max-width: 18rem;
+          max-height: 16rem;
+        }
+      }
+    }
+  }
+
+  .userHelp {
+    width: 5rem;
+    height: 5rem;
+    font-size: 3rem;
+    line-height: 4.5rem;
+  }
+
+  .orderStatusList {
+    li {
+      margin-bottom: 4rem;
+      font-size: 3.2rem;
+      line-height: 4.8rem;
+      .orderAbout {
+        .status {
+          margin-top: 1rem;
+          font-size: 3rem;
+          line-height: 4.5rem;
+        }
+      }
+      .orderIcon {
+        margin-right: 1.2rem;
+        img {
+          width: 3.4rem;
+          height: 2rem;
+        }
+      }
+    }
+  }
+
+  .itemField {
+    padding: 4rem 3rem 4rem 4.6rem;
+  }
+
+  .paItem {
+    border-radius: 4rem;
+    margin-bottom: 8rem;
+    .buttonGray {
+      font-size: 3.2rem;
+      line-height: 4.8rem;
+      min-height: 10rem;
+      padding: 2.5rem 1rem;
+      height: auto;
+    }
+    .empty {
+      font-size: 4.8rem;
+      line-height: 5.6rem;
+      margin-bottom: 6.4rem;
+      margin-top: 2.6rem;
+    }
+    .buttonBlue {
+      padding: 0 3rem;
+      font-size: 3rem;
+      height: 8.4rem;
+      line-height: 8.6rem;
+    }
+    .title {
+      display: flex;
+      justify-content: left;
+      align-items: center;
+      padding: 4rem 1.8rem 4rem 4.6rem;
+      min-height: 16rem;
+      flex-wrap: wrap;
+      .icon {
+        width: 8rem;
+        height: 8rem;
+        background-color: #F9F9F9;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        border-radius: 100%;
+        img {
+          width: 3.4rem;
+          height: 3.4rem;
+          object-fit: contain;
+        }
+      }
+      .itemName {
+        font-size: 3.6rem;
+        line-height: 4.2rem;
+        margin-left: 2rem;
+      }
+      .right {
+        margin-left: auto;
+      }
+    }
+  }
+
+  .personalArea {
+    padding: 8rem 0;
+    .contentTitle2 {
+      font-size: 6rem;
+      line-height: 9rem;
+      font-family: "Roboto Bold";
+      margin-bottom: 8rem;
+    }
+    .blockGray {
+      display: block;
+      font-size: 3.2rem;
+      line-height: 4.8rem;
+      margin-bottom: 8rem;
+      padding: 4.8rem 3rem 4.8rem 4.6rem;
+      position: relative;
+      &.warning {
+        > div:last-child {
+          margin-top: 3.6rem;
+        }
+      }
+      .title {
+        margin-left: 9rem;
+        font-size: 3.2rem;
+        line-height: 4.8rem;
+        font-family: "Roboto Bold";
+        margin-bottom: 3.2rem;
+      }
+      .alert {
+        width: 5.4rem;
+        height: 5.4rem;
+        font-size: 3.2rem;
+        line-height: 4.6rem;
+      }
+      .warningIcon {
+        position: absolute;
+        left: 4.6rem;
+        top: 6.6rem;
+      }
+      .noMyProfile {
+        margin-right: 2rem;
+      }
+      .flexRight {
+        justify-content: left;
+        margin-top: 2rem;
+      }
+      .noMyProfile {
+        font-size: 3.2rem;
+        line-height: 4.8rem;
+      }
+    }
+  }
+
+  .pa2cols {
+    display: block;
+    .col {
+      width: 100%;
+    }
+  }
+
+  footer {
+    position: relative;
+  }
+
+  .closeModal {
+    top: 4rem;
+    right: 3rem;
+  }
+
+  .sliderCustomNav {
+    margin-top: 1rem;
+  }
+
+  .prevProductCart, .nextProductCart {
+    display: none;
+  }
+
+  input[type=text], input[type=password] {
+    height: 10rem;
+    line-height: 10.2rem;
+    font-size: 3rem;
+  }
+
+  .addCommentForm {
+    margin-top: 4rem;
+    margin-bottom: 0;
+    .row2inputs {
+      display: block;
+      div {
+        width: 100%;
+        padding-bottom: 2rem;
+      }
+    }
+    label {
+      font-size: 3.6rem;
+      line-height: 4.8rem;
+    }
+    input {
+      top: -2rem;
+      position: relative;
+    }
+    textarea {
+      top: -2rem;
+      position: relative;
+      height: 37rem;
+    }
+  }
+
+  .mySwiper {
+    height: 162rem;
+  }
+
+  .swiper-nav {
+    width: 40rem;
+    .iconLongArrow {
+      width: 9rem;
+      height: 2rem;
+    }
+    .swiper-pagination {
+      bottom: 0 !important;
+    }
+  }
+
+  textarea {
+    font-size: 3.2rem;
+    line-height: 4.5rem;
+    height: 14.5rem;
+  }
+
+  .sendFile .iconAddPhoto {
+    margin-bottom: 0;
+  }
+
+  .sendFile {
+    font-size: 3rem;
+    line-height: 4.5rem;
+  }
+
+  .blockGray {
+    font-size: 3rem;
+    line-height: 4.5rem;
+  }
+
+  .textAreaWrap label {
+    font-size: 3.2rem;
+    line-height: 4.2rem;
+  }
+
+  .textAreaWrap textarea {
+    margin-top: -2.1rem;
+  }
+
+  .addReviewForm {
+    font-size: 3.2rem;
+    line-height: 4.8rem;
+    padding: 7rem 3.6rem;
+    .title {
+      font-size: 3.6rem;
+      line-height: 10rem;
+      font-family: "Roboto Bold";
+      margin-bottom: 3rem;
+    }
+    .title2 {
+      font-size: 3.6rem;
+      line-height: 4.8rem;
+      margin-bottom: 4rem;
+      font-family: "Roboto Bold";
+    }
+    .textGray {
+      font-size: 3rem;
+      line-height: 4rem;
+      margin-bottom: 4rem;
+    }
+    .item {
+      display: flex;
+      justify-content: left;
+      margin-bottom: 5rem;
+      .imgWrap {
+        padding-top: 2.4rem;
+        img {
+          width: 20rem;
+          height: 14rem;
+          object-fit: contain;
+        }
+      }
+      .info {
+        margin-left: 5rem;
+        .price {
+          font-size: 3.6rem;
+          line-height: 5.4rem;
+          margin-bottom: 1.6rem;
+          font-family: "Roboto Bold";
+        }
+      }
+    }
+  }
+
+  .propertyRatingChoise {
+    display: block;
+    margin-bottom: 7rem;
+    li {
+      width: auto;
+      margin-bottom: 2.6rem;
+    }
+    .prop {
+      font-size: 3rem;
+      line-height: 4.4rem;
+    }
+  }
+
+  .categoryList.recommendet {
+    margin-left: 0;
+  }
+
+  .tingle-modal.custom {
+    padding-top: 0;
+    background: rgba(0, 0, 0, 0.4);
+    .tingle-modal-box {
+      border-radius: 0;
+      width: 100%;
+    }
+  }
+
+  .tingle-modal.custom1 {
+    background: rgba(0, 0, 0, 0.4);
+    .tingle-modal-box {
+      border-radius: 2rem;
+      width: 69rem;
+      margin: 0 auto;
+    }
+  }
+
+  #yaMap {
+    height: 95rem;
+  }
+
+  .propertiesRating {
+    font-size: 3.2rem;
+    line-height: 4.8rem;
+  }
+
+  .ratingBar {
+    width: auto;
+    margin-bottom: 3rem;
+  }
+
+  .reviewItem {
+    .title {
+      font-size: 3.6rem;
+      line-height: 5.4rem;
+      .date {
+        font-size: 3.2rem;
+      }
+    }
+    .title2 {
+      margin-top: 7.2rem;
+    }
+    .reviewText {
+      font-size: 3.2rem;
+      line-height: 4.8rem;
+      padding-right: 0;
+    }
+  }
+
+  .reviewLikes {
+    margin-top: 8rem;
+  }
+
+  .reviewLikes .count, .reviewLikes .addComment {
+    font-size: 3.2rem;
+    line-height: 4.8rem;
+  }
+
+  .reviewPhotos {
+    margin-top: 4rem;
+    margin-left: -3rem;
+    .imgWrap {
+      width: calc((100% - 6rem)/2);
+      height: 23rem;
+      margin-left: 3rem;
+      border-radius: 4rem;
+      img {
+        max-width: 28rem;
+        max-height: 21rem;
+      }
+    }
+  }
+
+  .pcRight {
+    width: 67rem;
+    margin: 0 auto;
+  }
+
+  .rcCommentsWrap .rcTitle {
+    font-size: 3.2rem;
+    line-height: 4.8rem;
+  }
+
+  .commentItem {
+    font-size: 3rem;
+    line-height: 4.5rem;
+    margin-top: 4rem;
+    margin-left: 3rem;
+  }
+
+  .cvWrap {
+    margin-top: 4rem;
+  }
+
+  .commentsVisibility {
+    font-size: 3.2rem;
+    line-height: 4.8rem;
+  }
+
+  .commentItem .commentTitle {
+    font-size: 3.2rem;
+    line-height: 4.8rem;
+    margin-bottom: 1rem;
+  }
+
+  .totalRating {
+    .tRatingByProp {
+      display: block;
+      margin-left: 5.6rem;
+      .col {
+        margin-left: 0;
+        width: auto;
+        position: relative;
+        margin-bottom: 1rem;
+        .property {
+          font-size: 3.2rem;
+          line-height: 4.8rem;
+        }
+      }
+    }
+    .tNum {
+      width: 8.4rem;
+      height: 8.4rem;
+      font-size: 4rem;
+    }
+  }
+
+  .reviewsStats {
+    display: block;
+    .left {
+      width: auto;
+      padding: 0;
+      text-align: center;
+      margin-bottom: 8rem;
+    }
+  }
+
+  .ratingWrap.bigStars {
+    margin-left: 17rem;
+    text-align: left;
+    margin-bottom: 3rem;
+  }
+
+  .ratingWrap.bigStars .count {
+    line-height: 6rem;
+    font-size: 3.2rem;
+    font-family: "Roboto Bold";
+  }
+
+  .ratingWrap.bigStars .rating {
+    margin-right: 10rem;
+    width: 19.4rem !important;
+    transform: scale(1.4);
+  }
+
+  .ratingWrap.bigStars .floatingRating {
+    height: 4.7rem;
+    transform: scale(1.4);
+    .rating {
+      transform: scale(1);
+    }
+  }
+
+  #toggleMenu:checked ~ .headerMenu {
+    transform: none;
+  }
+
+  .buttonGray {
+    border-radius: 2rem;
+    height: 10rem;
+    width: 52rem;
+    padding: 0;
+    text-align: center;
+    font-size: 3.6rem;
+    line-height: 10.2rem;
+  }
+
+  .productUsersPhotos {
+    .title {
+      font-size: 4.8rem;
+      line-height: 7.2rem;
+      margin-bottom: 3.4rem;
+    }
+    .more {
+
+    }
+    .imgWrap {
+      min-height: 43.2rem;
+      margin-bottom: 4rem;
+      img {
+        max-width: 50rem;
+        max-height: 50rem;
+      }
+    }
+  }
+
+  .pcFullInfo .productName {
+    font-size: 4.8rem;
+    line-height: 7.2rem;
+    margin-bottom: 4rem;
+  }
+
+  .allCharacteristics {
+    .title {
+      font-size: 4.8rem;
+      line-height: 7.2rem;
+      margin-bottom: 4rem;
+    }
+    .showAll {
+      margin-top: 8rem;
+    }
+    .acRow {
+      font-size: 3rem;
+      line-height: 4.6rem;
+      margin-bottom: 4rem;
+      justify-content: space-between;
+      border-bottom: 1px dotted #838383;
+      .text {
+        width: auto;
+        border: 0;
+        span {
+          top: 1.8rem;
+          &::after {
+            padding-right: 2rem;
+          }
+        }
+      }
+      .rVal {
+        width: auto;
+        text-align: right;
+        top: 1.8rem;
+        span {
+          background-color: #F9F9F9;
+          outline: 2rem solid #F9F9F9;
+        }
+      }
+    }
+  }
+
+  .productOptions {
+    .title {
+      font-size: 3rem;
+      line-height: 4rem;
+      margin-bottom: 2rem;
+    }
+    .toCart {
+      border-radius: 2rem;
+      height: 8.4rem;
+      font-size: 3rem;
+      line-height: 4.5rem;
+      padding: 2rem 0;
+      text-align: center;
+      width: 38.4rem;
+    }
+  }
+
+  body input.ui-spinner-input {
+    width: 21.6rem;
+    height: 7.4rem;
+    font-size: 3.2rem !important;
+    line-height: 4.8rem;
+  }
+
+  body .ui-selectmenu-button.ui-button {
+    width: 35.6rem;
+    font-size: 3rem;
+    line-height: 3rem;
+    font-family: "Roboto Thin";
+    padding: 2.1rem 2.6rem;
+    border-radius: 2rem;
+    height: 7.4rem;
+  }
+
+  .ui-selectmenu-icon.ui-icon.custom-icon {
+    width: 3rem;
+    height: 3rem;
+    margin-top: 0;
+  }
+
+  body .ui-menu .ui-menu-item {
+    font-size: 3rem;
+    line-height: 5rem;
+  }
+
+  body .ui-spinner-up, body .ui-spinner-down {
+    width: 2.4rem;
+    height: 2.4rem;
+    overflow: initial;
+  }
+
+  .ui-button-icon.ui-icon.custom-up-icon {
+    width: 100%;
+    height: 100%;
+    top: 2.5rem;
+    left: 2.5rem;
+  }
+
+  .ui-button-icon.ui-icon.custom-down-icon {
+    width: 100%;
+    height: 100%;
+    right: 2.5rem;
+    top: 2.5rem;
+  }
+
+  .productOptions {
+    .ui-widget.ui-widget-content.ui-spinner {
+      float: right;
+    }
+  }
+
+  body .ui-widget.ui-widget-content.ui-spinner {
+    border-radius: 2rem;
+  }
+
+  .pcFullInfoWrap {
+    display: block;
+    margin: 0 -3rem;
+  }
+
+  .productOptions {
+    font-size: 3rem;
+    line-height: 4.5rem;
+    .row {
+      display: inline;
+    }
+  }
+
+  .compareLink {
+    float: right;
+    margin-top: 1.2rem;
+    span {
+      font-size: 3.2rem;
+      line-height: 6rem;
+    }
+    svg {
+      width: 3.3rem;
+      height: 3.3rem;
+    }
+  }
+
+  .aboutProduct {
+    min-height: 0;
+    p {
+      font-size: 3rem;
+      line-height: 4.5rem;
+    }
+  }
+
+  .productCardHeader .info p {
+    font-size: 3rem;
+    line-height: 4.5rem;
+    padding-right: 4rem;
+  }
+
+  .thumbnails {
+    margin-top: 8rem;
+  }
+
+  .gallery .owl-nav {
+    margin-left: 9rem;
+    margin-top: -22rem;
+    svg {
+      height: 2rem;
+      width: 11rem;
+    }
+  }
+
+  .thumbnails .item {
+    padding: 1px 2.2rem;
+    .wrap {
+      display: block;
+      width: 18rem;
+      height: 14.6rem;
+      img {
+        max-height: none;
+        max-width: none;
+        width: 16rem;
+        height: 12.6rem;
+        object-fit: contain;
+      }
+    }
+  }
+
+  .pcFullInfo {
+    width: auto;
+    border-radius: 0;
+    padding: 7rem 3rem;
+  }
+
+  .pcTabs {
+    font-size: 0;
+    display: block;
+    margin-left: -3rem;
+    margin-bottom: 5rem;
+    li {
+      display: inline-block;
+      margin-left: 3rem;
+      width: calc((100% - 6rem)/2);
+      font-size: 3rem;
+      height: 6.4rem;
+      line-height: 6rem;
+      margin-bottom: 3rem;
+    }
+  }
+
+  .productFullDescription {
+    font-size: 3rem;
+    line-height: 4.5rem;
+    .title {
+      font-size: 4.8rem;
+      line-height: 7.2rem;
+      margin-bottom: 2rem;
+    }
+    .title2 {
+      font-size: 3.6rem;
+      margin-bottom: 4rem;
+    }
+  }
+
+  .gallery {
+    width: auto;
+  }
+
+  .floatingRating {
+    transform: scale(2);
+    transform-origin: left top;
+    height: 2.2rem;
+    &.mobOriginalSize {
+      transform: none;
+      .rating {
+        transform: none;
+      }
+    }
+    .rating {
+      transform: scale(1);
+      width: 11.8rem !important;
+    }
+  }
+
+  .rating {
+    transform: scale(2);
+    transform-origin: left top;
+    vertical-align: top;
+    margin-right: 12rem;
+    &.mobOriginalSize {
+      transform: none;
+    }
+  }
+
+  .mainCharacteristics {
+    display: block;
+    padding: 7.4rem 0 0.8rem;
+    text-align: left;
+    margin-bottom: 0;
+    li {
+      margin-bottom: 2.2rem;
+    }
+    .text, .title {
+      font-size: 3rem;
+      line-height: 4.5rem;
+      display: inline;
+      margin-right: 1rem;
+    }
+  }
+
+  .productCardHeader {
+    display: block;
+    position: relative;
+    margin: 0 -3rem;
+    padding: 7.6rem 3rem 4.7rem;
+    .breadScrum {
+      margin-bottom: 3.6rem;
+    }
+    .info {
+      width: auto;
+      padding: 0;
+      background-color: transparent;
+      .price {
+        font-size: 5rem;
+        line-height: 7.5rem;
+        font-family: "Roboto Bold";
+      }
+      .vendorCode {
+        margin-right: 0;
+        font-size: 3rem;
+        line-height: 3.4rem;
+      }
+      .contentTitle2 {
+        margin-bottom: 2rem;
+        font-size: 3.6rem;
+        line-height: 5.4rem;
+      }
+      .ratingAndReviews {
+        margin: 0 0 1.7rem;
+      }
+    }
+  }
+
+  .gallery {
+    padding: 4rem;
+    .imgWrap {
+      height: 41rem;
+    }
+  }
+
+  .ratingWrap {
+    line-height: 2.4rem;
+    .rating {
+      margin-right: 2rem;
+    }
+  }
+
+  .services .bestPrices {
+    background-size: 38.3rem 76.6rem;
+    background-position: bottom -5rem right 0;
+  }
+
+  .bgLineOc {
+    height: 0.6rem;
+    width: 20rem;
+    margin-top: -7rem;
+  }
+
+  .bgC2 {
+    height: auto;
+    margin: 0 3rem;
+    img {
+      position: initial;
+      max-width: 67rem;
+      max-height: 55rem;
+    }
+  }
+
+  .ourContacts2 {
+    padding: 0rem 0 12rem;
+    .contentTitle2 {
+      font-size: 6rem;
+      line-height: 10rem;
+      margin-bottom: 4rem;
+    }
+    .textGray {
+      font-size: 3.2rem;
+      line-height: 4.5rem;
+    }
+    .contactsList {
+      width: auto;
+      margin-top: 9.4rem;
+      padding-bottom: 4rem;
+      li {
+        margin-left: 7rem;
+        margin-right: 0;
+        display: block;
+        width: auto;
+      }
+      .icon {
+        left: -7.5rem;
+        top: -0.5rem;
+        img {
+          width: 5rem;
+        }
+      }
+    }
+  }
+
+  .aboutUs {
+    padding: 12rem 0 4rem;
+    .contentWrapper {
+      .imgWrap {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: auto;
+        height: 50rem;
+        margin-left: 0rem;
+        margin-right: 0rem;
+        img {
+          max-width: 67rem;
+          max-height: 48rem;
+        }
+      }
+      .info {
+        float: none;
+        font-size: 3rem;
+        line-height: 4.5rem;
+        width: auto;
+        .title {
+          font-size: 7rem;
+          line-height: 7rem;
+        }
+        p {
+          color: #838383;
+          margin-bottom: 5rem;
+        }
+      }
+    }
+  }
+
+  .services {
+    .bpContentWrapper {
+      width: auto;
+      .item {
+        margin-left: 0;
+      }
+      .owl-dots {
+        z-index: 2;
+        right: initial;
+        position: relative;
+        margin: 0 auto;
+        width: 30rem;
+        text-align: center;
+        bottom: 6.4rem;
+      }
+      .owl-dot:last-child {
+        margin-right: 0;
+      }
+      .owl-nav {
+        z-index: 1;
+        margin: 0 auto;
+        width: 80%;
+        top: initial;
+        right: initial;
+        position: relative;
+        bottom: 3rem;
+      }
+      .info {
+        width: auto;
+        padding: 0 3rem;
+        margin-top: 8rem;
+        .title {
+          height: auto;
+          margin-bottom: 2.2rem;
+        }
+        .textGray {
+          height: 32rem;
+          p {
+            width: auto;
+            font-size: 3rem;
+            line-height: 4.5rem;
+            margin-bottom: 0.5rem;
+          }
+        }
+      }
+    }
+    .bestPrices {
+      height: auto;
+    }
+  }
+
+  .cSelect {
+    width: 44rem;
+    height: 8rem;
+    line-height: 8.2rem;
+    border-radius: 2rem;
+    padding-left: 1.8rem;
+  }
+
+  .yaMapTitle {
+    display: block;
+    padding: 3rem;
+    position: relative;
+    span {
+      display: block;
+      margin-left: 12rem;
+      text-align: left;
+      font-size: 3.2rem;
+      line-height: 4.5rem;
+    }
+    svg {
+      position: absolute;
+      width: 6rem;
+      height: 6rem;
+      left: 4rem;
+      top: 5rem;
+    }
+  }
+
+  .requestFormSection.contactsPage {
+    .requestFormWitchContacts {
+      margin: 0 -3rem;
+      border-radius: 0;
+    }
+    .ourContacts {
+      width: auto;
+      border-color: #F9F9F9;
+    }
+  }
+
+  .faqBox {
+    font-size: 3rem;
+    line-height: 4.5rem;
+    padding: 7rem 0 24rem;
+    .more {
+      margin-top: 8rem;
+    }
+    .textGray {
+      font-size: 3rem;
+      line-height: 4.5rem;
+    }
+    .contentTitle2 {
+      font-size: 6rem;
+      line-height: 9rem;
+      margin-bottom: 4rem;
+    }
+    .contentTitle3 {
+      margin-top: 10.6rem;
+      font-size: 3.6rem;
+      line-height: 5.4rem;
+    }
+    .back {
+      margin-bottom: 4.2rem;
+      .iconLongArrow {
+        width: 5rem;
+        height: 1rem;
+        position: relative;
+        top: -0.7rem;
+        margin-right: 1.5rem;
+      }
+    }
+  }
+
+  .questionList li.isOpen .answers {
+    height: 26rem;
+  }
+
+  .questionList {
+    margin-top: 4rem;
+    li .quest {
+      background: #F2F2F2;
+      border-radius: 2rem;
+      margin-bottom: 2rem;
+      padding: 1rem 3rem;
+      min-height: 10.8rem;
+    }
+  }
+
+  .newsFooter {
+    background-color: #F2F2F2;
+  }
+
+  .articleWrapper {
+    padding: 10rem 0;
+    font-size: 3rem;
+    line-height: 4.5rem;
+    .textBlue {
+      font-size: 3.2rem;
+      margin-bottom: 4rem;
+    }
+    .textGray {
+      font-size: 3rem;
+      margin-bottom: 4rem;
+    }
+    .contentTitle3 {
+      font-size: 6rem;
+      line-height: 7rem;
+      margin-bottom: 3.4rem;
+    }
+    p {
+      margin-bottom: 4rem;
+    }
+    img {
+      margin-bottom: 4rem;
+    }
+  }
+
+  .newsList.newsListSlider {
+    margin-top: 4rem;
+  }
+
+  .stList {
+    padding-bottom: 1.3rem;
+  }
+
+  .stList li {
+    padding-left: 4rem;
+    background: transparent url(../img/icons/dott.svg) no-repeat left 2rem;
+    background-size: 2rem 2rem;
+    margin-bottom: 6rem;
+  }
+
+  .newsList.newsListSlider {
+    .item {
+      display: block;
+      margin-bottom: 20rem;
+      width: 67rem;
+    }
+    .owl-nav {
+      display: none;
+      justify-content: space-between;
+      margin: 0;
+      position: relative;
+      svg {
+        width: 4.5rem;
+        height: 1.2rem;
+      }
+      .owl-prev {
+        transform: rotate(180deg);
+        top: -19rem;
+        left: 0;
+        position: absolute;
+      }
+      .owl-next {
+        top: -19rem;
+        right: 0;
+        position: absolute;
+      }
+    }
+  }
+
+  .deliveryInfo.lnPage {
+    background: #F2F2F2 url(../img/bgDelivery3mob.png) no-repeat right 65%;
+    background-size: 31.6rem 63.4rem;
+  }
+
+  .newsList.lnPage {
+    margin-top: 6rem;
+    .item {
+      margin-bottom: 8rem;
+      .newsDate {
+        width: 16.2rem;
+        height: 8rem;
+        right: initial;
+        left: 5.1rem;
+        top: -4rem;
+        line-height: 8.2rem;
+        font-size: 3rem;
+        .big {
+          margin: 0;
+          font-size: 4rem;
+        }
+        div {
+          display: inline-block;
+        }
+        .mobHide {
+          display: inline !important;
+        }
+        .mobShow {
+          display: none !important;
+        }
+      }
+    }
+  }
+
+  .newsSlider {
+    .owl-nav {
+      bottom: -9rem !important;
+      width: 67rem;
+      left: 3rem;
+    }
+    .owl-dots {
+      bottom: -7.7rem !important;
+    }
+    .item {
+      padding-bottom: 38rem;
+      .info {
+        margin: 0;
+        .title {
+          text-align: center;
+          margin: 8.4rem 0 5rem;
+        }
+      }
+      .imgPos {
+        padding: 0 3rem;
+      }
+      .imgWrapper {
+        width: auto;
+      }
+      .textGray {
+        font-size: 3rem;
+        line-height: 3.9rem;
+        margin: 0 3rem;
+        text-align: left;
+      }
+    }
+  }
+
+  .imgWrapMin1, .imgWrapMin2, .imgWrapMin3, .imgWrapMin4 {
+    top: 65rem;
+    width: 12.8rem;
+    height: 30rem;
+    border-radius: 1.2rem;
+  }
+
+  .imgWrapMin1 {
+    left: 3rem;
+  }
+  .imgWrapMin2 {
+    left: 21.8rem;
+  }
+  .imgWrapMin3 {
+    right: 21.8rem;
+  }
+  .imgWrapMin4 {
+    right: 3rem;
+  }
+
+  .bestPrices.bgNews {
+    height: auto;
+  }
+
+  .acArrow {
+    font-size: 3.6rem;
+  }
+
+  .categoryHeader .actions {
+    margin-top: 5rem;
+    display: flex !important;
+    justify-content: space-between;
+    .callFilterMob {
+      background-color: #33A9FF;
+      color: white;
+      height: 8rem;
+      line-height: 8.2rem;
+      border-radius: 2rem;
+      padding: 0 2.6rem;
+      cursor: pointer;
+      font-size: 3.2rem;
+      svg {
+        width: 2.6rem;
+        height: 3rem;
+        position: relative;
+        top: 0.5rem;
+        path {
+          fill: white;
+        }
+      }
+    }
+  }
+
+  .categoryFilterWrap.mobFilter {
+    display: block;
+    position: fixed;
+    background-color: white;
+    height: 100vh;
+    width: 100%;
+    top: 0;
+    left: 0;
+    transform-origin: 0% 0%;
+    transform: translate(100%, 0);
+    transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
+    z-index: 20;
+    overflow: auto;
+    .categoryFHeader {
+      margin-top: 0;
+      height: 12rem;
+      font-size: 3.2rem;
+      line-height: 4.8rem;
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      box-shadow: 0px 2px 10px rgba(131, 131, 131, 0.11);
+      .iconFilter {
+        width: 2.2rem;
+        height: 2.4rem;
+        margin-top: 0;
+        margin-left: -12rem;
+      }
+      .iconFCross {
+        position: absolute;
+        width: 2.6rem;
+        top: 4.6rem;
+        right: 3.4rem;
+        cursor: pointer;
+      }
+    }
+    .categoryFilter {
+      margin: 5rem 5.4rem 0;
+      .item.isOpen {
+        border-bottom: 0;
+      }
+      .item {
+        padding: 0 8rem;
+        width: auto;
+        border-radius: 0;
+        border: 0;
+        border-bottom: 1px solid #C0C0C0;
+        font-size: 3.2rem;
+        line-height: 4.8rem;
+        min-height: initial;
+        .title {
+          font-size: 3.2rem;
+          line-height: 4.8rem;
+          color: black;
+          height: 7.2rem;
+          padding: 0;
+          .acArrow {
+            font-size: 3rem;
+            transition: 0.3s;
+          }
+        }
+        .itemList {
+          padding: 0 0 3rem;
+          .inpSliderUI input {
+            width: 23rem;
+            height: 8rem;
+            font-size: 2.8rem;
+            line-height: 8.4rem;
+          }
+          .inpSliderUI {
+            border-bottom: 1px solid #C0C0C0;
+            padding: 0 8rem;
+            margin: 2.4rem -8rem 3.2rem;
+          }
+        }
+      }
+    }
+  }
+
+  .categoryFilterWrap.mobFilter.isOpen {
+    transform: none;
+  }
+
+  .allFilters {
+    font-size: 3.2rem;
+    line-height: 6rem;
+    text-align: center;
+    .iconLongArrow {
+      width: 10rem;
+      height: 2rem;
+      margin-left: 1.5rem;
+    }
+  }
+
+  .categoryListLine {
+    margin-top: 6.7rem;
+  }
+
+  .categoryList {
+    margin-left: 0;
+    padding-bottom: 2rem;
+    width: auto;
+    .item {
+      width: auto;
+      display: block;
+      margin-left: 0;
+      height: 79rem;
+      border-radius: 4rem;
+      padding: 5.4rem;
+      margin-bottom: 4rem;
+      .imgWrap {
+        height: 40rem;
+        img {
+          max-height: 38rem;
+          max-width: 47rem;
+        }
+      }
+      .info {
+        font-size: 3rem;
+        line-height: 4.5rem;
+        .cat {
+          font-size: 3rem;
+          line-height: 4rem;
+          margin-bottom: 0.4rem;
+        }
+        .itemName {
+          font-size: 4rem;
+          line-height: 6rem;
+        }
+      }
+      .price {
+        font-size: 4.8rem;
+        line-height: 7.2rem;
+        bottom: 3.4rem;
+        left: 5.4rem;
+      }
+      .inCart {
+        right: 5.4rem;
+        bottom: 3.8rem;
+      }
+    }
+  }
+
+  .pagination {
+    display: block;
+    margin: 0 3rem;
+    .dlMore {
+      font-size: 3.2rem;
+      line-height: 6rem;
+      margin-bottom: 6rem;
+      text-align: center;
+    }
+    .paginationWrap {
+      justify-content: space-around;
+      font-size: 4rem;
+      line-height: 6rem;
+      a {
+        margin-left: 4rem;
+        &:first-child {
+          margin-left: 0;
+        }
+      }
+    }
+    .iconLongArrow {
+      width: 9rem;
+      height: 2rem;
+      margin-top: 2rem;
+    }
+  }
+
+  .bgCategory {
+    background: #F9F9F9 url(../img/bgCategoryMob.png) top center no-repeat;
+    background-size: contain;
+  }
+
+  .deliveryInfo.categoryBG {
+    background: white url(../img/bgDelivery2mob.png) no-repeat right 65%;
+    background-size: 31.6rem 63.4rem;
+  }
+
+  .contentWrapper {
+    width: 69rem;
+    font-size: 3rem;
+    line-height: 6rem;
+  }
+
+  .mobFixed {
+    position: fixed;
+    width: 100%;
+  }
+
+  .mobHide {
+    display: none !important;
+  }
+
+  .categoryListWrap {
+    margin-left: 0;
+  }
+
+  .categoryListHeader {
+    width: auto;
+  }
+
+  .categoryListLine {
+    margin-left: 0;
+    border: 0;
+  }
+
+  .categorySection {
+    padding: 8rem 0 10rem;
+  }
+
+  .categorySection .contentTitle2 {
+    font-size: 6rem;
+    line-height: 9rem;
+    margin-bottom: 1.8rem;
+  }
+
+  .breadScrum {
+    font-size: 3rem;
+    line-height: 4.5rem;
+    .iconBCArrow {
+      width: 5rem;
+      height: 1rem;
+    }
+  }
+
+  #toggleMenu {
+    display: flex;
+    position: absolute;
+    z-index: 11;
+    top: 4.3rem;
+    right: 4.3rem;
+    width: 7rem;
+    height: 7rem;
+    border-radius: 100%;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  #toggleMenu:checked {
+    position: fixed;
+    top: 2rem;
+    right: 2rem;
+  }
+
+  #toggleMenu:checked ~ .headenurMe {
+    transform: none;
+  }
+
+  header {
+    .logoMain {
+      width: 12rem;
+      height: 12rem;
+      img {
+        width: 12rem;
+        height: 12rem;
+      }
+    }
+    .contentWrapper {
+      height: 18rem;
+    }
+    .userActions {
+      height: 9rem;
+    }
+    .headerMenu {
+      display: block;
+      position: fixed;
+      background-color: white;
+      height: 100vh;
+      width: 100%;
+      top: 0;
+      left: 0;
+      transform-origin: 0 0;
+      transform: translate(100%, 0);
+      transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+      z-index: 10;
+      .mobileHeader {
+        text-align: center;
+        line-height: 12rem;
+        height: 12rem;
+        font-size: 3.2rem;
+        box-shadow: 0px 2px 10px rgba(131, 131, 131, 0.11);
+        text-transform: none;
+        .iconCross {
+          position: absolute;
+          top: 4.6rem;
+          right: 4.7rem;
+          margin-top: 0;
+        }
+      }
+      ul {
+        display: block;
+      }
+    }
+    .userActions li > a {
+      width: 9rem;
+      height: 9rem;
+      border-radius: 5rem;
+      padding-top: 2.5rem;
+      .activeNotification {
+        width: 3.2rem;
+        height: 3.2rem;
+        line-height: 3.2rem;
+        border-radius: 1.6rem;
+        font-size: 2.4rem;
+      }
+    }
+  }
+
+  .headerMenu.mobIsOpen {
+    display: block;
+  }
+
+  .bpContentWrapper {
+    display: block;
+    margin-left: 0;
+    .item {
+      display: block;
+      width: 69rem;
+      margin-left: 3rem;
+      height: auto;
+    }
+    .info {
+      margin: 16rem 0 0;
+      width: auto;
+      .title {
+        font-size: 6rem;
+        line-height: 7rem;
+        margin-top: 1rem;
+        margin-bottom: 6.6rem;
+        overflow: hidden;
+        height: 14rem;
+        position: relative;
+      }
+      .textGray {
+        height: 4rem;
+        position: relative;
+        overflow: hidden;
+      }
+    }
+    a {
+      font-size: 3rem;
+      line-height: 6rem;
+    }
+    .imgWrapper {
+      width: auto;
+      height: 69rem;
+      display: flex;
+      align-items: center;
+      img {
+        margin: 3rem auto 0;
+        width: 100%;
+        max-height: 63rem;
+        max-width: 69rem;
+      }
+    }
+    .owl-carousel {
+      width: auto;
+    }
+    .right {
+      width: auto;
+      height: 39.2rem;
+      background: #F9F9F9;
+      display: flex;
+      align-items: center;
+      .title {
+        margin-top: 0;
+        font-size: 4rem;
+        line-height: 5.2rem;
+        width: 30rem;
+      }
+      .mobShow {
+        img {
+          margin-left: -7rem;
+          width: 50.4rem;
+        }
+      }
+      .more {
+        top: -10rem;
+        right: 3rem;
+        left: initial;
+      }
+    }
+    .owl-dots {
+      top: initial;
+      bottom: 7rem;
+      right: 23rem;
+    }
+  }
+
+  .messengerLink {
+    top: -14rem;
+    right: initial;
+    left: 3.4rem;
+    z-index: 2;
+    .icon {
+      width: 11rem;
+      height: 11rem;
+      border-radius: 6rem;
+    }
+  }
+
+  .owl-dot {
+    width: 0.6rem;
+    height: 0.6rem;
+    margin-right: 2rem;
+    &.active {
+      width: 1rem;
+      height: 1rem;
+      border-radius: 1rem;
+    }
+  }
+
+  .bgText {
+    font-size: 22rem;
+    line-height: 18rem;
+    margin-top: 3.6rem;
+    margin-left: 6rem;
+  }
+
+  .textGray {
+    font-size: 3rem;
+    line-height: 4rem;
+  }
+
+  .catalogShort {
+    width: auto;
+    margin-left: 0;
+    padding: 12rem 0 8rem;
+    h2 {
+      margin-bottom: 4rem;
+    }
+    .item {
+      margin-left: 0;
+      width: auto;
+      display: block;
+      height: 55rem;
+      margin-bottom: 4rem;
+      .imgWrapper {
+        width: auto;
+        height: 41rem;
+        display: flex;
+        align-items: center;
+        img {
+          max-width: 65rem;
+          max-height: 37rem;
+          margin: 0 auto;
+        }
+      }
+    }
+    span {
+      font-size: 3rem;
+      line-height: 6rem;
+    }
+    .iconBlueButton {
+      line-height: 9rem;
+    }
+    .item.textItem {
+      height: 50rem;
+      .textGray {
+        font-size: 3rem;
+        line-height: 4.5rem;
+        margin-bottom: 6rem;
+      }
+    }
+    .itemNum {
+      font-size: 4rem;
+      line-height: 6rem;
+    }
+  }
+
+  h2 {
+    font-size: 6rem;
+    line-height: 7rem;
+  }
+
+  .ourAdvantagesIntro {
+    display: block;
+    height: auto;
+    position: relative;
+    margin-bottom: 0;
+    .left {
+      position: absolute;
+      top: 38rem;
+      right: 0;
+      text-align: right;
+    }
+    .right {
+      padding-top: 8rem;
+      font-size: 3rem;
+      line-height: 6rem;
+      position: relative;
+      z-index: 2;
+      padding-bottom: 37.6rem;
+      h2 {
+        margin-bottom: 4rem;
+      }
+    }
+  }
+
+  .ourAdvantagesIntro .right .textGray {
+    font-size: 3rem;
+    line-height: 4.5rem;
+    padding-right: 4rem;
+    margin-bottom: 6rem;
+  }
+
+  .ourAdvantagesIntro .left .imgWrapper img {
+    max-width: 58rem;
+  }
+
+  .ourAdvantagesList {
+    width: auto;
+    display: block;
+    padding-bottom: 4rem;
+  }
+
+  .item.imgTopOverflow .imgWrapper img {
+    margin-top: 0;
+  }
+
+  .mobShow {
+    display: block !important;
+  }
+
+  .catalogShort .textGray {
+    font-size: 3rem;
+    line-height: 4rem;
+    margin-bottom: 0;
+  }
+
+  .catalogShort .category {
+    font-size: 4rem;
+    line-height: 6rem;
+  }
+
+  .bgText.smallText {
+    font-size: 14rem;
+    line-height: 14rem;
+    margin-top: 57rem;
+    margin-left: 2.8rem;
+  }
+
+  .ourAdvantagesList .item {
+    display: block;
+    width: auto;
+    height: auto;
+    margin-bottom: 3rem;
+    position: relative;
+    overflow: hidden;
+    padding-bottom: 5.2rem;
+    border-radius: 1.5rem;
+    height: 44rem;
+  }
+
+  h3 {
+    font-size: 3.6rem;
+    line-height: 4.5rem;
+  }
+
+  .ourAdvantagesList .item .bgLine {
+    top: -1.6rem
+  }
+
+  .ourAdvantagesList .item .bgLine img {
+    height: 14rem;
+  }
+
+  .ourAdvantagesList .item .textGray {
+    font-size: 3rem;
+    line-height: 3.8rem;
+    margin: 0 6rem 0 3rem;
+  }
+
+  .ourAdvantagesList .item .icon {
+    width: 10rem;
+    height: 10rem;
+  }
+
+  .ourAdvantagesList .item .icon img {
+    width: 6rem;
+    margin-top: 2rem;
+  }
+
+  .ourAdvantagesList .item h3 {
+    margin: 16.2rem 6rem 2rem 3rem;
+  }
+
+  .lastNewsWrapper {
+    padding: 12rem 0;
+    .textGray {
+      line-height: 4.5rem;
+    }
+  }
+
+  .newsList {
+    margin-top: 22.8rem;
+    margin-left: 0;
+  }
+
+  .lastNewsHeader {
+    position: relative;
+  }
+
+  .lastNewsHeader h2 {
+    margin-right: 0;
+    margin-bottom: 4rem;
+  }
+
+  .lastNewsHeader .right {
+    float: none;
+    position: absolute;
+    top: 30rem;
+  }
+
+  .newsList .item {
+    margin-left: 0;
+    display: block;
+    width: auto;
+    margin-right: 4rem;
+    border-radius: 8rem;
+    border-bottom-left-radius: 0;
+    height: 58.6rem;
+    font-size: 2.8rem;
+    line-height: 4.2rem;
+  }
+
+  .newsList .item .imgWrap {
+    height: 38rem;
+    border-top-left-radius: 8rem;
+  }
+
+  .newsList .item .imgWrap img {
+    position: relative;
+    overflow: hidden;
+    width: 69rem;
+    max-width: none;
+    max-height: none;
+  }
+
+  .newsList .item .bgLayout {
+    margin-top: -6rem;
+    padding: 3rem 4rem 0;
+  }
+
+  .newsList .item .newsDate {
+    z-index: 2;
+    width: 7.8rem;
+    height: 15.2rem;
+    border-radius: 3rem;
+    font-size: 2.2rem;
+    line-height: 1.5rem;
+  }
+
+  .newsList .item .newsDate .big {
+    font-size: 3rem;
+    line-height: 2rem;
+    margin: 4.3rem 0 2rem;
+  }
+
+  .newsList .item .bgLayout .linkWrap a {
+    font-size: 5rem;
+    line-height: 5rem;
+  }
+
+  .newsList .item .bgLayout .iconBlueButton {
+    width: 6.4rem;
+    height: 6.4rem;
+    line-height: 6.4rem !important;
+    right: 4.9rem;
+    top: 4.5rem;
+  }
+
+  .requestFormWitchContacts {
+    display: block;
+  }
+
+  .ourContacts {
+    padding: 8rem 10rem 8rem 3rem;
+    height: auto;
+  }
+
+  .ourContacts .textGray {
+    font-size: 3rem;
+    line-height: 4.5rem;
+  }
+
+  .contactsList {
+    font-size: 3.6rem;
+    line-height: 5.4rem;
+  }
+
+  .ourContacts .contactsList {
+    margin-top: 5.6rem;
+    margin-bottom: 5rem;
+  }
+
+  .contactsList .title {
+    font-size: 3rem;
+    line-height: 4rem;
+  }
+
+  .contactsList .icon {
+    top: 0.1rem;
+  }
+
+  .contactsList .icon img {
+    width: 3.4rem;
+  }
+
+  .ourContacts .bgLayout {
+    right: 8rem;
+    top: initial;
+    bottom: -12rem;
+  }
+
+  .ourContacts .bgLayout img {
+    width: 24rem;
+    transform: rotate(20deg);
+  }
+
+  .socLinks li a {
+    width: 5.2rem;
+    height: 5.2rem;
+    border-radius: 3rem;
+    border: 2px solid #292D32;
+  }
+
+  .iconWs {
+    width: 5.2rem;
+    height: 5.2rem;
+  }
+
+  .socLinks li a .iconFb {
+    margin-top: 0.9rem;
+  }
+
+  .requestForm {
+    padding: 12rem 3rem 8rem;
+    width: auto;
+    height: auto;
+  }
+
+  .requestForm h2 {
+    margin-bottom: 3rem;
+  }
+
+  .requestForm p {
+    font-size: 3rem;
+    line-height: 4.5rem;
+    margin-right: -1rem;
+  }
+
+  .requestForm label {
+    font-size: 3rem;
+    line-height: 2rem;
+  }
+
+  .requestForm input[type=text], .requestForm textarea {
+    font-size: 3.4rem;
+  }
+
+  .requestForm textarea {
+    line-height: 5.2rem;
+    height: 16rem;
+  }
+
+  .requestForm input[type=text] {
+    line-height: 8rem;
+    height: 8rem;
+  }
+
+  footer .logoMain {
+    float: none;
+    text-align: center;
+    margin: 0 auto;
+  }
+
+  .footerNav {
+    margin-left: 0;
+    display: block;
+    font-size: 3rem;
+    line-height: 3.8rem;
+    padding-top: 44.8rem;
+    position: relative;
+  }
+
+  .footerNav .title {
+    font-size: 3.6rem;
+    line-height: 4.2rem;
+  }
+
+  footer .logoMain img {
+    width: 14rem;
+    height: 14rem;
+  }
+
+  .fnHelp {
+    position: absolute;
+    top: 4rem;
+  }
+
+  .fnProfile {
+    position: absolute;
+    top: 4rem;
+    left: 34.4rem;
+  }
+
+  .footerNav ul {
+    padding-right: 0;
+  }
+
+  .footerNav ul {
+    width: auto;
+  }
+
+  .fnCatalog li.title {
+    float: none;
+  }
+
+  .fnCatalog li {
+    float: right;
+    width: 50%;
+  }
+
+  .footerNav li {
+    margin-bottom: 2rem;
+  }
+
+  .lessMargin {
+    margin-top: -4rem;
+  }
+
+  .contactsRow {
+    margin-top: 2rem;
+    display: block;
+    font-size: 3rem;
+    line-height: 4.5rem;
+  }
+
+  .contactsRow .title {
+    font-size: 3rem;
+    line-height: 4rem;
+    margin-top: 4rem;
+  }
+
+  footer .socLinks {
+    margin-top: 6rem;
+    padding-bottom: 2rem;
+  }
+
+  footer .bgText.smallText {
+    top: initial;
+    bottom: 3rem;
+  }
+
+  .messangersCol {
+    margin-top: -39rem;
+  }
+
+  .messangersCol a {
+    width: 8rem;
+    height: 8rem;
+    border-radius: 4rem;
+  }
+
+  .messangersCol a .iconWs {
+    width: 4rem;
+    height: 4rem;
+  }
+
+  .messangersCol a svg {
+    margin-top: 0.8rem;
+  }
+
+  .headerMenu li {
+    margin: 0 3.6rem;
+    margin-top: 8rem;
+    font-size: 3rem;
+    line-height: 4.8rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #C0C0C0;
+  }
+
+  .buttonBlue {
+    height: 8.8rem;
+    line-height: 8.8rem;
+    font-size: 3.1rem;
+    padding: 0 8rem;
+    border-radius: 2rem;
+  }
+
+  .headerMenu .noAuth {
+    text-transform: none;
+    padding: 0 3.6rem;
+  }
+
+  .headerMenu .noAuth .text {
+    padding: 8rem 0;
+    font-size: 3.6rem;
+    line-height: 6rem;
+  }
+
+  .authActions {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .authActions .buttonBlue {
+    padding: 0 9rem;
+  }
+
+  .catalogShortWithStock .contentWrapper {
+    display: block;
+  }
+
+  .deliveryInfo {
+    overflow: hidden;
+  }
+
+  .deliveryInfo .contentWrapper {
+    display: block;
+    height: auto;
+    padding-top: 0;
+    .imgWrapper img {
+      max-width: 60rem;
+      max-height: 60rem;
+    }
+  }
+  .content2col {
+    width: auto;
+    padding-top: 10rem;
+  }
+  .catalogShort.col2 {
+    width: auto;
+    padding-top: 0;
+  }
+
+  .rowSlider .item .imgWrapper {
+    position: relative;
+    overflow: hidden;
+    height: 44rem;
+    display: flex;
+    align-items: center;
+    img {
+      height: auto;
+      max-height: 44rem;
+      max-width: 67rem;
+    }
+  }
+
+  .rowSlider .item .imgWrapper img.mobShow {
+    max-width: 75rem;
+  }
+
+  .rowSlider .owl-dots {
+    bottom: -13.7rem;
+    right: 29.6rem;
+  }
+
+  .bestPrices {
+    height: 106.8rem;
+  }
+
+  .bestPrices .bgText {
+    margin-top: 74rem;
+  }
+
+  .bestPrices.main {
+    height: auto;
+    .bgText {
+      margin-top: 3rem;
+    }
+  }
+
+  .rowSlider .item .title {
+    margin-top: 8rem;
+    font-size: 6rem;
+    line-height: 7rem;
+    margin-bottom: 2.2rem;
+  }
+
+  .rowSlider {
+    position: relative;
+    width: 75rem;
+  }
+
+  .rowSlider .owl-nav {
+    bottom: -15rem;
+  }
+
+  .rowSlider .item .info {
+    padding: 0 3rem;
+  }
+
+  .mobShowText {
+    display: initial;
+  }
+
+  .bgCircle {
+    background: #F2F2F2 url(../img/bgCircleMob.png) no-repeat center top;
+    background-size: contain;
+  }
+
+  .content2col .contentTitle2.less {
+    font-size: 6rem;
+    line-height: 7rem;
+    margin-bottom: 4rem;
+  }
+
+  .stockCol {
+    float: none;
+    padding-top: 12rem;
+    width: auto;
+    height: auto;
+  }
+
+  .contentTitle2.less {
+    font-size: 6rem;
+    line-height: 7rem;
+  }
+
+  .gotoLink {
+    font-size: 3.2rem;
+    line-height: 6rem;
+    color: black;
+  }
+
+  .gotoLink .iconLongArrow {
+    width: 9.2rem;
+    height: 2rem;
+  }
+
+  .stockBox .item {
+    width: 67rem;
+    height: 73.4rem;
+    padding: 4.4rem 4rem;
+  }
+
+  .stockBox div .item:last-child {
+    display: none;
+  }
+
+  .stockTimer {
+    color: #292D32;
+    font-size: 3rem;
+    line-height: 4rem;
+  }
+
+  .stockBox .imgWrap {
+    height: 36rem;
+  }
+
+  .stockBox .imgWrap img {
+    width: auto;
+    height: auto;
+    max-width: 60rem;
+    max-height: 35rem;
+  }
+
+  .stockBox .iconStock {
+    position: absolute;
+    top: 24rem;
+    right: 7rem;
+  }
+
+  .stockBox .links {
+    font-size: 2.8rem;
+    line-height: 3.6rem;
+  }
+
+  .stockBox .links .product {
+    font-size: 3.2rem;
+    line-height: 4.8rem;
+  }
+
+  .stockBox .ratingAndReviews {
+    margin-top: 11.6rem;
+  }
+
+  .stockBox .priceBox {
+    margin-top: 4rem;
+  }
+
+  .stockBox .priceBox .left {
+    font-size: 4.8rem;
+    line-height: 7.2rem;
+    width: 50.6rem;
+    display: flex;
+    justify-content: left;
+  }
+
+  .stockBox .priceBox .left .price {
+    font-size: 3.2rem;
+    line-height: 4.8rem;
+    margin-top: 1.5rem;
+    position: relative;
+    margin-left: 1rem;
+  }
+
+  .stockBox .priceBox .left .stockPrice {
+    margin-top: 0;
+  }
+
+  .stockBox .iconCart {
+    margin-top: -2rem;
+    position: relative;
+    top: -1.5rem;
+  }
+
+  .rating img {
+    width: 3rem;
+  }
+
+  .ratingAndReviews .reviews svg {
+    width: 3.4rem;
+    height: 2.6rem;
+    margin-right: 0;
+  }
+
+  .stockCol .custom-owl-next svg, .stockCol .custom-owl-prev svg {
+    width: 9.2rem;
+    height: 2rem;
+  }
+
+  .stockCol .owl-nav {
+    margin-top: 1rem;
+  }
+
+  .stockCol .owl-nav .custom-owl-prev {
+    margin-right: 21rem;
+  }
+
+  .stockCol .owl-dots {
+    bottom: 1.1rem;
+    left: 25.4rem;
+    width: 20rem;
+    text-align: center;
+  }
+
+  .stockCol .owl-dot {
+    width: 1rem;
+    height: 1rem;
+    &.active {
+      width: 1.8rem;
+      height: 1.8rem;
+    }
+  }
+
+  .deliveryInfo {
+    background: #F2F2F2 url(../img/bgDeliveryMob.png) no-repeat top right;
+  }
+
+  .bgText.smallText {
+    margin-left: 0;
+  }
+
+  .deliveryInfo .contentTitle2 {
+    font-size: 6rem;
+    line-height: 7rem;
+    margin: 11.6rem 0 4rem;
+  }
+
+  .deliveryInfo p {
+    font-size: 3rem;
+    line-height: 4.5rem;
+    margin-bottom: 5.2rem;
+    width: 62rem;
+  }
+
+  .deliveryInfo .imgWrapper {
+    text-align: center;
+    padding: 4rem 0 13rem;
+    img {
+      max-height: 40rem;
+    }
+  }
+}

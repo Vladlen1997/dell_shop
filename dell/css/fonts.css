@@ -1,0 +1,58 @@
+@font-face {
+  font-family: "Roboto";
+  src: url("../fonts/Roboto/EuclidCircularA-Bold.eot");
+  src: local("Roboto"), local("Roboto"), url("../fonts/Roboto/EuclidCircularA-Bold.eot?#iefix") format("embedded-opentype"), url("../fonts/Roboto/EuclidCircularA-Bold.woff2") format("woff2"), url("../fonts/Roboto/EuclidCircularA-Bold.woff") format("woff"), url("../fonts/Roboto/Roboto-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Roboto Light";
+  src: url("../fonts/Roboto/EuclidCircularA-Bold.eot");
+  src: local("Roboto Light"), local("Roboto Light"), url("../fonts/Roboto/EuclidCircularA-Bold.eot?#iefix") format("embedded-opentype"), url("../fonts/Roboto/EuclidCircularA-Bold.woff2") format("woff2"), url("../fonts/Roboto/EuclidCircularA-Bold.woff") format("woff"), url("../fonts/Roboto/Roboto-Light.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Roboto Thin";
+  src: url("../fonts/Roboto/EuclidCircularA-Bold.eot");
+  src: local("Roboto Thin"), local("Roboto Thin"), url("../fonts/Roboto/EuclidCircularA-Bold.eot?#iefix") format("embedded-opentype"), url("../fonts/Roboto/EuclidCircularA-Bold.woff2") format("woff2"), url("../fonts/Roboto/EuclidCircularA-Bold.woff") format("woff"), url("../fonts/Roboto/Roboto-Thin.ttf") format("truetype");
+  font-weight: 100;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Roboto Bold";
+  src: url("../fonts/Roboto/EuclidCircularA-Bold.eot");
+  src: local("Roboto Bold"), local("Roboto Bold"), url("../fonts/Roboto/EuclidCircularA-Bold.eot?#iefix") format("embedded-opentype"), url("../fonts/Roboto/EuclidCircularA-Bold.woff2") format("woff2"), url("../fonts/Roboto/EuclidCircularA-Bold.woff") format("woff"), url("../fonts/Roboto/Roboto-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Rubik One";
+  src: url("../fonts/rubikone/EuclidCircularA-Bold.eot");
+  src: local("Rubik One"), local("Rubik One"), url("../fonts/rubikone/EuclidCircularA-Bold.eot?#iefix") format("embedded-opentype"), url("../fonts/rubikone/rubikoneregular.woff2") format("woff2"), url("../fonts/rubikone/rubikoneregular.woff") format("woff"), url("../fonts/rubikone/rubikoneregular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Circe Bold";
+  src: url("../fonts/Circe-Bold/Circe-Bold.eot");
+  src: local("Circe Bold"), local("Circe Bold"), url("../fonts/Circe-Bold/Circe-Bold.eot?#iefix") format("embedded-opentype"), url("../fonts/Circe-Bold/Circe-Bold.woff2") format("woff2"), url("../fonts/Circe-Bold/Circe-Bold.woff") format("woff"), url("../fonts/Circe-Bold/Circe-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: "EuclidCircularA-Bold";
+  src: url("../fonts/EuclidCircularA-Bold/EuclidCircularA-Bold.eot");
+  src: local("EuclidCircularA-Bold"), local("EuclidCircularA-Bold"), url("../fonts/EuclidCircularA-Bold/EuclidCircularA-Bold.eot?#iefix") format("embedded-opentype"), url("../fonts/EuclidCircularA-Bold/EuclidCircularA-Bold.woff2") format("woff2"), url("../fonts/EuclidCircularA-Bold/EuclidCircularA-Bold.woff") format("woff"), url("../fonts/EuclidCircularA-Bold/EuclidCircularA-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: "EuclidCircularA-Light";
+  src: url("../fonts/EuclidCircularA-Light/EuclidCircularA-Bold.eot");
+  src: local("EuclidCircularA-Light"), local("EuclidCircularA-Light"), url("../fonts/EuclidCircularA-Light/EuclidCircularA-Bold.eot?#iefix") format("embedded-opentype"), url("../fonts/EuclidCircularA-Light/EuclidCircularA-Light.woff2") format("woff2"), url("../fonts/EuclidCircularA-Light/EuclidCircularA-Light.woff") format("woff"), url("../fonts/EuclidCircularA-Light/EuclidCircularA-Light.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+}
+
+/*# sourceMappingURL=fonts.css.map */

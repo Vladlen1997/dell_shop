@@ -1,0 +1,1063 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Dell</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta property="og:title" content="">
+    <meta property="og:type" content="">
+    <meta property="og:url" content="">
+    <meta property="og:image" content="">
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="js/jq-ui-1.13.0/jquery-ui.css">
+    <link rel="stylesheet" href="js/plugins/OwlCarousel2-2.3.4/dist/assets/owl.carousel.css">
+    <link rel="stylesheet" href="js/plugins/OwlCarousel2-2.3.4/dist/assets/owl.theme.default.min.css">
+    <link rel="stylesheet" href="js/plugins/swiper/swiper.min.css">
+    <link rel="stylesheet" href="js/plugins/tingle-master/src/tingle.css">
+
+    <script src="js/jq/jquery.js"></script>
+    <script src="js/jq-ui-1.13.0/jquery-ui.min.js"></script>
+    <script src="js/plugins/OwlCarousel2-2.3.4/dist/owl.carousel.min.js"></script>
+    <script src="js/plugins/swiper/swiper.min.js"></script>
+    <script src="js/plugins/tingle-master/src/tingle.js"></script>
+    <script src="js/index.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+
+            var modal = new tingle.modal({
+                footer: false,
+                stickyFooter: false,
+                closeMethods: ['overlay', 'escape'],
+                closeLabel: "Close",
+                cssClass: ['custom'],
+            });
+
+            modal.setContent($("#modalContent").html());
+            $("#modalContent").remove();
+
+            $(".addReview").click(function (e) {
+                e.preventDefault();
+                modal.open();
+            });
+
+            $(".closeModal").click(function () {  modal.close(); });
+
+            $(".tingle-modal .fileUpload").click(function (e) {
+                e.preventDefault();
+                $(this).prev().click();
+            });
+
+            ratingChoise(".js-ratingChoise");
+        });
+    </script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            var authModal = new tingle.modal({
+                footer: false,
+                stickyFooter: false,
+                closeMethods: ['overlay', 'escape'],
+                closeLabel: "Close",
+                cssClass: ['custom1', 'w110'],
+            });
+            var regModal = new tingle.modal({
+                footer: false,
+                stickyFooter: false,
+                closeMethods: ['overlay', 'escape'],
+                closeLabel: "Close",
+                cssClass: ['custom1', 'w110'],
+            });
+
+            authModal.setContent($("#authModal").html());
+            $("#authModal").remove();
+            regModal.setContent($("#regModal").html());
+            $("#regModal").remove();
+
+
+            $(".js-openAuthModal").click(function (e) {
+                e.preventDefault();
+                authModal.open();
+                regModal.close();
+            });
+            $(".reg-link").click(function (e) {
+                e.preventDefault();
+                regModal.open();
+                authModal.close();
+            });
+
+            $(".authModalWrap .closeModal").click(function () {  authModal.close(); regModal.close(); });
+
+            $(".authTabs span").click(function() {
+                var el = $(this).parent();
+                if (!el.hasClass('active')) {
+                    el.addClass('active');
+                    el.siblings().removeClass('active');
+                    if (el.parent().hasClass('toggleForm')) {
+                        $(".js-toggleForm .row").toggleClass('iHide');
+                    }
+                }
+            });
+
+            $(".togglePassView").click(function() {
+                var el = $(this);
+                el.toggleClass('active');
+                el.hasClass('active') ? el.prev().attr('type', 'text') : el.prev().attr('type', 'password');
+            });
+
+            $(".js-submitForm").click(function(e) {
+                e.preventDefault();
+                var formId = $(this).attr('form_id');
+                if (formId) $("#" + formId).submit();
+            });
+
+            $(".js-autorize span").click(function() {
+                $(".forgotPassWrap").toggleClass('iHide').prev().toggleClass('iHide');
+            });
+
+            $(".js-forgotPass").click(function() {
+                $(".authFormWrap").toggleClass('iHide').next().toggleClass('iHide');
+            });
+
+        });
+    </script>
+</head>
+<body>
+<div class="container">
+    <div id="authModal" class="iHide">
+        <div class="authModalWrap">
+            <div class="closeModal"><img src="img/icons/crossMobile.svg" alt=""></div>
+            <div class="cols2">
+                <div class="col authFormWrap">
+                    <div class="title">Войдите в свой аккаунт</div>
+                    <form id="authForm">
+                        <div class="labelOnTop">
+                            <div class="row">
+                                <label>Ваше имя</label>
+                                <input type="text" name="" required='error'>
+                            </div>
+                            <div class="row">
+                                <label>Пароль</label>
+                                <input type="password" name="">
+                                <span class="togglePassView">
+                                        <img class="passVisible" src="img/icons/eye.svg" alt="">
+                                        <img class="passHidden" src="img/icons/eyeClosed.svg" alt="">
+                                    </span>
+                            </div>
+                        </div>
+                        <a href="" class="js-submitForm sForm" form_id="authForm">
+                            <span class="iconBlueButton">→</span>
+                            <span>Войти</span>
+                        </a>
+                        <div class="textCenter">
+                            <a href="" class="lightGrayLink reg-link">Ещё не зарегистрированы?</a>
+                        </div>
+                    </form>
+                </div>
+                <div class="col forgotPassWrap iHide">
+                    <div class="title">Восстановление пароля</div>
+                    <div class="forgotPassForm">
+                        <form>
+                            <div class="cols2 authTabs toggleForm">
+                                <div class="col active"><span>С помощью E-mail</span></div>
+                                <div class="col"><span>По номеру телефона</span></div>
+                            </div>
+                            <div class="labelOnTop js-toggleForm">
+                                <div class="row">
+                                    <label>E-mail*</label>
+                                    <input type="text" name="" required='error'>
+                                </div>
+                                <div class="row iHide">
+                                    <label>Номер телефона*</label>
+                                    <input type="text" name="" required='error'>
+                                </div>
+                            </div>
+                            <div class="capchaWrap">
+                                <img src="img/capcha.png" alt="">
+                            </div>
+                            <div class="textCenter">
+                                <button type="submit" class="buttonBlue">Восстановить пароль</button>
+                            </div>
+                            <div class="textCenter js-autorize">
+                                <span>Войти</span>
+                            </div>
+                            <div class="textCenter">
+                                <a href="" class="lightGrayLink reg-link">Ещё не зарегистрированы? </a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="col imgWrap">
+                    <img class="mobHide" src="img/bgAuth.png" alt="">
+                    <img class="mobShow" src="img/bgAuthMob.png" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="regModal" class="iHide">
+        <div class="authModalWrap">
+            <div class="closeModal"><img src="img/icons/crossMobile.svg" alt=""></div>
+            <div class="cols2">
+                <div class="col authFormWrap">
+                    <div class="title">Зарегистрируйтесь</div>
+                    <form id="regForm">
+                        <div class="labelOnTop">
+                            <div class="row">
+                                <label>Ваше имя</label>
+                                <input type="text" name="" required='error'>
+                            </div>
+                            <div class="row">
+                                <label>E-mail</label>
+                                <input type="text" name="" required='error'>
+                            </div>
+                            <div class="row">
+                                <label>Пароль</label>
+                                <input type="password" name="">
+                                <span class="togglePassView">
+                                    <img class="passVisible" src="img/icons/eye.svg" alt="">
+                                    <img class="passHidden" src="img/icons/eyeClosed.svg" alt="">
+                                </span>
+                            </div>
+                        </div>
+                        <a href="" class="js-submitForm sForm" form_id="authForm">
+                            <span class="iconBlueButton">→</span>
+                            <span>Зарегистрироваться</span>
+                        </a>
+                        <div class="textCenter">
+                            <a href="" class="lightGrayLink js-openAuthModal">Войти</a>
+                        </div>
+                    </form>
+                </div>
+                <div class="col forgotPassWrap iHide">
+                    <div class="title">Восстановление пароля</div>
+                    <div class="forgotPassForm">
+                        <form>
+                            <div class="cols2 authTabs toggleForm">
+                                <div class="col active"><span>С помощью E-mail</span></div>
+                                <div class="col"><span>По номеру телефона</span></div>
+                            </div>
+                            <div class="labelOnTop js-toggleForm">
+                                <div class="row">
+                                    <label>E-mail*</label>
+                                    <input type="text" name="" required='error'>
+                                </div>
+                                <div class="row iHide">
+                                    <label>Номер телефона*</label>
+                                    <input type="text" name="" required='error'>
+                                </div>
+                            </div>
+                            <div class="capchaWrap">
+                                <img src="img/capcha.png" alt="">
+                            </div>
+                            <div class="textCenter">
+                                <button type="submit" class="buttonBlue">Восстановить пароль</button>
+                            </div>
+                            <div class="textCenter js-autorize">
+                                <span>Войти</span>
+                            </div>
+                            <div class="textCenter">
+                                <a href="" class="lightGrayLink reg-link">Ещё не зарегистрированы? </a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="col imgWrap">
+                    <img class="mobHide" src="img/bgAuth.png" alt="">
+                    <img class="mobShow" src="img/bgAuthMob.png" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+    <header>
+        <div class="contentWrapper">
+            <div class="left">
+                <div class="logoMain">
+                    <a href="/"><img src="img/icons/logo.svg" alt=""></a>
+                </div>
+                <input id="toggleMenu" type="checkbox">
+                <nav class="headerMenu">
+                    <div class="mobileHeader mobShow">
+                        <span>Меню</span>
+                        <img class="iconCross" src="img/icons/crossMobile.svg" alt="">
+                    </div>
+                    <div class="noAuth">
+                        <div class="text">Привет, гость!</div>
+                        <div class="authActions">
+                            <a class="buttonBlue" href="#">Войти</a>
+                            <a class="buttonBlue" href="#">Регистрация</a>
+                        </div>
+                    </div>
+                    <ul>
+                        <li><a href="#" class="active">главная</a></li>
+                        <li><a href="#">каталог</a></li>
+                        <li><a href="#">контакты</a></li>
+                        <li class="mobHide posRelative">
+                            <a href="#" class="iconSearch js-openSearch"></a>
+                            <div class="searchBox">
+                                <div class="searchActive">
+                                    <input type="text" name="">
+                                    <span class="iconBlueButton">→</span>
+                                </div>
+                                <div class="autocomplitItems">
+                                    <div class="item">
+                                        <div class="imgWrap">
+                                            <img src="img/cs1.png" alt="">
+                                        </div>
+                                        <div class="itemName">Ноутбук Macbook PRO 13 2021</div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="imgWrap">
+                                            <img src="img/cs1.png" alt="">
+                                        </div>
+                                        <div class="itemName">Ноутбук Macbook PRO 13 2021</div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="imgWrap">
+                                            <img src="img/cs1.png" alt="">
+                                        </div>
+                                        <div class="itemName">Ноутбук Macbook PRO 13 2021</div>
+                                    </div>
+                                    <div class="item empty">
+                                        <div class="imgWrap"></div>
+                                        <div class="itemName">Ничего не найдено</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+
+                    </ul>
+                </nav>
+            </div>
+            <div class="right">
+                <div class="userActions">
+                    <ul>
+                        <li class="mobShow posRelative">
+                            <span class="iconSearch js-openSearch"></span>
+                            <div class="searchBox">
+                                <div class="searchActive">
+                                    <input type="text" name="">
+                                    <span class="iconBlueButton">→</span>
+                                </div>
+                                <div class="autocomplitItems">
+                                    <div class="item">
+                                        <div class="imgWrap">
+                                            <img src="img/cs1.png" alt="">
+                                        </div>
+                                        <div class="itemName">Ноутбук Macbook PRO 13 2021</div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="imgWrap">
+                                            <img src="img/cs1.png" alt="">
+                                        </div>
+                                        <div class="itemName">Ноутбук Macbook PRO 13 2021</div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="imgWrap">
+                                            <img src="img/cs1.png" alt="">
+                                        </div>
+                                        <div class="itemName">Ноутбук Macbook PRO 13 2021</div>
+                                    </div>
+                                    <div class="item empty">
+                                        <div class="imgWrap"></div>
+                                        <div class="itemName">Ничего не найдено</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="" class="js-openAuthModal">
+                                <svg class="iconProfile pathStroke" viewBox="0 0 21 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M20.2232 21.8578V19.6184C20.2232 18.4306 19.7338 17.2914 18.8628 16.4515C17.9918 15.6115 16.8104 15.1396 15.5785 15.1396H6.2892C5.05736 15.1396 3.87597 15.6115 3.00492 16.4515C2.13388 17.2914 1.64453 18.4306 1.64453 19.6184V21.8578" stroke="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M10.9337 10.6607C13.4989 10.6607 15.5784 8.65548 15.5784 6.18191C15.5784 3.70835 13.4989 1.70312 10.9337 1.70312C8.36855 1.70312 6.28906 3.70835 6.28906 6.18191C6.28906 8.65548 8.36855 10.6607 10.9337 10.6607Z" stroke="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </a>
+                        </li>
+                        <li class="mobHide">
+                            <a href="">
+                                <svg class="iconStats pathStroke pathFill rectStroke" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M9.94939 6.94939C10.4932 6.40553 11.2309 6.1 12 6.1C12.7691 6.1 13.5068 6.40553 14.0506 6.94939C14.5945 7.49325 14.9 8.23087 14.9 9V21C14.9 21.7691 14.5945 22.5068 14.0506 23.0506C13.5068 23.5945 12.7691 23.9 12 23.9C11.2309 23.9 10.4932 23.5945 9.94939 23.0506C9.40553 22.5068 9.1 21.7691 9.1 21V9C9.1 8.23087 9.40553 7.49325 9.94939 6.94939ZM12.7778 21.7778C12.9841 21.5715 13.1 21.2917 13.1 21V9C13.1 8.70826 12.9841 8.42847 12.7778 8.22218C12.5715 8.01589 12.2917 7.9 12 7.9C11.7083 7.9 11.4285 8.01589 11.2222 8.22218C11.0159 8.42847 10.9 8.70826 10.9 9V21C10.9 21.2917 11.0159 21.5715 11.2222 21.7778C11.4285 21.9841 11.7083 22.1 12 22.1C12.2917 22.1 12.5715 21.9841 12.7778 21.7778Z" fill="none" stroke="#292D32" stroke-width="0.2"/>
+                                    <path d="M18.9494 0.94939C19.4932 0.405535 20.2309 0.1 21 0.1C21.7691 0.1 22.5068 0.405535 23.0506 0.94939C23.5945 1.49325 23.9 2.23087 23.9 3V21C23.9 21.7691 23.5945 22.5068 23.0506 23.0506C22.5068 23.5945 21.7691 23.9 21 23.9C20.2309 23.9 19.4932 23.5945 18.9494 23.0506C18.4055 22.5068 18.1 21.7691 18.1 21V3C18.1 2.23087 18.4055 1.49325 18.9494 0.94939ZM21.7778 21.7778C21.9841 21.5715 22.1 21.2917 22.1 21V3C22.1 2.70826 21.9841 2.42847 21.7778 2.22218C21.5715 2.01589 21.2917 1.9 21 1.9C20.7083 1.9 20.4285 2.01589 20.2222 2.22218C20.0159 2.42847 19.9 2.70826 19.9 3V21C19.9 21.2917 20.0159 21.5715 20.2222 21.7778C20.4285 21.9841 20.7083 22.1 21 22.1C21.2917 22.1 21.5715 21.9841 21.7778 21.7778Z" fill="none" stroke="#292D32" stroke-width="0.2"/>
+                                    <rect x="0.75" y="12.75" width="4.5" height="10.5" rx="2.25" stroke="none" stroke-width="1.5"/>
+                                </svg>
+                            </a>
+                        </li>
+                        <li class="mobHide">
+                            <a href="">
+                                <svg class="iconFavorite pathFill" width="24" height="23" viewBox="0 0 24 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M17.5 0.916992C16.3739 0.934507 15.2724 1.24885 14.3067 1.82826C13.341 2.40768 12.5453 3.23166 12 4.21699C11.4546 3.23166 10.6589 2.40768 9.6932 1.82826C8.7275 1.24885 7.62601 0.934507 6.49996 0.916992C4.7049 0.994983 3.01366 1.78025 1.79574 3.10122C0.577818 4.4222 -0.0677922 6.17152 -4.17093e-05 7.96699C-4.17093e-05 12.514 4.78596 17.48 8.79996 20.847C9.69618 21.6001 10.8293 22.013 12 22.013C13.1706 22.013 14.3037 21.6001 15.2 20.847C19.214 17.48 24 12.514 24 7.96699C24.0677 6.17152 23.4221 4.4222 22.2042 3.10122C20.9863 1.78025 19.295 0.994983 17.5 0.916992ZM13.915 19.317C13.3789 19.7684 12.7007 20.0159 12 20.0159C11.2992 20.0159 10.621 19.7684 10.085 19.317C4.94696 15.006 1.99996 10.87 1.99996 7.96699C1.9316 6.70171 2.36632 5.46072 3.20932 4.51469C4.05232 3.56866 5.23519 2.99434 6.49996 2.91699C7.76472 2.99434 8.9476 3.56866 9.7906 4.51469C10.6336 5.46072 11.0683 6.70171 11 7.96699C11 8.23221 11.1053 8.48656 11.2929 8.6741C11.4804 8.86164 11.7347 8.96699 12 8.96699C12.2652 8.96699 12.5195 8.86164 12.7071 8.6741C12.8946 8.48656 13 8.23221 13 7.96699C12.9316 6.70171 13.3663 5.46072 14.2093 4.51469C15.0523 3.56866 16.2352 2.99434 17.5 2.91699C18.7647 2.99434 19.9476 3.56866 20.7906 4.51469C21.6336 5.46072 22.0683 6.70171 22 7.96699C22 10.87 19.053 15.006 13.915 19.313V19.317Z" fill="none" stroke="none" stroke-width="0.6"/>
+                                </svg>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <div class="activeNotification">3</div>
+                                <svg class="iconBag pathFill" width="22" height="24" viewBox="0 0 22 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M16.1157 7.69568V5.55802C16.1157 4.8919 15.9845 4.2323 15.7296 3.61689C15.4747 3.00147 15.101 2.44229 14.63 1.97127C14.159 1.50026 13.5998 1.12662 12.9844 0.871711C12.369 0.616798 11.7094 0.485596 11.0433 0.485596C10.3772 0.485596 9.71756 0.616798 9.10215 0.871711C8.48674 1.12662 7.92756 1.50026 7.45654 1.97127C6.98552 2.44229 6.61189 3.00147 6.35698 3.61689C6.10206 4.2323 5.97086 4.8919 5.97086 5.55802V10.6304C5.97086 10.8226 6.0472 11.0069 6.1831 11.1428C6.31899 11.2787 6.50331 11.3551 6.69549 11.3551C6.88768 11.3551 7.07199 11.2787 7.20788 11.1428C7.34378 11.0069 7.42012 10.8226 7.42012 10.6304V9.14494H13.2172V7.69568H7.42012V5.55802C7.42012 4.5971 7.80185 3.67553 8.48132 2.99606C9.1608 2.31658 10.0824 1.93486 11.0433 1.93486C12.0042 1.93486 12.9258 2.31658 13.6052 2.99606C14.2847 3.67553 14.6664 4.5971 14.6664 5.55802V10.5942C14.6664 10.7864 14.7428 10.9707 14.8787 11.1066C15.0146 11.2425 15.1989 11.3188 15.3911 11.3188C15.5833 11.3188 15.7676 11.2425 15.9035 11.1066C16.0394 10.9707 16.1157 10.7864 16.1157 10.5942V9.14494H19.7389V22.1883H2.3477V9.14494H4.5216V7.69568H0.898438V22.2535C0.898438 22.6206 1.04426 22.9726 1.30382 23.2322C1.56337 23.4918 1.91541 23.6376 2.28248 23.6376H19.8041C20.1712 23.6376 20.5232 23.4918 20.7827 23.2322C21.0423 22.9726 21.1881 22.6206 21.1881 22.2535V7.69568H16.1157Z" fill="none"/>
+                                </svg>
+
+                            </a>
+                        </li>
+                        <li class="mobMenu mobShow">
+                            <img class="iconMenu" src="img/icons/menu.svg" alt="">
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="pageContent">
+        <section class="productCard">
+            <div class="contentWrapper">
+                <div class="productCardHeader">
+                    <div class="mobShow">
+                        <div class="breadScrum">
+                            <a href="">
+                                <svg class="iconHome" width="14" height="15" viewBox="0 0 14 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M8.002 0.387991C7.72668 0.140626 7.36962 0.00378418 6.9995 0.00378418C6.62938 0.00378418 6.27232 0.140626 5.997 0.387991L0.497 5.32999C0.340623 5.47062 0.215564 5.64256 0.129942 5.83465C0.0443201 6.02673 4.81578e-05 6.23468 0 6.44499V13.5C0 13.8978 0.158035 14.2793 0.43934 14.5607C0.720644 14.842 1.10218 15 1.5 15H3.5C3.89782 15 4.27936 14.842 4.56066 14.5607C4.84196 14.2793 5 13.8978 5 13.5V9.49999C5 9.36738 5.05268 9.24021 5.14645 9.14644C5.24021 9.05267 5.36739 8.99999 5.5 8.99999H8.5C8.63261 8.99999 8.75979 9.05267 8.85355 9.14644C8.94732 9.24021 9 9.36738 9 9.49999V13.5C9 13.8978 9.15804 14.2793 9.43934 14.5607C9.72064 14.842 10.1022 15 10.5 15H12.5C12.8978 15 13.2794 14.842 13.5607 14.5607C13.842 14.2793 14 13.8978 14 13.5V6.44499C14 6.23468 13.9557 6.02673 13.8701 5.83465C13.7844 5.64256 13.6594 5.47062 13.503 5.32999L8.003 0.387991H8.002Z" fill="none"/>
+                                </svg>
+                            </a>
+                            <svg class="iconBCArrow" viewBox="0 0 106 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M94 1L104.5 11.5M104.5 11.5L94 22M104.5 11.5H0" stroke="none" stroke-width="1.5"/>
+                            </svg>
+                            <a href="">Каталог</a>
+                            <svg class="iconBCArrow" viewBox="0 0 106 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M94 1L104.5 11.5M104.5 11.5L94 22M104.5 11.5H0" stroke="none" stroke-width="1.5"/>
+                            </svg>
+                            <a href="">Ноутбуки</a>
+                        </div>
+                        <div class="info">
+                            <div class="contentTitle2">Ноутбук Dell Latitude 5310<br> 2in1 Titan Silver</div>
+                            <div>
+                                <div class="vendorCode">Артикул: 3567-1234</div>
+                                <div class="ratingAndReviews">
+                                    <div class="ratingWrap">
+                                        <span class="rating js-ratingSmall mobOriginalSize" rating="4.3">
+                                                <svg viewBox="0 0 13 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M5.63227 0.921927C5.9926 0.15649 7.08145 0.156488 7.44179 0.921926L8.43482 3.03136C8.58058 3.34099 8.87456 3.55458 9.21409 3.59753L11.5271 3.8901C12.3665 3.99627 12.7029 5.03183 12.0863 5.61106L10.387 7.20734C10.1375 7.44165 10.0253 7.78724 10.0893 8.12342L10.5258 10.4137C10.6842 11.2447 9.80334 11.8847 9.06191 11.4773L7.01864 10.3544C6.71872 10.1896 6.35534 10.1896 6.05541 10.3544L4.01215 11.4773C3.27072 11.8847 2.38982 11.2447 2.54821 10.4137L2.98473 8.12342C3.0488 7.78724 2.93651 7.44165 2.68707 7.20734L0.98775 5.61106C0.371125 5.03183 0.707597 3.99627 1.54692 3.8901L3.85997 3.59753C4.19949 3.55458 4.49348 3.34099 4.63924 3.03136L5.63227 0.921927Z" fill="none"/>
+                                                </svg>
+                                                <svg viewBox="0 0 13 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M5.63227 0.921927C5.9926 0.15649 7.08145 0.156488 7.44179 0.921926L8.43482 3.03136C8.58058 3.34099 8.87456 3.55458 9.21409 3.59753L11.5271 3.8901C12.3665 3.99627 12.7029 5.03183 12.0863 5.61106L10.387 7.20734C10.1375 7.44165 10.0253 7.78724 10.0893 8.12342L10.5258 10.4137C10.6842 11.2447 9.80334 11.8847 9.06191 11.4773L7.01864 10.3544C6.71872 10.1896 6.35534 10.1896 6.05541 10.3544L4.01215 11.4773C3.27072 11.8847 2.38982 11.2447 2.54821 10.4137L2.98473 8.12342C3.0488 7.78724 2.93651 7.44165 2.68707 7.20734L0.98775 5.61106C0.371125 5.03183 0.707597 3.99627 1.54692 3.8901L3.85997 3.59753C4.19949 3.55458 4.49348 3.34099 4.63924 3.03136L5.63227 0.921927Z" fill="none"/>
+                                                </svg>
+                                                <svg viewBox="0 0 13 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M5.63227 0.921927C5.9926 0.15649 7.08145 0.156488 7.44179 0.921926L8.43482 3.03136C8.58058 3.34099 8.87456 3.55458 9.21409 3.59753L11.5271 3.8901C12.3665 3.99627 12.7029 5.03183 12.0863 5.61106L10.387 7.20734C10.1375 7.44165 10.0253 7.78724 10.0893 8.12342L10.5258 10.4137C10.6842 11.2447 9.80334 11.8847 9.06191 11.4773L7.01864 10.3544C6.71872 10.1896 6.35534 10.1896 6.05541 10.3544L4.01215 11.4773C3.27072 11.8847 2.38982 11.2447 2.54821 10.4137L2.98473 8.12342C3.0488 7.78724 2.93651 7.44165 2.68707 7.20734L0.98775 5.61106C0.371125 5.03183 0.707597 3.99627 1.54692 3.8901L3.85997 3.59753C4.19949 3.55458 4.49348 3.34099 4.63924 3.03136L5.63227 0.921927Z" fill="none"/>
+                                                </svg>
+                                                <svg viewBox="0 0 13 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M5.63227 0.921927C5.9926 0.15649 7.08145 0.156488 7.44179 0.921926L8.43482 3.03136C8.58058 3.34099 8.87456 3.55458 9.21409 3.59753L11.5271 3.8901C12.3665 3.99627 12.7029 5.03183 12.0863 5.61106L10.387 7.20734C10.1375 7.44165 10.0253 7.78724 10.0893 8.12342L10.5258 10.4137C10.6842 11.2447 9.80334 11.8847 9.06191 11.4773L7.01864 10.3544C6.71872 10.1896 6.35534 10.1896 6.05541 10.3544L4.01215 11.4773C3.27072 11.8847 2.38982 11.2447 2.54821 10.4137L2.98473 8.12342C3.0488 7.78724 2.93651 7.44165 2.68707 7.20734L0.98775 5.61106C0.371125 5.03183 0.707597 3.99627 1.54692 3.8901L3.85997 3.59753C4.19949 3.55458 4.49348 3.34099 4.63924 3.03136L5.63227 0.921927Z" fill="none"/>
+                                                </svg>
+                                                <svg viewBox="0 0 13 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M5.63227 0.921927C5.9926 0.15649 7.08145 0.156488 7.44179 0.921926L8.43482 3.03136C8.58058 3.34099 8.87456 3.55458 9.21409 3.59753L11.5271 3.8901C12.3665 3.99627 12.7029 5.03183 12.0863 5.61106L10.387 7.20734C10.1375 7.44165 10.0253 7.78724 10.0893 8.12342L10.5258 10.4137C10.6842 11.2447 9.80334 11.8847 9.06191 11.4773L7.01864 10.3544C6.71872 10.1896 6.35534 10.1896 6.05541 10.3544L4.01215 11.4773C3.27072 11.8847 2.38982 11.2447 2.54821 10.4137L2.98473 8.12342C3.0488 7.78724 2.93651 7.44165 2.68707 7.20734L0.98775 5.61106C0.371125 5.03183 0.707597 3.99627 1.54692 3.8901L3.85997 3.59753C4.19949 3.55458 4.49348 3.34099 4.63924 3.03136L5.63227 0.921927Z" fill="none"/>
+                                                </svg>
+                                            </span>
+                                        <span class="count">4.3</span>
+                                    </div>
+                                    <div class="reviews">
+                                        <div>
+                                            <svg viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M17.9927 6.14636V10.11C17.9927 10.3676 17.982 10.6153 17.9501 10.8532C17.7056 13.5286 16.0148 14.8564 12.8991 14.8564H12.4738C12.2079 14.8564 11.9527 14.9753 11.7932 15.1735L10.5172 16.759C9.95359 17.4625 9.03908 17.4625 8.47549 16.759L7.19944 15.1735C7.0612 15.0051 6.75284 14.8564 6.5189 14.8564H6.09355C2.7014 14.8564 1 14.0736 1 10.11V6.14636C1 3.243 2.43556 1.66746 5.29603 1.43955C5.55124 1.40982 5.81708 1.3999 6.09355 1.3999H12.8991C16.2913 1.3999 17.9927 2.98536 17.9927 6.14636Z" stroke="#C0C0C0" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                                                <path d="M13.2237 8.08411C12.9475 8.08411 12.7237 8.30796 12.7237 8.58411C12.7237 8.86025 12.9475 9.08411 13.2237 9.08411H13.2332C13.5094 9.08411 13.7332 8.86025 13.7332 8.58411C13.7332 8.30796 13.5094 8.08411 13.2332 8.08411H13.2237Z" stroke="#C0C0C0" stroke-linecap="round" stroke-linejoin="round"/>
+                                                <path d="M9.50199 8.08411C9.22585 8.08411 9.00199 8.30796 9.00199 8.58411C9.00199 8.86025 9.22585 9.08411 9.50199 9.08411H9.51156C9.7877 9.08411 10.0116 8.86025 10.0116 8.58411C10.0116 8.30796 9.7877 8.08411 9.51156 8.08411H9.50199Z" stroke="#C0C0C0" stroke-linecap="round" stroke-linejoin="round"/>
+                                                <path d="M5.78037 8.08411C5.50423 8.08411 5.28037 8.30796 5.28037 8.58411C5.28037 8.86025 5.50423 9.08411 5.78037 9.08411H5.78994C6.06608 9.08411 6.28994 8.86025 6.28994 8.58411C6.28994 8.30796 6.06608 8.08411 5.78994 8.08411H5.78037Z" stroke="#C0C0C0" stroke-linecap="round" stroke-linejoin="round"/>
+                                            </svg>
+                                            <span>14</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <span class="price">43 000 ₽</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gallery">
+                        <div class="imgWrap js-productView swiper">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide"><img src="img/pc1.png" alt=""></div>
+                                <div class="swiper-slide"><img src="img/uf2.png" alt=""></div>
+                                <div class="swiper-slide"><img src="img/uf3.png" alt=""></div>
+                                <div class="swiper-slide"><img src="img/cs3.png" alt=""></div>
+                                <div class="swiper-slide"><img src="img/cs4.png" alt=""></div>
+                            </div>
+                        </div>
+                        <div class="sliderCustomNav">
+                            <svg class="iconLongArrow productViewPrev sliderPrev" viewBox="0 0 106 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M94 1L104.5 11.5M104.5 11.5L94 22M104.5 11.5H0" stroke="none" stroke-width="1.5"/>
+                            </svg>
+                            <div class="productViewPagination sliderCustomPagination"></div>
+                            <svg class="iconLongArrow productViewNext" viewBox="0 0 106 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M94 1L104.5 11.5M104.5 11.5L94 22M104.5 11.5H0" stroke="none" stroke-width="1.5"/>
+                            </svg>
+                        </div>
+                        <div class="thumbnails js-productThumbs swiper">
+                            <div class="swiper-wrapper">
+                                <div class="item swiper-slide">
+                                    <div class="wrap"><img src="img/tumb1.png" alt=""></div>
+                                </div>
+                                <div class="item swiper-slide">
+                                    <div class="wrap"><img src="img/tumb2.png" alt=""></div>
+                                </div>
+                                <div class="item swiper-slide">
+                                    <div class="wrap"><img src="img/tumb3.png" alt=""></div>
+                                </div>
+                                <div class="item swiper-slide">
+                                    <div class="wrap"><img src="img/cs3.png" alt=""></div>
+                                </div>
+                                <div class="item swiper-slide">
+                                    <div class="wrap"><img src="img/cs4.png" alt=""></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="info">
+                        <div class="mobHide">
+                            <div class="contentTitle2">Ноутбук Dell Latitude<br> 5310 2in1 Titan Silver</div>
+                            <div>
+                                <div class="vendorCode">Артикул: 3567-1234</div>
+                                <div class="ratingAndReviews">
+                                    <div class="ratingWrap">
+                                        <span class="rating js-ratingSmall mobOriginalSize" rating="4.3">
+                                                <svg viewBox="0 0 13 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M5.63227 0.921927C5.9926 0.15649 7.08145 0.156488 7.44179 0.921926L8.43482 3.03136C8.58058 3.34099 8.87456 3.55458 9.21409 3.59753L11.5271 3.8901C12.3665 3.99627 12.7029 5.03183 12.0863 5.61106L10.387 7.20734C10.1375 7.44165 10.0253 7.78724 10.0893 8.12342L10.5258 10.4137C10.6842 11.2447 9.80334 11.8847 9.06191 11.4773L7.01864 10.3544C6.71872 10.1896 6.35534 10.1896 6.05541 10.3544L4.01215 11.4773C3.27072 11.8847 2.38982 11.2447 2.54821 10.4137L2.98473 8.12342C3.0488 7.78724 2.93651 7.44165 2.68707 7.20734L0.98775 5.61106C0.371125 5.03183 0.707597 3.99627 1.54692 3.8901L3.85997 3.59753C4.19949 3.55458 4.49348 3.34099 4.63924 3.03136L5.63227 0.921927Z" fill="none"/>
+                                                </svg>
+                                                <svg viewBox="0 0 13 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M5.63227 0.921927C5.9926 0.15649 7.08145 0.156488 7.44179 0.921926L8.43482 3.03136C8.58058 3.34099 8.87456 3.55458 9.21409 3.59753L11.5271 3.8901C12.3665 3.99627 12.7029 5.03183 12.0863 5.61106L10.387 7.20734C10.1375 7.44165 10.0253 7.78724 10.0893 8.12342L10.5258 10.4137C10.6842 11.2447 9.80334 11.8847 9.06191 11.4773L7.01864 10.3544C6.71872 10.1896 6.35534 10.1896 6.05541 10.3544L4.01215 11.4773C3.27072 11.8847 2.38982 11.2447 2.54821 10.4137L2.98473 8.12342C3.0488 7.78724 2.93651 7.44165 2.68707 7.20734L0.98775 5.61106C0.371125 5.03183 0.707597 3.99627 1.54692 3.8901L3.85997 3.59753C4.19949 3.55458 4.49348 3.34099 4.63924 3.03136L5.63227 0.921927Z" fill="none"/>
+                                                </svg>
+                                                <svg viewBox="0 0 13 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M5.63227 0.921927C5.9926 0.15649 7.08145 0.156488 7.44179 0.921926L8.43482 3.03136C8.58058 3.34099 8.87456 3.55458 9.21409 3.59753L11.5271 3.8901C12.3665 3.99627 12.7029 5.03183 12.0863 5.61106L10.387 7.20734C10.1375 7.44165 10.0253 7.78724 10.0893 8.12342L10.5258 10.4137C10.6842 11.2447 9.80334 11.8847 9.06191 11.4773L7.01864 10.3544C6.71872 10.1896 6.35534 10.1896 6.05541 10.3544L4.01215 11.4773C3.27072 11.8847 2.38982 11.2447 2.54821 10.4137L2.98473 8.12342C3.0488 7.78724 2.93651 7.44165 2.68707 7.20734L0.98775 5.61106C0.371125 5.03183 0.707597 3.99627 1.54692 3.8901L3.85997 3.59753C4.19949 3.55458 4.49348 3.34099 4.63924 3.03136L5.63227 0.921927Z" fill="none"/>
+                                                </svg>
+                                                <svg viewBox="0 0 13 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M5.63227 0.921927C5.9926 0.15649 7.08145 0.156488 7.44179 0.921926L8.43482 3.03136C8.58058 3.34099 8.87456 3.55458 9.21409 3.59753L11.5271 3.8901C12.3665 3.99627 12.7029 5.03183 12.0863 5.61106L10.387 7.20734C10.1375 7.44165 10.0253 7.78724 10.0893 8.12342L10.5258 10.4137C10.6842 11.2447 9.80334 11.8847 9.06191 11.4773L7.01864 10.3544C6.71872 10.1896 6.35534 10.1896 6.05541 10.3544L4.01215 11.4773C3.27072 11.8847 2.38982 11.2447 2.54821 10.4137L2.98473 8.12342C3.0488 7.78724 2.93651 7.44165 2.68707 7.20734L0.98775 5.61106C0.371125 5.03183 0.707597 3.99627 1.54692 3.8901L3.85997 3.59753C4.19949 3.55458 4.49348 3.34099 4.63924 3.03136L5.63227 0.921927Z" fill="none"/>
+                                                </svg>
+                                                <svg viewBox="0 0 13 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M5.63227 0.921927C5.9926 0.15649 7.08145 0.156488 7.44179 0.921926L8.43482 3.03136C8.58058 3.34099 8.87456 3.55458 9.21409 3.59753L11.5271 3.8901C12.3665 3.99627 12.7029 5.03183 12.0863 5.61106L10.387 7.20734C10.1375 7.44165 10.0253 7.78724 10.0893 8.12342L10.5258 10.4137C10.6842 11.2447 9.80334 11.8847 9.06191 11.4773L7.01864 10.3544C6.71872 10.1896 6.35534 10.1896 6.05541 10.3544L4.01215 11.4773C3.27072 11.8847 2.38982 11.2447 2.54821 10.4137L2.98473 8.12342C3.0488 7.78724 2.93651 7.44165 2.68707 7.20734L0.98775 5.61106C0.371125 5.03183 0.707597 3.99627 1.54692 3.8901L3.85997 3.59753C4.19949 3.55458 4.49348 3.34099 4.63924 3.03136L5.63227 0.921927Z" fill="none"/>
+                                                </svg>
+                                            </span>
+                                        <span class="count">4.3</span>
+                                    </div>
+                                    <div class="reviews">
+                                        <div>
+                                            <svg viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M17.9927 6.14636V10.11C17.9927 10.3676 17.982 10.6153 17.9501 10.8532C17.7056 13.5286 16.0148 14.8564 12.8991 14.8564H12.4738C12.2079 14.8564 11.9527 14.9753 11.7932 15.1735L10.5172 16.759C9.95359 17.4625 9.03908 17.4625 8.47549 16.759L7.19944 15.1735C7.0612 15.0051 6.75284 14.8564 6.5189 14.8564H6.09355C2.7014 14.8564 1 14.0736 1 10.11V6.14636C1 3.243 2.43556 1.66746 5.29603 1.43955C5.55124 1.40982 5.81708 1.3999 6.09355 1.3999H12.8991C16.2913 1.3999 17.9927 2.98536 17.9927 6.14636Z" stroke="#C0C0C0" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                                                <path d="M13.2237 8.08411C12.9475 8.08411 12.7237 8.30796 12.7237 8.58411C12.7237 8.86025 12.9475 9.08411 13.2237 9.08411H13.2332C13.5094 9.08411 13.7332 8.86025 13.7332 8.58411C13.7332 8.30796 13.5094 8.08411 13.2332 8.08411H13.2237Z" stroke="#C0C0C0" stroke-linecap="round" stroke-linejoin="round"/>
+                                                <path d="M9.50199 8.08411C9.22585 8.08411 9.00199 8.30796 9.00199 8.58411C9.00199 8.86025 9.22585 9.08411 9.50199 9.08411H9.51156C9.7877 9.08411 10.0116 8.86025 10.0116 8.58411C10.0116 8.30796 9.7877 8.08411 9.51156 8.08411H9.50199Z" stroke="#C0C0C0" stroke-linecap="round" stroke-linejoin="round"/>
+                                                <path d="M5.78037 8.08411C5.50423 8.08411 5.28037 8.30796 5.28037 8.58411C5.28037 8.86025 5.50423 9.08411 5.78037 9.08411H5.78994C6.06608 9.08411 6.28994 8.86025 6.28994 8.58411C6.28994 8.30796 6.06608 8.08411 5.78994 8.08411H5.78037Z" stroke="#C0C0C0" stroke-linecap="round" stroke-linejoin="round"/>
+                                            </svg>
+                                            <span>14</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="aboutProduct">
+                                <p>Dell Latitude 5310 2-в-1 сочетает в себе стильную внешность и преимущества эргономичного дизайна.</p>
+                            </div>
+                        </div>
+                        <div class="productOptions">
+                            <div class="title">Цвет</div>
+                            <select class="cSelect js-cSelect">
+                                <option value="1" selected>Серебристый</option>
+                                <option value="1">Черный</option>
+                                <option value="1">Белый</option>
+                            </select>
+                            <span class="price mobHide">43 000 ₽</span>
+                            <div class="rowEnd mobHide"></div>
+                            <input type="number" class="spinner" value="1">
+                            <div class="rowEnd mobShow"></div>
+                            <div class="toCart">Добавить в корзину</div>
+                            <div class="rowEnd"></div>
+                        </div>
+                        <div class="aboutProduct mobShow">
+                            <p>Dell Latitude 5310 2-в-1 сочетает в себе стильную внешность и преимущества эргономичного дизайна.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="breadScrum mobHide">
+                    <a href="">
+                        <svg class="iconHome" width="14" height="15" viewBox="0 0 14 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M8.002 0.387991C7.72668 0.140626 7.36962 0.00378418 6.9995 0.00378418C6.62938 0.00378418 6.27232 0.140626 5.997 0.387991L0.497 5.32999C0.340623 5.47062 0.215564 5.64256 0.129942 5.83465C0.0443201 6.02673 4.81578e-05 6.23468 0 6.44499V13.5C0 13.8978 0.158035 14.2793 0.43934 14.5607C0.720644 14.842 1.10218 15 1.5 15H3.5C3.89782 15 4.27936 14.842 4.56066 14.5607C4.84196 14.2793 5 13.8978 5 13.5V9.49999C5 9.36738 5.05268 9.24021 5.14645 9.14644C5.24021 9.05267 5.36739 8.99999 5.5 8.99999H8.5C8.63261 8.99999 8.75979 9.05267 8.85355 9.14644C8.94732 9.24021 9 9.36738 9 9.49999V13.5C9 13.8978 9.15804 14.2793 9.43934 14.5607C9.72064 14.842 10.1022 15 10.5 15H12.5C12.8978 15 13.2794 14.842 13.5607 14.5607C13.842 14.2793 14 13.8978 14 13.5V6.44499C14 6.23468 13.9557 6.02673 13.8701 5.83465C13.7844 5.64256 13.6594 5.47062 13.503 5.32999L8.003 0.387991H8.002Z" fill="none"/>
+                        </svg>
+                    </a>
+                    <svg class="iconBCArrow" viewBox="0 0 106 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M94 1L104.5 11.5M104.5 11.5L94 22M104.5 11.5H0" stroke="none" stroke-width="1.5"/>
+                    </svg>
+                    <a href="">Каталог</a>
+                    <svg class="iconBCArrow" viewBox="0 0 106 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M94 1L104.5 11.5M104.5 11.5L94 22M104.5 11.5H0" stroke="none" stroke-width="1.5"/>
+                    </svg>
+                    <a href="">Ноутбуки</a>
+                    <svg class="iconBCArrow" viewBox="0 0 106 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M94 1L104.5 11.5M104.5 11.5L94 22M104.5 11.5H0" stroke="none" stroke-width="1.5"/>
+                    </svg>
+                    <a href="">Ноутбук Dell Latitude 5310 2in1 Titan Silver</a>
+                </div>
+                <div class="pcFullInfoWrap">
+                    <div class="pcFullInfo">
+                        <ul class="pcTabs">
+                            <li>Описание</li>
+                            <li>Характеристика</li>
+                            <li>Фото</li>
+                        </ul>
+                        <ul class="tabsContent">
+                            <li>
+                                <div class="productFullDescription">
+                                    <div class="title">Ноутбук Dell Latitude 5310 2in1 Titan Silver</div>
+                                    <div class="title2">О товаре</div>
+                                    <p>
+                                        14-дюймовый бизнес-ноутбук Dell Latitude 5480 является обновлённой версией Latitude 14 E5470.
+                                        Эти модели характеризуются спокойным дизайном "без претензий", прочным корпусом, и привлекательным
+                                        набором функций безопасности. "Массовая" серия Latitude 5000 находится где-то посередине между менее
+                                        дорогим семейством 3000 "начального уровня" и "премиум" серией 7000.
+                                    </p>
+                                    <p>
+                                        Низкая цена минимальной конфигурации этого 14-дюймового середнячка Dell (начинающаяся с 770 долларов)
+                                        способна усыпить бдительность, но может быстро взлететь до небес: начальный вариант включает процессор
+                                        Core i3, 4 ГБ памяти и 2.5-жёсткий диск 500 ГБ, тогда как наш ноутбук с экраном с поддержкой прикосновений
+                                        оборудован процессором i7, 8 ГБ памяти и твердотельным диском 256 ГБ - цена такой конфигурации уже 1550
+                                        долларов (немногим более, чем в 2 раза выше). Максимальная конфигурация по всем параметрам опустошит ваш
+                                        кошелёк на более чем 2000 долларов.
+                                    </p>
+                                    <p>
+                                        Разумеется, у этого 14-дюймового бизнес-ноутбука есть конкуренты. Во время обзора мы посмотрим, как наш
+                                        Latitude 5480 сравнится с другими бизнес-ноутбуками вроде Lenovo ThinkPad T460s, новым Lenovo ThinkPad
+                                        T470, HP ProBook 440 G4, и Acer TravelMate P648.
+                                    </p>
+                                    <p>
+                                        Низкая цена минимальной конфигурации этого 14-дюймового середнячка Dell (начинающаяся с 770 долларов)
+                                        способна усыпить бдительность, но может быстро взлететь до небес: начальный вариант включает процессор
+                                        Core i3, 4 ГБ памяти и 2.5-жёсткий диск 500 ГБ, тогда как наш ноутбук с экраном с поддержкой прикосновений
+                                        оборудован процессором i7, 8 ГБ памяти и твердотельным диском 256 ГБ - цена такой конфигурации уже 1550
+                                        долларов (немногим более, чем в 2 раза выше). Максимальная конфигурация по всем параметрам опустошит ваш
+                                        кошелёк на более чем 2000 долларов.
+                                    </p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="productName">Ноутбук Dell Latitude 5310 2in1 Titan Silver</div>
+                                <div class="allCharacteristics">
+                                    <div class="title">Характеристики дисплея</div>
+                                    <div class="acRow">
+                                        <div class="text"><span>Размер экрана</span></div>
+                                        <div class="rVal"><span>13,3"</span></div>
+                                    </div>
+                                    <div class="acRow">
+                                        <div class="text"><span>Разрешение экрана</span></div>
+                                        <div class="rVal"><span>1920 x 1080</span></div>
+                                    </div>
+                                    <div class="acRow">
+                                        <div class="text"><span>Тип дисплея</span></div>
+                                        <div class="rVal"><span>WVA</span></div>
+                                    </div>
+                                    <div class="acRow">
+                                        <div class="text"><span>Поверхность дисплея</span></div>
+                                        <div class="rVal"><span>Матовая</span></div>
+                                    </div>
+                                    <div class="acRow">
+                                        <div class="text"><span>Сенсорный дисплей</span></div>
+                                        <div class="rVal"><span>Да</span></div>
+                                    </div>
+                                    <div class="title">Удобство использования</div>
+                                    <div class="acRow">
+                                        <div class="text"><span>Подсветка клавиатуры</span></div>
+                                        <div class="rVal"><span>Да</span></div>
+                                    </div>
+                                    <div class="acRow">
+                                        <div class="text"><span>Язык клавиатуры (клавиш)</span></div>
+                                        <div class="rVal"><span>Английский, Русский</span></div>
+                                    </div>
+                                    <div class="title">Быстродействие</div>
+                                    <div class="acRow">
+                                        <div class="text"><span>Тип процессора</span></div>
+                                        <div class="rVal"><span>Intel Core i7-10610U</span></div>
+                                    </div>
+                                    <div class="acRow">
+                                        <div class="text"><span>Количество ядер процессора</span></div>
+                                        <div class="rVal"><span>4</span></div>
+                                    </div>
+                                    <div class="acRow">
+                                        <div class="text"><span>Базовая частота процессора</span></div>
+                                        <div class="rVal"><span>1,8 ГГц</span></div>
+                                    </div>
+                                    <div class="acRow">
+                                        <div class="text"><span>Тип оперативной памяти</span></div>
+                                        <div class="rVal"><span>DDR4</span></div>
+                                    </div>
+                                    <div class="acRow">
+                                        <div class="text"><span>Частота оперативной памяти</span></div>
+                                        <div class="rVal"><span>2666 МГц</span></div>
+                                    </div>
+                                    <div class="acRow">
+                                        <div class="text"><span>Размер оперативной памяти</span></div>
+                                        <div class="rVal"><span>16 Гб</span></div>
+                                    </div>
+                                    <div class="acRow">
+                                        <div class="text"><span>Размер памяти Intel Optane</span></div>
+                                        <div class="rVal"><span>Нет</span></div>
+                                    </div>
+                                    <div class="acRow">
+                                        <div class="text"><span>Операционная система</span></div>
+                                        <div class="rVal"><span>Windows 10 Pro</span></div>
+                                    </div>
+                                    <div class="title">Устройства хранения данных</div>
+                                    <div class="acRow">
+                                        <div class="text"><span>Тип накопителя</span></div>
+                                        <div class="rVal"><span>SSD</span></div>
+                                    </div>
+                                    <div class="acRow">
+                                        <div class="text"><span>Объем накопителя</span></div>
+                                        <div class="rVal"><span>512 Гб</span></div>
+                                    </div>
+                                    <div class="showAll">
+                                        <span>Развернуть все характеристики<span class="acArrow">&rarr;</span></span>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="productUsersPhotos">
+                                    <div class="title">Ноутбук Dell Latitude 5310 2in1 Titan Silver</div>
+                                    <div class="imgWrap"><img src="img/uf1.png" alt=""></div>
+                                    <div class="imgWrap"><img src="img/uf2.png" alt=""></div>
+                                    <div class="imgWrap"><img src="img/uf3.png" alt=""></div>
+                                    <div class="more">
+                                        <div class="buttonGray">Показать еще фото</div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="recommendetProducts">
+            <div class="contentWrapper">
+                <div class="contentTitle2">Вам также может понравиться</div>
+                <div class="categoryList recommendet">
+                    <div class="item">
+                        <div class="imgWrap">
+                            <div class="likeBox">
+                                <svg class="like" viewBox="0 0 20 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M9.93381 3.59926L9.04348 2.68409C6.95363 0.53588 3.12161 1.2772 1.73831 3.97799C1.08888 5.24829 0.942352 7.08235 2.12822 9.42303C3.27062 11.6768 5.64732 14.3763 9.93381 17.3168C14.2203 14.3763 16.5958 11.6768 17.7394 9.42303C18.9253 7.08111 18.78 5.24829 18.1293 3.97799C16.746 1.2772 12.914 0.534638 10.8241 2.68285L9.93381 3.59926ZM9.93381 18.8131C-9.10583 6.23175 4.07154 -3.58795 9.71526 1.60626C9.78977 1.67456 9.86303 1.74534 9.93381 1.8186C10.0039 1.7454 10.0768 1.67498 10.1524 1.6075C15.7948 -3.59043 28.9734 6.23051 9.93381 18.8131Z" fill="none"></path>
+                                </svg>
+                            </div>
+                            <div class="compareBox">
+                                <svg class="compare" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M13.3672 8.125C13.3672 8.9538 13.6964 9.74866 14.2825 10.3347C14.8685 10.9208 15.6634 11.25 16.4922 11.25C17.321 11.25 18.1158 10.9208 18.7019 10.3347C19.2879 9.74866 19.6172 8.9538 19.6172 8.125C19.6173 8.02805 19.5948 7.9324 19.5516 7.84563L17.0516 2.84562C16.9843 2.71095 16.8708 2.60507 16.7317 2.54743C16.5927 2.48979 16.4375 2.48427 16.2947 2.53188L12.3378 3.85062C12.1186 3.57199 11.8256 3.36043 11.4922 3.24V1.875C11.4922 1.52982 11.2124 1.25 10.8672 1.25C10.522 1.25 10.2422 1.52982 10.2422 1.875V3.24C9.88364 3.36677 9.5722 3.59974 9.34934 3.9079C9.12649 4.21606 9.00278 4.58479 8.99469 4.965L5.04469 6.28187C4.88753 6.33425 4.7576 6.44688 4.68344 6.595L2.18344 11.595C2.13988 11.6819 2.11719 11.7778 2.11719 11.875C2.11719 12.7038 2.44643 13.4987 3.03248 14.0847C3.61853 14.6708 4.41339 15 5.24219 15C6.07099 15 6.86585 14.6708 7.4519 14.0847C8.03795 13.4987 8.36719 12.7038 8.36719 11.875C8.36728 11.778 8.34481 11.6824 8.30156 11.5956L6.12344 7.24L9.39656 6.14875C9.6157 6.42746 9.9087 6.63903 10.2422 6.75937V17.5H5.24219C4.89701 17.5 4.61719 17.7798 4.61719 18.125C4.61719 18.4702 4.89701 18.75 5.24219 18.75H16.4922C16.8374 18.75 17.1172 18.4702 17.1172 18.125C17.1172 17.7798 16.8374 17.5 16.4922 17.5H11.4922V6.76C11.8507 6.63323 12.1622 6.40026 12.385 6.0921C12.6079 5.78395 12.7316 5.41521 12.7397 5.035L15.2584 4.195L13.4334 7.845C13.3899 7.93191 13.3672 8.02778 13.3672 8.125ZM5.24219 13.75C4.85579 13.7486 4.47929 13.6278 4.1643 13.404C3.84931 13.1802 3.61126 12.8644 3.48281 12.5H7.00156C6.87311 12.8644 6.63507 13.1802 6.32008 13.404C6.00509 13.6278 5.62858 13.7486 5.24219 13.75ZM6.73094 11.25H3.75344L5.24219 8.2725L6.73094 11.25ZM10.8672 5.625C10.7436 5.625 10.6227 5.58834 10.52 5.51967C10.4172 5.45099 10.3371 5.35338 10.2898 5.23918C10.2425 5.12497 10.2301 4.99931 10.2542 4.87807C10.2783 4.75683 10.3378 4.64547 10.4252 4.55806C10.5127 4.47065 10.624 4.41112 10.7453 4.38701C10.8665 4.36289 10.9922 4.37527 11.1064 4.42258C11.2206 4.46988 11.3182 4.54999 11.3869 4.65277C11.4555 4.75555 11.4922 4.87639 11.4922 5C11.4922 5.16576 11.4263 5.32473 11.3091 5.44194C11.1919 5.55915 11.0329 5.625 10.8672 5.625ZM16.4922 10C16.1058 9.99863 15.7293 9.87776 15.4143 9.65397C15.0993 9.43018 14.8613 9.11442 14.7328 8.75H18.2516C18.1231 9.11442 17.8851 9.43018 17.5701 9.65397C17.2551 9.87776 16.8786 9.99863 16.4922 10ZM16.4922 4.5225L17.9809 7.5H15.0034L16.4922 4.5225Z" fill="none"></path>
+                                </svg>
+                            </div>
+                            <img src="img/rs1.png" alt="">
+                        </div>
+                        <div class="info">
+                            <div class="cat">
+                                <a href="">Ноутбук</a>
+                            </div>
+                            <div class="itemName">
+                                <a href="">Ноутбук Dell Latitude</a>
+                            </div>
+                            <div class="props">1920x1080 (Full HD), 14 ", SSD, 256 ГБ, Intel UHD Graphics 620, Linux</div>
+                        </div>
+                        <div class="price">43 000 ₽</div>
+                        <div class="inCart">
+                            <a href="">
+                                            <span class="iconCart">
+                                                <svg viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M1.01786 7.30328C0.995773 7.2104 0.99415 7.11347 1.01311 7.01985C1.03208 6.92622 1.07113 6.83835 1.12731 6.76291C1.18349 6.68747 1.25531 6.62645 1.33734 6.58447C1.41936 6.54249 1.50942 6.52066 1.60069 6.52063H12.0796C12.1709 6.52066 12.2609 6.54249 12.343 6.58447C12.425 6.62645 12.4968 6.68747 12.553 6.76291C12.6092 6.83835 12.6482 6.92622 12.6672 7.01985C12.6861 7.11347 12.6845 7.2104 12.6624 7.30328L11.5743 11.8675C11.5093 12.1401 11.3593 12.3822 11.1481 12.5551C10.9369 12.7281 10.6766 12.8221 10.4086 12.8221H3.27167C3.00369 12.8221 2.74342 12.7281 2.53221 12.5551C2.32101 12.3822 2.17099 12.1401 2.10601 11.8675L1.01786 7.30328Z" stroke="white" stroke-width="1.5" stroke-linejoin="round"></path>
+                                                    <path d="M5.0376 9.04126V10.3015" stroke="white" stroke-width="1.5" stroke-linecap="square"></path>
+                                                    <path d="M8.64258 9.04126V10.3015" stroke="white" stroke-width="1.5" stroke-linecap="square"></path>
+                                                    <path d="M3.23486 5.78093L5.63831 2.00005" stroke="white" stroke-width="1.5" stroke-linecap="square"></path>
+                                                    <path d="M10.4453 5.78093L8.04199 2.00005" stroke="white" stroke-width="1.5" stroke-linecap="square"></path>
+                                                </svg>
+                                            </span>
+                                <span class="text mobHide">В корзину</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="imgWrap">
+                            <div class="likeBox">
+                                <svg class="like" viewBox="0 0 20 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M9.93381 3.59926L9.04348 2.68409C6.95363 0.53588 3.12161 1.2772 1.73831 3.97799C1.08888 5.24829 0.942352 7.08235 2.12822 9.42303C3.27062 11.6768 5.64732 14.3763 9.93381 17.3168C14.2203 14.3763 16.5958 11.6768 17.7394 9.42303C18.9253 7.08111 18.78 5.24829 18.1293 3.97799C16.746 1.2772 12.914 0.534638 10.8241 2.68285L9.93381 3.59926ZM9.93381 18.8131C-9.10583 6.23175 4.07154 -3.58795 9.71526 1.60626C9.78977 1.67456 9.86303 1.74534 9.93381 1.8186C10.0039 1.7454 10.0768 1.67498 10.1524 1.6075C15.7948 -3.59043 28.9734 6.23051 9.93381 18.8131Z" fill="none"></path>
+                                </svg>
+                            </div>
+                            <div class="compareBox">
+                                <svg class="compare" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M13.3672 8.125C13.3672 8.9538 13.6964 9.74866 14.2825 10.3347C14.8685 10.9208 15.6634 11.25 16.4922 11.25C17.321 11.25 18.1158 10.9208 18.7019 10.3347C19.2879 9.74866 19.6172 8.9538 19.6172 8.125C19.6173 8.02805 19.5948 7.9324 19.5516 7.84563L17.0516 2.84562C16.9843 2.71095 16.8708 2.60507 16.7317 2.54743C16.5927 2.48979 16.4375 2.48427 16.2947 2.53188L12.3378 3.85062C12.1186 3.57199 11.8256 3.36043 11.4922 3.24V1.875C11.4922 1.52982 11.2124 1.25 10.8672 1.25C10.522 1.25 10.2422 1.52982 10.2422 1.875V3.24C9.88364 3.36677 9.5722 3.59974 9.34934 3.9079C9.12649 4.21606 9.00278 4.58479 8.99469 4.965L5.04469 6.28187C4.88753 6.33425 4.7576 6.44688 4.68344 6.595L2.18344 11.595C2.13988 11.6819 2.11719 11.7778 2.11719 11.875C2.11719 12.7038 2.44643 13.4987 3.03248 14.0847C3.61853 14.6708 4.41339 15 5.24219 15C6.07099 15 6.86585 14.6708 7.4519 14.0847C8.03795 13.4987 8.36719 12.7038 8.36719 11.875C8.36728 11.778 8.34481 11.6824 8.30156 11.5956L6.12344 7.24L9.39656 6.14875C9.6157 6.42746 9.9087 6.63903 10.2422 6.75937V17.5H5.24219C4.89701 17.5 4.61719 17.7798 4.61719 18.125C4.61719 18.4702 4.89701 18.75 5.24219 18.75H16.4922C16.8374 18.75 17.1172 18.4702 17.1172 18.125C17.1172 17.7798 16.8374 17.5 16.4922 17.5H11.4922V6.76C11.8507 6.63323 12.1622 6.40026 12.385 6.0921C12.6079 5.78395 12.7316 5.41521 12.7397 5.035L15.2584 4.195L13.4334 7.845C13.3899 7.93191 13.3672 8.02778 13.3672 8.125ZM5.24219 13.75C4.85579 13.7486 4.47929 13.6278 4.1643 13.404C3.84931 13.1802 3.61126 12.8644 3.48281 12.5H7.00156C6.87311 12.8644 6.63507 13.1802 6.32008 13.404C6.00509 13.6278 5.62858 13.7486 5.24219 13.75ZM6.73094 11.25H3.75344L5.24219 8.2725L6.73094 11.25ZM10.8672 5.625C10.7436 5.625 10.6227 5.58834 10.52 5.51967C10.4172 5.45099 10.3371 5.35338 10.2898 5.23918C10.2425 5.12497 10.2301 4.99931 10.2542 4.87807C10.2783 4.75683 10.3378 4.64547 10.4252 4.55806C10.5127 4.47065 10.624 4.41112 10.7453 4.38701C10.8665 4.36289 10.9922 4.37527 11.1064 4.42258C11.2206 4.46988 11.3182 4.54999 11.3869 4.65277C11.4555 4.75555 11.4922 4.87639 11.4922 5C11.4922 5.16576 11.4263 5.32473 11.3091 5.44194C11.1919 5.55915 11.0329 5.625 10.8672 5.625ZM16.4922 10C16.1058 9.99863 15.7293 9.87776 15.4143 9.65397C15.0993 9.43018 14.8613 9.11442 14.7328 8.75H18.2516C18.1231 9.11442 17.8851 9.43018 17.5701 9.65397C17.2551 9.87776 16.8786 9.99863 16.4922 10ZM16.4922 4.5225L17.9809 7.5H15.0034L16.4922 4.5225Z" fill="none"></path>
+                                </svg>
+                            </div>
+                            <img src="img/rs1.png" alt="">
+                        </div>
+                        <div class="info">
+                            <div class="cat">
+                                <a href="">Ноутбук</a>
+                            </div>
+                            <div class="itemName">
+                                <a href="">Ноутбук Dell Latitude</a>
+                            </div>
+                            <div class="props">1920x1080 (Full HD), 14 ", SSD, 256 ГБ, Intel UHD Graphics 620, Linux</div>
+                        </div>
+                        <div class="price">43 000 ₽</div>
+                        <div class="inCart">
+                            <a href="">
+                                            <span class="iconCart">
+                                                <svg viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M1.01786 7.30328C0.995773 7.2104 0.99415 7.11347 1.01311 7.01985C1.03208 6.92622 1.07113 6.83835 1.12731 6.76291C1.18349 6.68747 1.25531 6.62645 1.33734 6.58447C1.41936 6.54249 1.50942 6.52066 1.60069 6.52063H12.0796C12.1709 6.52066 12.2609 6.54249 12.343 6.58447C12.425 6.62645 12.4968 6.68747 12.553 6.76291C12.6092 6.83835 12.6482 6.92622 12.6672 7.01985C12.6861 7.11347 12.6845 7.2104 12.6624 7.30328L11.5743 11.8675C11.5093 12.1401 11.3593 12.3822 11.1481 12.5551C10.9369 12.7281 10.6766 12.8221 10.4086 12.8221H3.27167C3.00369 12.8221 2.74342 12.7281 2.53221 12.5551C2.32101 12.3822 2.17099 12.1401 2.10601 11.8675L1.01786 7.30328Z" stroke="white" stroke-width="1.5" stroke-linejoin="round"></path>
+                                                    <path d="M5.0376 9.04126V10.3015" stroke="white" stroke-width="1.5" stroke-linecap="square"></path>
+                                                    <path d="M8.64258 9.04126V10.3015" stroke="white" stroke-width="1.5" stroke-linecap="square"></path>
+                                                    <path d="M3.23486 5.78093L5.63831 2.00005" stroke="white" stroke-width="1.5" stroke-linecap="square"></path>
+                                                    <path d="M10.4453 5.78093L8.04199 2.00005" stroke="white" stroke-width="1.5" stroke-linecap="square"></path>
+                                                </svg>
+                                            </span>
+                                <span class="text mobHide">В корзину</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="imgWrap">
+                            <div class="likeBox">
+                                <svg class="like" viewBox="0 0 20 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M9.93381 3.59926L9.04348 2.68409C6.95363 0.53588 3.12161 1.2772 1.73831 3.97799C1.08888 5.24829 0.942352 7.08235 2.12822 9.42303C3.27062 11.6768 5.64732 14.3763 9.93381 17.3168C14.2203 14.3763 16.5958 11.6768 17.7394 9.42303C18.9253 7.08111 18.78 5.24829 18.1293 3.97799C16.746 1.2772 12.914 0.534638 10.8241 2.68285L9.93381 3.59926ZM9.93381 18.8131C-9.10583 6.23175 4.07154 -3.58795 9.71526 1.60626C9.78977 1.67456 9.86303 1.74534 9.93381 1.8186C10.0039 1.7454 10.0768 1.67498 10.1524 1.6075C15.7948 -3.59043 28.9734 6.23051 9.93381 18.8131Z" fill="none"></path>
+                                </svg>
+                            </div>
+                            <div class="compareBox">
+                                <svg class="compare" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M13.3672 8.125C13.3672 8.9538 13.6964 9.74866 14.2825 10.3347C14.8685 10.9208 15.6634 11.25 16.4922 11.25C17.321 11.25 18.1158 10.9208 18.7019 10.3347C19.2879 9.74866 19.6172 8.9538 19.6172 8.125C19.6173 8.02805 19.5948 7.9324 19.5516 7.84563L17.0516 2.84562C16.9843 2.71095 16.8708 2.60507 16.7317 2.54743C16.5927 2.48979 16.4375 2.48427 16.2947 2.53188L12.3378 3.85062C12.1186 3.57199 11.8256 3.36043 11.4922 3.24V1.875C11.4922 1.52982 11.2124 1.25 10.8672 1.25C10.522 1.25 10.2422 1.52982 10.2422 1.875V3.24C9.88364 3.36677 9.5722 3.59974 9.34934 3.9079C9.12649 4.21606 9.00278 4.58479 8.99469 4.965L5.04469 6.28187C4.88753 6.33425 4.7576 6.44688 4.68344 6.595L2.18344 11.595C2.13988 11.6819 2.11719 11.7778 2.11719 11.875C2.11719 12.7038 2.44643 13.4987 3.03248 14.0847C3.61853 14.6708 4.41339 15 5.24219 15C6.07099 15 6.86585 14.6708 7.4519 14.0847C8.03795 13.4987 8.36719 12.7038 8.36719 11.875C8.36728 11.778 8.34481 11.6824 8.30156 11.5956L6.12344 7.24L9.39656 6.14875C9.6157 6.42746 9.9087 6.63903 10.2422 6.75937V17.5H5.24219C4.89701 17.5 4.61719 17.7798 4.61719 18.125C4.61719 18.4702 4.89701 18.75 5.24219 18.75H16.4922C16.8374 18.75 17.1172 18.4702 17.1172 18.125C17.1172 17.7798 16.8374 17.5 16.4922 17.5H11.4922V6.76C11.8507 6.63323 12.1622 6.40026 12.385 6.0921C12.6079 5.78395 12.7316 5.41521 12.7397 5.035L15.2584 4.195L13.4334 7.845C13.3899 7.93191 13.3672 8.02778 13.3672 8.125ZM5.24219 13.75C4.85579 13.7486 4.47929 13.6278 4.1643 13.404C3.84931 13.1802 3.61126 12.8644 3.48281 12.5H7.00156C6.87311 12.8644 6.63507 13.1802 6.32008 13.404C6.00509 13.6278 5.62858 13.7486 5.24219 13.75ZM6.73094 11.25H3.75344L5.24219 8.2725L6.73094 11.25ZM10.8672 5.625C10.7436 5.625 10.6227 5.58834 10.52 5.51967C10.4172 5.45099 10.3371 5.35338 10.2898 5.23918C10.2425 5.12497 10.2301 4.99931 10.2542 4.87807C10.2783 4.75683 10.3378 4.64547 10.4252 4.55806C10.5127 4.47065 10.624 4.41112 10.7453 4.38701C10.8665 4.36289 10.9922 4.37527 11.1064 4.42258C11.2206 4.46988 11.3182 4.54999 11.3869 4.65277C11.4555 4.75555 11.4922 4.87639 11.4922 5C11.4922 5.16576 11.4263 5.32473 11.3091 5.44194C11.1919 5.55915 11.0329 5.625 10.8672 5.625ZM16.4922 10C16.1058 9.99863 15.7293 9.87776 15.4143 9.65397C15.0993 9.43018 14.8613 9.11442 14.7328 8.75H18.2516C18.1231 9.11442 17.8851 9.43018 17.5701 9.65397C17.2551 9.87776 16.8786 9.99863 16.4922 10ZM16.4922 4.5225L17.9809 7.5H15.0034L16.4922 4.5225Z" fill="none"></path>
+                                </svg>
+                            </div>
+                            <img src="img/rs2.png" alt="">
+                        </div>
+                        <div class="info">
+                            <div class="cat">
+                                <a href="">Ноутбук</a>
+                            </div>
+                            <div class="itemName">
+                                <a href="">Ноутбук Dell Latitude</a>
+                            </div>
+                            <div class="props">1920x1080 (Full HD), 14 ", SSD, 256 ГБ, Intel UHD Graphics 620, Linux</div>
+                        </div>
+                        <div class="price">43 000 ₽</div>
+                        <div class="inCart">
+                            <a href="">
+                                            <span class="iconCart">
+                                                <svg viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M1.01786 7.30328C0.995773 7.2104 0.99415 7.11347 1.01311 7.01985C1.03208 6.92622 1.07113 6.83835 1.12731 6.76291C1.18349 6.68747 1.25531 6.62645 1.33734 6.58447C1.41936 6.54249 1.50942 6.52066 1.60069 6.52063H12.0796C12.1709 6.52066 12.2609 6.54249 12.343 6.58447C12.425 6.62645 12.4968 6.68747 12.553 6.76291C12.6092 6.83835 12.6482 6.92622 12.6672 7.01985C12.6861 7.11347 12.6845 7.2104 12.6624 7.30328L11.5743 11.8675C11.5093 12.1401 11.3593 12.3822 11.1481 12.5551C10.9369 12.7281 10.6766 12.8221 10.4086 12.8221H3.27167C3.00369 12.8221 2.74342 12.7281 2.53221 12.5551C2.32101 12.3822 2.17099 12.1401 2.10601 11.8675L1.01786 7.30328Z" stroke="white" stroke-width="1.5" stroke-linejoin="round"></path>
+                                                    <path d="M5.0376 9.04126V10.3015" stroke="white" stroke-width="1.5" stroke-linecap="square"></path>
+                                                    <path d="M8.64258 9.04126V10.3015" stroke="white" stroke-width="1.5" stroke-linecap="square"></path>
+                                                    <path d="M3.23486 5.78093L5.63831 2.00005" stroke="white" stroke-width="1.5" stroke-linecap="square"></path>
+                                                    <path d="M10.4453 5.78093L8.04199 2.00005" stroke="white" stroke-width="1.5" stroke-linecap="square"></path>
+                                                </svg>
+                                            </span>
+                                <span class="text mobHide">В корзину</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="deliveryInfo lnPage">
+            <div class="bgText smallText">delivery</div>
+            <div class="contentWrapper iFlex">
+                <div>
+                    <div class="contentTitle2">Доставка в любую точку</div>
+                    <p>Мы своевременно осуществляем доставку клиентам оборудования и комплектующих DELL.
+                        Условия и стоимость доставки товаров зависят от удаленности пункта назначения,
+                        срочности и транспортной компании.</p>
+                    <div>
+                        <a href="#">
+                            <span class="iconBlueButton">&rarr;</span>
+                            <span>Заказать</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="imgWrapper">
+                    <img src="img/delivery.png" alt="">
+                </div>
+            </div>
+        </section>
+        <div id="modalContent">
+            <div class="closeModal"><img src="img/icons/crossMobile.svg" alt=""></div>
+            <form action="">
+                <div class="addReviewForm">
+                    <div class="title">Мой отзыв</div>
+                    <div class="item">
+                        <div class="imgWrap"><img src="img/rs1.png" alt=""></div>
+                        <div class="info">
+                            <div class="price">43 000 ₽</div>
+                            <div class="productName">Ноутбук Dell Latitude 5310 2in1<br class="mobHide">Titan Silver</div>
+                        </div>
+                    </div>
+                    <div class="title2">Общая оценка*</div>
+                    <ul class="propertyRatingChoise">
+                        <li>
+                            <div class="prop">Мощность</div>
+                            <span class="rating js-ratingChoise">
+                        <input type="hidden" value="0">
+                        <div></div>
+                        <svg viewBox="0 0 13 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M5.63227 0.921927C5.9926 0.15649 7.08145 0.156488 7.44179 0.921926L8.43482 3.03136C8.58058 3.34099 8.87456 3.55458 9.21409 3.59753L11.5271 3.8901C12.3665 3.99627 12.7029 5.03183 12.0863 5.61106L10.387 7.20734C10.1375 7.44165 10.0253 7.78724 10.0893 8.12342L10.5258 10.4137C10.6842 11.2447 9.80334 11.8847 9.06191 11.4773L7.01864 10.3544C6.71872 10.1896 6.35534 10.1896 6.05541 10.3544L4.01215 11.4773C3.27072 11.8847 2.38982 11.2447 2.54821 10.4137L2.98473 8.12342C3.0488 7.78724 2.93651 7.44165 2.68707 7.20734L0.98775 5.61106C0.371125 5.03183 0.707597 3.99627 1.54692 3.8901L3.85997 3.59753C4.19949 3.55458 4.49348 3.34099 4.63924 3.03136L5.63227 0.921927Z" fill="none"/>
+                        </svg>
+                        <div></div>
+                        <svg viewBox="0 0 13 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M5.63227 0.921927C5.9926 0.15649 7.08145 0.156488 7.44179 0.921926L8.43482 3.03136C8.58058 3.34099 8.87456 3.55458 9.21409 3.59753L11.5271 3.8901C12.3665 3.99627 12.7029 5.03183 12.0863 5.61106L10.387 7.20734C10.1375 7.44165 10.0253 7.78724 10.0893 8.12342L10.5258 10.4137C10.6842 11.2447 9.80334 11.8847 9.06191 11.4773L7.01864 10.3544C6.71872 10.1896 6.35534 10.1896 6.05541 10.3544L4.01215 11.4773C3.27072 11.8847 2.38982 11.2447 2.54821 10.4137L2.98473 8.12342C3.0488 7.78724 2.93651 7.44165 2.68707 7.20734L0.98775 5.61106C0.371125 5.03183 0.707597 3.99627 1.54692 3.8901L3.85997 3.59753C4.19949 3.55458 4.49348 3.34099 4.63924 3.03136L5.63227 0.921927Z" fill="none"/>
+                        </svg>
+                        <div></div>
+                        <svg viewBox="0 0 13 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M5.63227 0.921927C5.9926 0.15649 7.08145 0.156488 7.44179 0.921926L8.43482 3.03136C8.58058 3.34099 8.87456 3.55458 9.21409 3.59753L11.5271 3.8901C12.3665 3.99627 12.7029 5.03183 12.0863 5.61106L10.387 7.20734C10.1375 7.44165 10.0253 7.78724 10.0893 8.12342L10.5258 10.4137C10.6842 11.2447 9.80334 11.8847 9.06191 11.4773L7.01864 10.3544C6.71872 10.1896 6.35534 10.1896 6.05541 10.3544L4.01215 11.4773C3.27072 11.8847 2.38982 11.2447 2.54821 10.4137L2.98473 8.12342C3.0488 7.78724 2.93651 7.44165 2.68707 7.20734L0.98775 5.61106C0.371125 5.03183 0.707597 3.99627 1.54692 3.8901L3.85997 3.59753C4.19949 3.55458 4.49348 3.34099 4.63924 3.03136L5.63227 0.921927Z" fill="none"/>
+                        </svg>
+                        <div></div>
+                        <svg viewBox="0 0 13 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M5.63227 0.921927C5.9926 0.15649 7.08145 0.156488 7.44179 0.921926L8.43482 3.03136C8.58058 3.34099 8.87456 3.55458 9.21409 3.59753L11.5271 3.8901C12.3665 3.99627 12.7029 5.03183 12.0863 5.61106L10.387 7.20734C10.1375 7.44165 10.0253 7.78724 10.0893 8.12342L10.5258 10.4137C10.6842 11.2447 9.80334 11.8847 9.06191 11.4773L7.01864 10.3544C6.71872 10.1896 6.35534 10.1896 6.05541 10.3544L4.01215 11.4773C3.27072 11.8847 2.38982 11.2447 2.54821 10.4137L2.98473 8.12342C3.0488 7.78724 2.93651 7.44165 2.68707 7.20734L0.98775 5.61106C0.371125 5.03183 0.707597 3.99627 1.54692 3.8901L3.85997 3.59753C4.19949 3.55458 4.49348 3.34099 4.63924 3.03136L5.63227 0.921927Z" fill="none"/>
+                        </svg>
+                        <div></div>
+                        <svg viewBox="0 0 13 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M5.63227 0.921927C5.9926 0.15649 7.08145 0.156488 7.44179 0.921926L8.43482 3.03136C8.58058 3.34099 8.87456 3.55458 9.21409 3.59753L11.5271 3.8901C12.3665 3.99627 12.7029 5.03183 12.0863 5.61106L10.387 7.20734C10.1375 7.44165 10.0253 7.78724 10.0893 8.12342L10.5258 10.4137C10.6842 11.2447 9.80334 11.8847 9.06191 11.4773L7.01864 10.3544C6.71872 10.1896 6.35534 10.1896 6.05541 10.3544L4.01215 11.4773C3.27072 11.8847 2.38982 11.2447 2.54821 10.4137L2.98473 8.12342C3.0488 7.78724 2.93651 7.44165 2.68707 7.20734L0.98775 5.61106C0.371125 5.03183 0.707597 3.99627 1.54692 3.8901L3.85997 3.59753C4.19949 3.55458 4.49348 3.34099 4.63924 3.03136L5.63227 0.921927Z" fill="none"/>
+                        </svg>
+                    </span>
+                        </li>
+                        <li>
+                            <div class="prop">Функциональность</div>
+                            <span class="rating js-ratingChoise">
+                                <input type="hidden" value="0">
+                                <div></div>
+                                <svg viewBox="0 0 13 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M5.63227 0.921927C5.9926 0.15649 7.08145 0.156488 7.44179 0.921926L8.43482 3.03136C8.58058 3.34099 8.87456 3.55458 9.21409 3.59753L11.5271 3.8901C12.3665 3.99627 12.7029 5.03183 12.0863 5.61106L10.387 7.20734C10.1375 7.44165 10.0253 7.78724 10.0893 8.12342L10.5258 10.4137C10.6842 11.2447 9.80334 11.8847 9.06191 11.4773L7.01864 10.3544C6.71872 10.1896 6.35534 10.1896 6.05541 10.3544L4.01215 11.4773C3.27072 11.8847 2.38982 11.2447 2.54821 10.4137L2.98473 8.12342C3.0488 7.78724 2.93651 7.44165 2.68707 7.20734L0.98775 5.61106C0.371125 5.03183 0.707597 3.99627 1.54692 3.8901L3.85997 3.59753C4.19949 3.55458 4.49348 3.34099 4.63924 3.03136L5.63227 0.921927Z" fill="none"/>
+                                </svg>
+                                <div></div>
+                                <svg viewBox="0 0 13 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M5.63227 0.921927C5.9926 0.15649 7.08145 0.156488 7.44179 0.921926L8.43482 3.03136C8.58058 3.34099 8.87456 3.55458 9.21409 3.59753L11.5271 3.8901C12.3665 3.99627 12.7029 5.03183 12.0863 5.61106L10.387 7.20734C10.1375 7.44165 10.0253 7.78724 10.0893 8.12342L10.5258 10.4137C10.6842 11.2447 9.80334 11.8847 9.06191 11.4773L7.01864 10.3544C6.71872 10.1896 6.35534 10.1896 6.05541 10.3544L4.01215 11.4773C3.27072 11.8847 2.38982 11.2447 2.54821 10.4137L2.98473 8.12342C3.0488 7.78724 2.93651 7.44165 2.68707 7.20734L0.98775 5.61106C0.371125 5.03183 0.707597 3.99627 1.54692 3.8901L3.85997 3.59753C4.19949 3.55458 4.49348 3.34099 4.63924 3.03136L5.63227 0.921927Z" fill="none"/>
+                                </svg>
+                                <div></div>
+                                <svg viewBox="0 0 13 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M5.63227 0.921927C5.9926 0.15649 7.08145 0.156488 7.44179 0.921926L8.43482 3.03136C8.58058 3.34099 8.87456 3.55458 9.21409 3.59753L11.5271 3.8901C12.3665 3.99627 12.7029 5.03183 12.0863 5.61106L10.387 7.20734C10.1375 7.44165 10.0253 7.78724 10.0893 8.12342L10.5258 10.4137C10.6842 11.2447 9.80334 11.8847 9.06191 11.4773L7.01864 10.3544C6.71872 10.1896 6.35534 10.1896 6.05541 10.3544L4.01215 11.4773C3.27072 11.8847 2.38982 11.2447 2.54821 10.4137L2.98473 8.12342C3.0488 7.78724 2.93651 7.44165 2.68707 7.20734L0.98775 5.61106C0.371125 5.03183 0.707597 3.99627 1.54692 3.8901L3.85997 3.59753C4.19949 3.55458 4.49348 3.34099 4.63924 3.03136L5.63227 0.921927Z" fill="none"/>
+                                </svg>
+                                <div></div>
+                                <svg viewBox="0 0 13 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M5.63227 0.921927C5.9926 0.15649 7.08145 0.156488 7.44179 0.921926L8.43482 3.03136C8.58058 3.34099 8.87456 3.55458 9.21409 3.59753L11.5271 3.8901C12.3665 3.99627 12.7029 5.03183 12.0863 5.61106L10.387 7.20734C10.1375 7.44165 10.0253 7.78724 10.0893 8.12342L10.5258 10.4137C10.6842 11.2447 9.80334 11.8847 9.06191 11.4773L7.01864 10.3544C6.71872 10.1896 6.35534 10.1896 6.05541 10.3544L4.01215 11.4773C3.27072 11.8847 2.38982 11.2447 2.54821 10.4137L2.98473 8.12342C3.0488 7.78724 2.93651 7.44165 2.68707 7.20734L0.98775 5.61106C0.371125 5.03183 0.707597 3.99627 1.54692 3.8901L3.85997 3.59753C4.19949 3.55458 4.49348 3.34099 4.63924 3.03136L5.63227 0.921927Z" fill="none"/>
+                                </svg>
+                                <div></div>
+                                <svg viewBox="0 0 13 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M5.63227 0.921927C5.9926 0.15649 7.08145 0.156488 7.44179 0.921926L8.43482 3.03136C8.58058 3.34099 8.87456 3.55458 9.21409 3.59753L11.5271 3.8901C12.3665 3.99627 12.7029 5.03183 12.0863 5.61106L10.387 7.20734C10.1375 7.44165 10.0253 7.78724 10.0893 8.12342L10.5258 10.4137C10.6842 11.2447 9.80334 11.8847 9.06191 11.4773L7.01864 10.3544C6.71872 10.1896 6.35534 10.1896 6.05541 10.3544L4.01215 11.4773C3.27072 11.8847 2.38982 11.2447 2.54821 10.4137L2.98473 8.12342C3.0488 7.78724 2.93651 7.44165 2.68707 7.20734L0.98775 5.61106C0.371125 5.03183 0.707597 3.99627 1.54692 3.8901L3.85997 3.59753C4.19949 3.55458 4.49348 3.34099 4.63924 3.03136L5.63227 0.921927Z" fill="none"/>
+                                </svg>
+                            </span>
+                        </li>
+                        <li>
+                            <div class="prop">Время работы</div>
+                            <span class="rating js-ratingChoise">
+                                <input type="hidden" value="0">
+                                <div></div>
+                                <svg viewBox="0 0 13 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M5.63227 0.921927C5.9926 0.15649 7.08145 0.156488 7.44179 0.921926L8.43482 3.03136C8.58058 3.34099 8.87456 3.55458 9.21409 3.59753L11.5271 3.8901C12.3665 3.99627 12.7029 5.03183 12.0863 5.61106L10.387 7.20734C10.1375 7.44165 10.0253 7.78724 10.0893 8.12342L10.5258 10.4137C10.6842 11.2447 9.80334 11.8847 9.06191 11.4773L7.01864 10.3544C6.71872 10.1896 6.35534 10.1896 6.05541 10.3544L4.01215 11.4773C3.27072 11.8847 2.38982 11.2447 2.54821 10.4137L2.98473 8.12342C3.0488 7.78724 2.93651 7.44165 2.68707 7.20734L0.98775 5.61106C0.371125 5.03183 0.707597 3.99627 1.54692 3.8901L3.85997 3.59753C4.19949 3.55458 4.49348 3.34099 4.63924 3.03136L5.63227 0.921927Z" fill="none"/>
+                                </svg>
+                                <div></div>
+                                <svg viewBox="0 0 13 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M5.63227 0.921927C5.9926 0.15649 7.08145 0.156488 7.44179 0.921926L8.43482 3.03136C8.58058 3.34099 8.87456 3.55458 9.21409 3.59753L11.5271 3.8901C12.3665 3.99627 12.7029 5.03183 12.0863 5.61106L10.387 7.20734C10.1375 7.44165 10.0253 7.78724 10.0893 8.12342L10.5258 10.4137C10.6842 11.2447 9.80334 11.8847 9.06191 11.4773L7.01864 10.3544C6.71872 10.1896 6.35534 10.1896 6.05541 10.3544L4.01215 11.4773C3.27072 11.8847 2.38982 11.2447 2.54821 10.4137L2.98473 8.12342C3.0488 7.78724 2.93651 7.44165 2.68707 7.20734L0.98775 5.61106C0.371125 5.03183 0.707597 3.99627 1.54692 3.8901L3.85997 3.59753C4.19949 3.55458 4.49348 3.34099 4.63924 3.03136L5.63227 0.921927Z" fill="none"/>
+                                </svg>
+                                <div></div>
+                                <svg viewBox="0 0 13 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M5.63227 0.921927C5.9926 0.15649 7.08145 0.156488 7.44179 0.921926L8.43482 3.03136C8.58058 3.34099 8.87456 3.55458 9.21409 3.59753L11.5271 3.8901C12.3665 3.99627 12.7029 5.03183 12.0863 5.61106L10.387 7.20734C10.1375 7.44165 10.0253 7.78724 10.0893 8.12342L10.5258 10.4137C10.6842 11.2447 9.80334 11.8847 9.06191 11.4773L7.01864 10.3544C6.71872 10.1896 6.35534 10.1896 6.05541 10.3544L4.01215 11.4773C3.27072 11.8847 2.38982 11.2447 2.54821 10.4137L2.98473 8.12342C3.0488 7.78724 2.93651 7.44165 2.68707 7.20734L0.98775 5.61106C0.371125 5.03183 0.707597 3.99627 1.54692 3.8901L3.85997 3.59753C4.19949 3.55458 4.49348 3.34099 4.63924 3.03136L5.63227 0.921927Z" fill="none"/>
+                                </svg>
+                                <div></div>
+                                <svg viewBox="0 0 13 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M5.63227 0.921927C5.9926 0.15649 7.08145 0.156488 7.44179 0.921926L8.43482 3.03136C8.58058 3.34099 8.87456 3.55458 9.21409 3.59753L11.5271 3.8901C12.3665 3.99627 12.7029 5.03183 12.0863 5.61106L10.387 7.20734C10.1375 7.44165 10.0253 7.78724 10.0893 8.12342L10.5258 10.4137C10.6842 11.2447 9.80334 11.8847 9.06191 11.4773L7.01864 10.3544C6.71872 10.1896 6.35534 10.1896 6.05541 10.3544L4.01215 11.4773C3.27072 11.8847 2.38982 11.2447 2.54821 10.4137L2.98473 8.12342C3.0488 7.78724 2.93651 7.44165 2.68707 7.20734L0.98775 5.61106C0.371125 5.03183 0.707597 3.99627 1.54692 3.8901L3.85997 3.59753C4.19949 3.55458 4.49348 3.34099 4.63924 3.03136L5.63227 0.921927Z" fill="none"/>
+                                </svg>
+                                <div></div>
+                                <svg viewBox="0 0 13 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M5.63227 0.921927C5.9926 0.15649 7.08145 0.156488 7.44179 0.921926L8.43482 3.03136C8.58058 3.34099 8.87456 3.55458 9.21409 3.59753L11.5271 3.8901C12.3665 3.99627 12.7029 5.03183 12.0863 5.61106L10.387 7.20734C10.1375 7.44165 10.0253 7.78724 10.0893 8.12342L10.5258 10.4137C10.6842 11.2447 9.80334 11.8847 9.06191 11.4773L7.01864 10.3544C6.71872 10.1896 6.35534 10.1896 6.05541 10.3544L4.01215 11.4773C3.27072 11.8847 2.38982 11.2447 2.54821 10.4137L2.98473 8.12342C3.0488 7.78724 2.93651 7.44165 2.68707 7.20734L0.98775 5.61106C0.371125 5.03183 0.707597 3.99627 1.54692 3.8901L3.85997 3.59753C4.19949 3.55458 4.49348 3.34099 4.63924 3.03136L5.63227 0.921927Z" fill="none"/>
+                                </svg>
+                            </span>
+                        </li>
+                    </ul>
+                    <div class="title2">Расскажите поподробнее</div>
+                    <div class="textAreaWrap">
+                        <label>Плюсы*</label>
+                        <textarea></textarea>
+                        <label>Минусы*</label>
+                        <textarea></textarea>
+                        <label>Дополнительно*</label>
+                        <textarea></textarea>
+                    </div>
+                    <div class="title2">Добавьте фотографии</div>
+                    <div class="textGray">Размер изображения не менее 800х600 пикселей, вес не более 10 Мб.</div>
+                    <div class="sendFile">
+                        <svg class="iconAddPhoto" width="53" height="45" viewBox="0 0 53 45" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M45.2278 18.6992C44.6066 18.6992 44.0109 18.9407 43.5717 19.3705C43.1324 19.8002 42.8857 20.3831 42.8857 20.9909V37.0326C42.8857 37.6404 42.6389 38.2233 42.1996 38.653C41.7604 39.0828 41.1647 39.3242 40.5435 39.3242H7.75308C7.1319 39.3242 6.53615 39.0828 6.09691 38.653C5.65767 38.2233 5.41091 37.6404 5.41091 37.0326V18.6992C5.41091 18.0915 5.65767 17.5086 6.09691 17.0788C6.53615 16.649 7.1319 16.4076 7.75308 16.4076H12.4374C12.9482 16.4337 13.4536 16.2955 13.8765 16.0141C14.2995 15.7327 14.6166 15.3236 14.7796 14.8492L16.0444 11.0909C16.2015 10.6357 16.5008 10.2404 16.9001 9.96075C17.2994 9.68112 17.7784 9.53133 18.2694 9.53257H31.1748C31.796 9.53257 32.3917 9.29113 32.831 8.86136C33.2702 8.43159 33.517 7.84869 33.517 7.24091C33.517 6.63312 33.2702 6.05022 32.831 5.62045C32.3917 5.19068 31.796 4.94924 31.1748 4.94924H18.1523C16.6804 4.95193 15.2465 5.40685 14.053 6.24977C12.8595 7.0927 11.9667 8.28107 11.5006 9.64716L10.7511 11.9388H7.75308C5.88953 11.9388 4.10231 12.6632 2.78458 13.9525C1.46685 15.2418 0.726563 16.9905 0.726562 18.8138V37.1472C0.726563 38.9705 1.46685 40.7192 2.78458 42.0085C4.10231 43.2978 5.88953 44.0222 7.75308 44.0222H40.5435C42.407 44.0222 44.1943 43.2978 45.512 42.0085C46.8297 40.7192 47.57 38.9705 47.57 37.1472V21.1055C47.5859 20.795 47.5371 20.4847 47.4265 20.1933C47.3159 19.9019 47.1459 19.6355 46.9268 19.4104C46.7077 19.1854 46.4441 19.0062 46.152 18.884C45.86 18.7617 45.5455 18.6989 45.2278 18.6992ZM24.1483 16.4076C22.2953 16.4076 20.484 16.9452 18.9433 17.9524C17.4026 18.9597 16.2018 20.3913 15.4927 22.0663C14.7836 23.7413 14.5981 25.5844 14.9596 27.3626C15.3211 29.1407 16.2134 30.7741 17.5236 32.0561C18.8339 33.338 20.5032 34.2111 22.3205 34.5648C24.1379 34.9185 26.0216 34.7369 27.7335 34.0431C29.4454 33.3493 30.9086 32.1744 31.9381 30.667C32.9675 29.1595 33.517 27.3872 33.517 25.5742C33.517 23.1431 32.5299 20.8115 30.7729 19.0924C29.016 17.3733 26.633 16.4076 24.1483 16.4076ZM24.1483 30.1576C23.2218 30.1576 22.3161 29.8888 21.5458 29.3851C20.7755 28.8815 20.1751 28.1657 19.8205 27.3282C19.466 26.4907 19.3732 25.5692 19.5539 24.6801C19.7347 23.791 20.1808 22.9743 20.8359 22.3333C21.4911 21.6923 22.3257 21.2558 23.2344 21.079C24.1431 20.9021 25.0849 20.9929 25.9409 21.3398C26.7969 21.6867 27.5284 22.2742 28.0432 23.0279C28.5579 23.7816 28.8326 24.6677 28.8326 25.5742C28.8326 26.7898 28.3391 27.9556 27.4606 28.8151C26.5821 29.6747 25.3906 30.1576 24.1483 30.1576ZM49.9122 4.94924H47.57V2.65757C47.57 2.04978 47.3232 1.46689 46.884 1.03712C46.4447 0.607348 45.849 0.365906 45.2278 0.365906C44.6066 0.365906 44.0109 0.607348 43.5717 1.03712C43.1324 1.46689 42.8857 2.04978 42.8857 2.65757V4.94924H40.5435C39.9223 4.94924 39.3266 5.19068 38.8873 5.62045C38.4481 6.05022 38.2013 6.63312 38.2013 7.24091C38.2013 7.84869 38.4481 8.43159 38.8873 8.86136C39.3266 9.29113 39.9223 9.53257 40.5435 9.53257H42.8857V11.8242C42.8857 12.432 43.1324 13.0149 43.5717 13.4447C44.0109 13.8745 44.6066 14.1159 45.2278 14.1159C45.849 14.1159 46.4447 13.8745 46.884 13.4447C47.3232 13.0149 47.57 12.432 47.57 11.8242V9.53257H49.9122C50.5334 9.53257 51.1291 9.29113 51.5683 8.86136C52.0076 8.43159 52.2543 7.84869 52.2543 7.24091C52.2543 6.63312 52.0076 6.05022 51.5683 5.62045C51.1291 5.19068 50.5334 4.94924 49.9122 4.94924Z" fill="#33A9FF"/>
+                        </svg>
+                        <br>
+                        <input type="file" class="fileHidden" multiple>
+                        <a href="" class="fileUpload">Нажмите на ссылку</a>, чтобы<br class="mobShow">
+                        выбрать фотографии<br class="mobHide"> или просто<br class="mobShow"> перетащите их сюда
+                    </div>
+                    <div class="textCenter">
+                        <div class="buttonBlue">Оставить отзыв</div>
+                    </div>
+                    <div class="blockGray">Перед отправкой отзыва убедитесь, что он соответствует правилам: не содержит
+                        оскорблений и ссылок на сторонние ресурсы</div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <footer>
+        <div class="bgText smallText">dell</div>
+        <div class="contentWrapper">
+            <div class="logoMain">
+                <a href="/"><img src="img/icons/logo.svg" alt=""></a>
+            </div>
+            <div class="footerNav">
+                <ul class="fnCatalog">
+                    <li class="title">Каталог</li>
+                    <li><a href="#">Ноутбуки</a></li>
+                    <li><a href="#">Персональные компьютеры</a></li>
+                    <li class="lessMargin"><a href="#">Серверы</a></li>
+                    <li><a href="#">Dell EMC</a></li>
+                    <li class="lessMargin"><a href="#">Запасные части к Dell EMC</a></li>
+                </ul>
+                <ul class="fnProfile">
+                    <li class="title">Личный кабинет</li>
+                    <li><a href="#">Профиль</a></li>
+                    <li><a href="#">История заказов</a></li>
+                    <li><a href="#">SMS-уведомления</a></li>
+                    <li><a href="#">Избранное</a></li>
+                    <li><a href="#">Сравнение товаров</a></li>
+                </ul>
+                <ul class="fnHelp">
+                    <li class="title">Помощь</li>
+                    <li><a href="#">Доставка и оплата</a></li>
+                    <li><a href="#">Контакты</a></li>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">Наш АСЦ</a></li>
+                </ul>
+            </div>
+            <div class="clearFix"></div>
+            <div class="contactsRow">
+                <div>
+                    <div class="title">Адрес</div>
+                    <div>Москва, ул. 3-я Хорошевская, дом 2, строение 1</div>
+                </div>
+                <div>
+                    <div class="title">Телефон</div>
+                    <div>+7 495 737-06-01, +7 495 737-06-01</div>
+                </div>
+                <div>
+                    <div class="title">E-mail</div>
+                    <div><a href="mailto:dell_ru@gmail.com">dell_ru@gmail.com</a></div>
+                </div>
+                <ul class="socLinks">
+                    <li>
+                        <a href="#">
+                            <svg class="iconFb" viewBox="0 0 10 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M8.95184 10.9546L9.44046 7.56788H6.38389V5.37106C6.38389 4.44451 6.81095 3.54038 8.17995 3.54038H9.56961V0.657058C9.56961 0.657058 8.30846 0.428223 7.10262 0.428223C4.58525 0.428223 2.93987 2.05021 2.93987 4.98662V7.56788H0.141602V10.9546H2.93987V19.1419C4.08094 19.3317 5.24282 19.3317 6.38389 19.1419V10.9546H8.95184Z" fill="none"/>
+                            </svg>
+                        </a>
+                    </li>
+                    <li class="noStyle">
+                        <a href="#">
+                            <svg class="iconWs" width="38" height="38" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M9.36724 33.3911L8.76998 33.0004L8.09002 33.2173C7.67666 33.3492 7.12251 33.5214 6.49304 33.717C5.6119 33.9907 4.58316 34.3103 3.5864 34.6295C3.69996 34.2695 3.81574 33.9016 3.92998 33.5356C4.36589 32.139 4.8171 30.656 4.93122 29.9866L5.03554 29.3748L4.67707 28.8681C2.67573 26.0395 1.5 22.5873 1.5 18.856C1.5 9.27056 9.27056 1.5 18.856 1.5C28.4415 1.5 36.212 9.27056 36.212 18.856C36.212 28.4415 28.4415 36.212 18.856 36.212C15.3514 36.212 12.0936 35.1749 9.36724 33.3911Z" stroke="none" stroke-width="3"/>
+                                <path d="M28.2838 24.8242C28.2838 25.1636 28.2082 25.5124 28.0477 25.8518C27.8872 26.1912 27.6795 26.5118 27.4056 26.8135C26.943 27.3226 26.4331 27.6903 25.8571 27.926C25.2906 28.1617 24.6768 28.2842 24.0159 28.2842C23.0528 28.2842 22.0236 28.058 20.9377 27.596C19.8519 27.134 18.766 26.5118 17.6896 25.7293C16.6038 24.9373 15.5746 24.0605 14.5926 23.0894C13.6201 22.1089 12.7419 21.0812 11.9582 20.0065C11.184 18.9317 10.5608 17.8569 10.1076 16.7915C9.65435 15.7167 9.42773 14.6891 9.42773 13.7085C9.42773 13.0674 9.54104 12.4546 9.76765 11.8889C9.99426 11.3138 10.3531 10.7859 10.8535 10.3145C11.4578 9.72049 12.1188 9.42822 12.8175 9.42822C13.0819 9.42822 13.3462 9.48479 13.5823 9.59793C13.8278 9.71106 14.045 9.88077 14.2149 10.1259L16.4055 13.2089C16.5755 13.4446 16.6982 13.6614 16.7832 13.8688C16.8682 14.0668 16.9154 14.2648 16.9154 14.4439C16.9154 14.6702 16.8493 14.8965 16.7171 15.1133C16.5943 15.3302 16.4149 15.5564 16.1883 15.7827L15.4707 16.5275C15.3669 16.6312 15.3197 16.7538 15.3197 16.9046C15.3197 16.9801 15.3291 17.0461 15.348 17.1215C15.3763 17.1969 15.4046 17.2535 15.4235 17.31C15.5935 17.6212 15.8862 18.0266 16.3016 18.5168C16.7265 19.0071 17.1798 19.5068 17.6708 20.0065C18.1806 20.5061 18.6716 20.9681 19.1721 21.3924C19.6631 21.8072 20.0691 22.09 20.3901 22.2597C20.4373 22.2786 20.494 22.3069 20.5601 22.3352C20.6356 22.3635 20.7111 22.3729 20.7961 22.3729C20.9566 22.3729 21.0794 22.3163 21.1832 22.2126L21.9008 21.5055C22.1369 21.2698 22.3635 21.0907 22.5807 20.9775C22.7979 20.8455 23.015 20.7795 23.2511 20.7795C23.4305 20.7795 23.6193 20.8173 23.8271 20.9021C24.0348 20.987 24.252 21.1095 24.488 21.2698L27.6134 23.4854C27.8589 23.6551 28.0288 23.8531 28.1327 24.0888C28.2271 24.3245 28.2838 24.5602 28.2838 24.8242Z" fill="none"/>
+                            </svg>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+</div>
+</body>
+</html>
